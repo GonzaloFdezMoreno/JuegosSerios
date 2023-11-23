@@ -78,7 +78,7 @@ El jugador tendrá una vista aérea de su granja, similar a la de Stardew Valley
 * __Reaccionar a eventos__: los eventos son sucesos que cambian el estado actual de la partida y obliga al jugador a tomar una decisión. Algunos tendrán lugar en una semana concreta ya que son importantes para el desarrollo de la partida, mientras que otros surgirán de manera aleatoria para introducir variedad al juego. Los eventos fijos tendrán lugar al comienzo de la semana, momento en el que se le informará al jugador en qué consiste exactamente. Por ejemplo, al comienzo de la semana 5 se
 le informa al jugador de que un nuevo impuesto ha entrado en vigor, de manera que, en adelante, se le cobrará la cantidad correspondiente con una determinada frecuencia. Por el contrario, los eventos aleatorios pueden tener lugar al comienzo o durante la semana. Por ejemplo, un desastre natural tendrá lugar al inicio de una semana aleatoria, informando al jugador de una manera similar a los eventos fijos, mientras que, transcurridas 6 horas de trabajo de una semana aleatoria, puede aparecer un vecino que quiera comprar algún producto a un buen precio.
 
-* __Siguiente semana__: equivalente al botón de pasar de turno en los juegos de estrategia. Terminará la semana y se mostrará un resumen de los ingresos y gastos de la misma. No será necesario que el jugador haya gastado todas las horas de esa semana para pasar a la siguiente, pero es recomendable que maximice las tareas que haga cada una de ellas.
+* __Siguiente semana__: equivalente al botón de pasar de turno en los juegos de estrategia. Terminará la semana y se mostrará un resumen de los ingresos y gastos de la misma. Esta información se añadirá a la última página del libro de cuentas, el cual el jugador podrá consultar para saber los gastos e ingresos de toda la partida. No será necesario que el jugador haya gastado todas las horas de esa semana para pasar a la siguiente, pero es recomendable que maximice las tareas que haga cada una de ellas.
 
 * __Paso de estaciones__: cada 12 semanas tendrá lugar el ciclo de estaciones entre primavera, verano, otoño e invierno. La estación actual tiene implicaciones en la recogida de la cosecha (habrá verduras exclusivas de cada estación) y en la probabilidad de que sucedan ciertos eventos (como las lluvias o los incendios).
 
@@ -105,9 +105,10 @@ La granja constará de las siguientes __parcelas__, las cuales tendrán cada una
 * __Terreno de pasto__: esta parcela sirve exclusivamente para llevar a pastar a los animales de pastoreo.
 Perro: dar de comer, veterinario.
 
-* __Tractor__: arreglar y vender.
+* __Tractor__: arreglar y vender. Se desbloquea tras el tutorial.
 
-* __Casa granjero__: teléfono, atender invitados y terminar semana
+* __Casa granjero__: atender invitados, comprar artículos para la granja (en un catálogo) y consultar el libro de cuentas.
+  
 Todas las parcelas pueden ser vendidas, de manera que las tareas correspondientes dejarán de estar disponibles.
 
 ### Eventos:
