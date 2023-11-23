@@ -7,14 +7,14 @@
     1. [Contexto de uso](#contUso)
 1. [Menús y modos de juego](#menuMod)
 1. [Jugabilidad] (#jug)
-    1. [Mecánica] (#mec)
-    1. [Dinámica] (#din)
-    1. [Estética] (#est)
-1. [Contenido] (#cont)
-    1. [Historia] (#hist)
-    1. [Personajes] (#pers)
-    1. [Objetos] (#obj)
-1. [Referencias] (#ref)
+    1. [Mecánica](#mec)
+    1. [Dinámica](#din)
+    1. [Estética](#est)
+1. [Contenido](#cont)
+    1. [Historia](#hist)
+    1. [Personajes](#pers)
+    1. [Objetos](#obj)
+1. [Referencias](#ref)
 
 
 //FALTA INDICE COMPLETO
