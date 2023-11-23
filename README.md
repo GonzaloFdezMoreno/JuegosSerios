@@ -125,7 +125,8 @@ Todas las parcelas pueden ser vendidas, de manera que las tareas correspondiente
 
 ## i. Dinámica <a name="din"></a>
 
-El objetivo de nuestro jugador se narrará durante las primeras semanas, su abuelo que se est´s jubilando le pedirá a su nieto que haga rentable su granja y que llegue a un pico de beneficios como misión, para asi confiarle su granja y que pueda vivir en un ambiente rural, sano y lejos de la ruidosa ciudad. Lo que no va a saber el jugador es que en nuestro juego no habra un final feliz.
+Durante las primeras semanas de juego se le explicará al jugador lo que debe hacer y se le marcará un objetivo: desbloquear el tractor. A esto le acompañarán explicaciones sobre cómo jugar a modo de tutorial. Tras conseguir el objetivo marcado inicialmente, el jugador podrá jugar libremente y comenzará la partida como tal.
+
 En este juego no existe una victoria como tal, el jugador está obligado a perder. Esto se debe a la intención educativa que queremos transmitir, de manera que el jugador sea consciente de las dificultades que se encuentran los trabajadores del mundo rural. En concreto, queremos que se sienta en la piel de un granjero que, por muy bien que gestione su granja, está condenado a sufrir pérdidas y, eventualmente, a verse obligado a vender su granja, ya que no es económicamente rentable dedicarse a ello.
 
 Sin embargo, esto no quiere decir que la forma en la que se juegue sea irrelevante. Si el jugador consigue desarrollar una estrategia que le permita maximizar sus ganancias, conseguirá sobrevivir más semanas, por lo que podrá experimentar situaciones que se den exclusivamente en momentos avanzados de la partida, como eventos o diálogos que no aparecen en las primeras semanas del juego.
@@ -143,7 +144,7 @@ Nosotros esperamos que el jugador siga una estrategia en la que intente realizar
 
 ## i. Historia <a name="hist"></a>
 
-Nos ponemos en la piel de un granjero que vive su vida en el campo tranquilamente, hasta que te llega la noticia de que los alrededores están cambiando, poniendo en peligro la vida rural: ocupación de terrenos de campo para el uso industrial, abandono de áreas poco pobladas,...; tu misión, lograr mantener tu granja y evitar tener que renunciar a ella.
+El abuelo del protagonista, que se está jubilando, le pedirá que se haga cargo de su granja y que consiga algo que él siempre quiso: un tractor amarillo; para así confiarle su granja y que pueda vivir en un ambiente rural, sano y lejos de la ruidosa ciudad. Lo que no va a saber el jugador es que en nuestro juego no habrá un final feliz. Ocupación de terrenos de campo para el uso industrial, abandono de áreas poco pobladas... Estos son solo algunos de los obstáculos que se encontrará nuestro protagonista. Tu misión, lograr mantener tu granja y evitar tener que renunciar a ella.
 
 ## ii. Personajes <a name="pers"></a>
 
