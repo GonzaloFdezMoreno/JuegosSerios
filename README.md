@@ -150,7 +150,8 @@ El abuelo del protagonista, que se está jubilando, le pedirá que se haga cargo
 ## ii. Personajes <a name="pers"></a>
 
 * __Protagonista__: José Luis/Mari Carmen (unos 30 años), dependiendo de si el jugador elige ser chico o chica. En ciertas situaciones aparecerá una imagen de este personaje, como en la interfaz o en algún cuadro de diálogo.
-* __Alcalde__: Don Timoteo (50 años), es un alcalde que busca su propio beneficio e ignora el bienestar de su pueblo.
+*  __Abuelo Saturnino__: el abuelo del protagonista. Le explicará al principio lo que debe hacer.
+*  __Alcalde__: Don Timoteo (50 años), es un alcalde que busca su propio beneficio e ignora el bienestar de su pueblo.
 * __Vecinos__: Doña Paqui, Don Faustino, Don Carmelo (65 años). Aparecerán esporádicamente en forma de eventos aleatorios.
 
 ## iii. Objetos <a name="obj"></a>
