@@ -38,14 +38,15 @@ Los principales interesados en dar a conocer el tema que tratamos y que quieran 
 # Menús y modos de juego <a name="menuMod"></a>
 
 Los menús de nuestro juego son: 
-1.- <u>Menú de inicio</u>: integrará las siguientes opciones: 
-    <u>Jugar</u>: comenzará el juego. 
-    <u>Modular el sonido</u>: deslizador con el que subirás y bajarás el volumen del juego. 
-    <u>Salir</u>: terminas el programa y sales del juego.
-2.- <u>Menú de pausa</u>: en el juego podrás pulsar ESC y el juego se pausa ofreciendo las siguientes opciones. 
-    <u>Continuar</u>: quitar la pausa y continuar con el juego. 
-    <u>Modular el sonido</u>: deslizador con el que subirás y bajarás el volumen del juego. 
-    <u>Salir</u>: terminas el programa y sales del juego. 
+
+1.- Menú de inicio: integrará las siguientes opciones: 
+    * Jugar: comenzará el juego. 
+    * Modular el sonido: deslizador con el que subirás y bajarás el volumen del juego. 
+    * Salir: terminas el programa y sales del juego.
+2.- Menú de pausa: en el juego podrás pulsar ESC y el juego se pausa ofreciendo las siguientes opciones. 
+    * Continuar: quitar la pausa y continuar con el juego. 
+    * Modular el sonido: deslizador con el que subirás y bajarás el volumen del juego. 
+    * Salir: terminas el programa y sales del juego. 
 
 Estética de los menús: botones con detalles rústicos y materiales de tablones. La música tendrá un tono calmado y country. Los fondos verdes y azules mezclando el cielo con el campo.
 
