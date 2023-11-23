@@ -117,7 +117,7 @@ Todas las parcelas pueden ser vendidas, de manera que las tareas correspondiente
 
 * __Animales enfermos/Plaga en los cultivos__: durante el transcurso de las semanas es posible que alguna emergencia ocurra dentro de la granja y en estos eventos el jugador deberá responder a estos llevando a los animales al veterinario o acabando con la plaga (con cierto coste); si el jugador decide ignorarlos o no es capaz de solucionar estos problemas la adquisición del recurso afectado se verá reducida.
 
-* __Visitas y compra de otros ciudadanos__: durante el juego algunos ciudadanos se pasarán por la granja ya sea para contarte algun consejo, aviso o chisme, este último será la forma en la que el jugador será informado de los cambios y otros sucesos que ocurriran alrededor de la granja, también para comprarte algún producto por un precio mayor al normal o pedirte que le guardes cierta cantidad para una futura compra; sin embargo, según pasan las semanas, estas personas irán apareciendo con menos frecuencia.
+* __Visitas y compra de otros ciudadanos__: durante el juego algunos ciudadanos se pasarán por la granja ya sea para contarte algun consejo, aviso o chisme, este último será la forma en la que el jugador será informado de los cambios y otros sucesos que ocurrirán alrededor de la granja, también para comprarte algún producto por un precio mayor al normal o pedirte que le guardes cierta cantidad para una futura compra; sin embargo, según pasan las semanas, estas personas irán apareciendo con menos frecuencia.
 
 * __Subida de impuestos__: a lo largo de las semanas el precio que se te exige pagar irá aumentando, por lo que le será más difícil lograr alcanzar las cifras que se le imponen.
 
@@ -125,7 +125,7 @@ Todas las parcelas pueden ser vendidas, de manera que las tareas correspondiente
 
 ## i. Dinámica <a name="din"></a>
 
-El objetivo de nuestro jugador se narrara los primeros dias, su abuelo que se esta jubilando le pedira a su nieto que haga rentable su granja y que llegue a un pico de veneficios como misión, para asi confiarle su granja y que pueda vivir en un ambiente rural, sano y lejos de la ruidosa ciudad. Lo que no va a saber el jugador es que en nuestro juego no habra un final feliz.
+El objetivo de nuestro jugador se narrará durante las primeras semanas, su abuelo que se est´s jubilando le pedirá a su nieto que haga rentable su granja y que llegue a un pico de beneficios como misión, para asi confiarle su granja y que pueda vivir en un ambiente rural, sano y lejos de la ruidosa ciudad. Lo que no va a saber el jugador es que en nuestro juego no habra un final feliz.
 En este juego no existe una victoria como tal, el jugador está obligado a perder. Esto se debe a la intención educativa que queremos transmitir, de manera que el jugador sea consciente de las dificultades que se encuentran los trabajadores del mundo rural. En concreto, queremos que se sienta en la piel de un granjero que, por muy bien que gestione su granja, está condenado a sufrir pérdidas y, eventualmente, a verse obligado a vender su granja, ya que no es económicamente rentable dedicarse a ello.
 
 Sin embargo, esto no quiere decir que la forma en la que se juegue sea irrelevante. Si el jugador consigue desarrollar una estrategia que le permita maximizar sus ganancias, conseguirá sobrevivir más semanas, por lo que podrá experimentar situaciones que se den exclusivamente en momentos avanzados de la partida, como eventos o diálogos que no aparecen en las primeras semanas del juego.
