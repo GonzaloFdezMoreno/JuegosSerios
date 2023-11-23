@@ -1,4 +1,4 @@
-# GDD Juego de Juegos Serios
+# GDD: A orillas del Duero
 
 ## Índice
 
@@ -6,7 +6,7 @@
 1. [Aspectos generales](#aspG)
     1. [Contexto de uso](#contUso)
 1. [Menús y modos de juego](#menuMod)
-1. [Jugabilidad] (#jug)
+1. [Jugabilidad](#jug)
     1. [Mecánica](#mec)
     1. [Dinámica](#din)
     1. [Estética](#est)
@@ -18,9 +18,8 @@
 
 # Descripción <a name="desc"></a>
 
-"Camino a Soria" es un juego de gestión de recursos de un solo jugador, donde se tomará el rol de un granjero que vive en un pueblo al borde del abandono. Durante las semanas en las que transcurre la historia nuestro granjero intentará vivir su vida gestionando su economía. En el proceso ocurrirán diversos eventos, que obstaculizan la fácil gestión de sus recursos, colocando al jugador en situaciones donde deberá tomar decisiones. Estas decisiones se traducen a tareas que gastarán una porción de tiempo. El tiempo será limitado, lo gastarás durante la semana realizando tareas y se te reiniciará al comienzo de la siguiente.  Nosotros como jugadores deberemos intentar aguantar la mayor cantidad de semanas, sin embargo nos enfrentamos a una fuerza fuera del control de nuestro personaje, por lo que antes o después acabaremos perdiendo la partida.
+"A orillas del Duero" es un juego de gestión de recursos de un solo jugador, donde se tomará el rol de un granjero que vive en un pueblo al borde del abandono. Durante las semanas en las que transcurre la historia nuestro granjero intentará vivir su vida gestionando su economía. En el proceso ocurrirán diversos eventos, que obstaculizan la fácil gestión de sus recursos, colocando al jugador en situaciones donde deberá tomar decisiones. Estas decisiones se traducen a tareas que gastarán una porción de tiempo. El tiempo será limitado, lo gastarás durante la semana realizando tareas y se te reiniciará al comienzo de la siguiente.  Nosotros como jugadores deberemos intentar aguantar la mayor cantidad de semanas, sin embargo nos enfrentamos a una fuerza fuera del control de nuestro personaje, por lo que antes o después acabaremos perdiendo la partida.
 
-//LOGO DEL JUEGO Y PORTADA
 
 # Aspectos generales <a name="aspG"></a>
 
@@ -63,6 +62,8 @@ Lo único configurable del juego será el volumen de la música y los sonidos de
 * __Controles__: todo el Input va a ser a través del ratón clicando en diferentes partes del mapa de la granja y en las diferentes opciones que despliegue cada zona u objeto con la que interactúas. Al clickar sobre cada parcela de la granja, aparecerá una ventana emergente con una imagen que represente su estado actual (y que le dará al jugador la información necesaria para saber qué necesita en ese momento) y la lista de tareas que se puede realizar allí. Si clickamos sobre las tareas, veremos una descripción más detallada de la misma que especifica qué produce, qué necesita para ser realizada y el tiempo que consume, además de un botón para iniciarla.
 
 * __Interfaz__: en la parte superior de la pantalla encontraremos los contadores de dinero, número de horas restantes de trabajo de la semana y el número de semanas actual en el que nos encontramos. En la esquina inferior derecha tenemos el botón de irse a dormir (equivalente a pasar de turno en los juegos de estrategia) y en la esquina inferior izquierda encontraremos el botón que abre el inventario. Al clickar este último, se abrirá una ventana emergente con todos los objetos que tenemos actualmente, los cuales pueden ser vendidos o empleados en la realización de alguna otra tarea. Por último, en la esquina superior derecha tendremos el botón de ajustes, el cual abrirá una ventana con las opciones de configuración del juego, así como botones para salir al menú principal, cerrar el juego y reanudar la partida.
+
+![Captura de pantalla 2023-11-23 114656](https://github.com/GonzaloFdezMoreno/JuegosSerios/assets/82372508/a667dcb1-3a8c-46cc-9353-bd98653b9171)
 
 # Jugabilidad <a name="jug"></a>
 
@@ -137,7 +138,6 @@ Nosotros esperamos que el jugador siga una estrategia en la que intente realizar
 
 <img src="ImageReadme/pollo.png" width="400" />
 <img src="ImageReadme/plantasHuerto.png" width="400" />
-//IMAGEN MAPA
 
 # Contenido <a name="cont"></a>
 
