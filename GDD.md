@@ -9,6 +9,13 @@
 1. [Jugabilidad] (#jug)
     1. [Mecánica] (#mec)
     1. [Dinámica] (#din)
+    1. [Estética] (#est)
+1. [Contenido] (#cont)
+    1. [Historia] (#hist)
+    1. [Personajes] (#pers)
+    1. [Objetos] (#obj)
+1. [Referencias] (#ref)
+
 
 //FALTA INDICE COMPLETO
 
@@ -109,9 +116,65 @@ Eventos:
 <u>Lluvia o incendios</u>: al ocurrir alguno de estos eventos, al jugador solo se le informará de modo que en caso de que llueva pueda ahorrarse regar los cultivos, pero que si ocurre algún incendio se le muestre algún impedimento (no poder llevar a las vacas a pastar) o tenga alguna pérdida (alguna de las instalaciones se quema)
 
 ## i. Dinámica <a name="din"></a>
+
 El objetivo de nuestro jugador se narrara los primeros dias, su abuelo que se esta jubilando le pedira a su nieto que haga rentable su granja y que llegue a un pico de veneficios como misión, para asi confiarle su granja y que pueda vivir en un ambiente rural, sano y lejos de la ruidosa ciudad. Lo que no va a saber el jugador es que en nuestro juego no habra un final feliz.
 En este juego no existe una victoria como tal, el jugador está obligado a perder. Esto se debe a la intención educativa que queremos transmitir, de manera que el jugador sea consciente de las dificultades que se encuentran los trabajadores del mundo rural. En concreto, queremos que se sienta en la piel de un granjero que, por muy bien que gestione su granja, está condenado a sufrir pérdidas y, eventualmente, a verse obligado a vender su granja, ya que no es económicamente rentable dedicarse a ello.
 
 Sin embargo, esto no quiere decir que la forma en la que se juegue sea irrelevante. Si el jugador consigue desarrollar una estrategia que le permita maximizar sus ganancias, conseguirá sobrevivir más semanas, por lo que podrá experimentar situaciones que se den exclusivamente en momentos avanzados de la partida, como eventos o diálogos que no aparecen en las primeras semanas del juego.
 
 Nosotros esperamos que el jugador siga una estrategia en la que intente realizar el mayor número de tareas posibles cada semana, intentando gastar siempre las 84 horas/acciones semanales. En caso de que una semana no pueda realizar todas las tareas pendientes, deberá priorizar aquellas que, si son ignoradas, penalizan en mayor medida, como proveer de atención médica a un animal enfermo, pues si no es tratado dejará de producir recursos. Respecto a los productos de las tareas, deberá decidir si venderlos o guardarlos para utilizarlos como ingrediente para realizar otra tarea. Si se decanta por venderlo, obtendrá un beneficio instantáneo, mientras que si lo utiliza para otra tarea podrá obtener un beneficio incluso mayor en un futuro (dependiendo del objeto). También deberá decidir si cada parcela es rentable, pues si los gastos que supone su mantenimiento es mayor a su producción quizás sea buena idea venderla. Con estas estrategias se espera que el jugador consiga sobrevivir más semanas y así tener una partida más larga y con contenido exclusivo.
+
+## ii.  Estética <a name="est"></a>
+
+ El juego tendrá una estética pixel art sencilla con detalles rústicos. Estos son algunos ejemplos de sprites:
+
+<img src="ImageReadme/pollo.png" width="400" />
+<img src="ImageReadme/plantasHuerto.png" width="400" />
+//IMAGEN POLLO
+//IMAGEN PLANTAS
+//IMAGEN MAPA
+
+# Contenido <a name="cont"></a>
+
+## i. Historia <a name="hist"></a>
+
+Nos ponemos en la piel de un granjero que vive su vida en el campo tranquilamente, hasta que te llega la noticia de que los alrededores están cambiando, poniendo en peligro la vida rural: ocupación de terrenos de campo para el uso industrial, abandono de áreas poco pobladas,...; tu misión, lograr mantener tu granja y evitar tener que renunciar a ella.
+
+## ii. Personajes <a name="pers"></a>
+
+<u>Protagonista</u>: José Luis/Mari Carmen (unos 30 años), dependiendo de si el jugador elige ser chico o chica. En ciertas situaciones aparecerá una imagen de este personaje, como en la interfaz o en algún cuadro de diálogo.
+<u>Alcalde</u>: Don Timoteo (50 años), es un alcalde que busca su propio beneficio e ignora el bienestar de su pueblo.
+<u>Vecinos</u>: Doña Paqui, Don Faustino, Don Carmelo (65 años). Aparecerán esporádicamente en forma de eventos aleatorios.
+
+## iii. Objetos <a name="obj"></a>
+
+A continuación se detallan los objetos que pueden ser almacenados en el inventario:
+
+| Objetos     | Obtencion                   | Uso                                 |
+|-------------|:---------------------------:|------------------------------------:|
+| Huevos      | Gallinas corral             | Venta                               |
+| Leche       | Vacas (establo)             | Venta                               |
+| Queso       | Ovejas (establo)            | Venta                               |
+| Lana        | Ovejas (establo)            | Venta                               |
+| Carne       | Vacas, ovejas y gallinas    | Venta                               |
+| Pienso      | Compra                      | Alimentar animales (gallinas)       |
+| Heno        | Compra                      | Alimentar animales (ovejas y vacas) |
+| Abono       | Compra y al alimentar vacas | Fertilizar huerto                   |
+| Zanahoria   | Huerto (solo invierno)      | Venta                               |
+| Guisantes   | Huerto (solo primavera)     | Venta                               |
+| Tomates     | Huerto (solo verano)        | Venta                               |
+| Lechuga     | Huerto (solo otoño)         | Venta                               |
+| Uvas        | Viñedo (solo otoño)         | Venta                               |
+| Cerezas     | Cerezo (solo primavera)     | Venta                               |
+| Semillas    | Compra                      | Plantar en el huerto                |
+| Insecticida | Compra                      | Desinfectar huerto                  |  
+
+# Referencias <a name="ref"></a>
+
+<u>Stardew Valley</u>
+
+<u>Harvest Moon</u>
+
+<u>Reigns</u>
+
+<u>Sid Meiers's Civilization VI</u>
