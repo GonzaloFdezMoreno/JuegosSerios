@@ -39,7 +39,7 @@ Los principales interesados en dar a conocer el tema que tratamos y que quieran 
 
 Los menús de nuestro juego son: 
 
-1.- Menú de inicio: integrará las siguientes opciones:
+1. Menú de inicio: integrará las siguientes opciones:
 
     * Jugar: comenzará el juego. 
 
@@ -47,7 +47,7 @@ Los menús de nuestro juego son:
 
     * Salir: terminas el programa y sales del juego.
 
-2.- Menú de pausa: en el juego podrás pulsar ESC y el juego se pausa ofreciendo las siguientes opciones. 
+2. Menú de pausa: en el juego podrás pulsar ESC y el juego se pausa ofreciendo las siguientes opciones. 
 
     * Continuar: quitar la pausa y continuar con el juego.
 
@@ -63,7 +63,7 @@ Lo único configurable del juego será el volumen de la música y los sonidos de
 
 ## ii. Interfaz y control <a name="interCont"></a>
 
-<u>Controles</u>: todo el Input va a ser a través del ratón clicando en diferentes partes del mapa de la granja y en las diferentes opciones que despliegue cada zona u objeto con la que interactúas. Al clickar sobre cada parcela de la granja, aparecerá una ventana emergente con una imagen que represente su estado actual (y que le dará al jugador la información necesaria para saber qué necesita en ese momento) y la lista de tareas que se puede realizar allí. Si clickamos sobre las tareas, veremos una descripción más detallada de la misma que especifica qué produce, qué necesita para ser realizada y el tiempo que consume, además de un botón para iniciarla.
+* Controles: todo el Input va a ser a través del ratón clicando en diferentes partes del mapa de la granja y en las diferentes opciones que despliegue cada zona u objeto con la que interactúas. Al clickar sobre cada parcela de la granja, aparecerá una ventana emergente con una imagen que represente su estado actual (y que le dará al jugador la información necesaria para saber qué necesita en ese momento) y la lista de tareas que se puede realizar allí. Si clickamos sobre las tareas, veremos una descripción más detallada de la misma que especifica qué produce, qué necesita para ser realizada y el tiempo que consume, además de un botón para iniciarla.
 
 <u>Interfaz</u>: en la parte superior de la pantalla encontraremos los contadores de dinero, número de horas restantes de trabajo de la semana y el número de semanas actual en el que nos encontramos. En la esquina inferior derecha tenemos el botón de irse a dormir (equivalente a pasar de turno en los juegos de estrategia) y en la esquina inferior izquierda encontraremos el botón que abre el inventario. Al clickar este último, se abrirá una ventana emergente con todos los objetos que tenemos actualmente, los cuales pueden ser vendidos o empleados en la realización de alguna otra tarea. Por último, en la esquina superior derecha tendremos el botón de ajustes, el cual abrirá una ventana con las opciones de configuración del juego, así como botones para salir al menú principal, cerrar el juego y reanudar la partida.
 
