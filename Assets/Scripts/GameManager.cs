@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public GameObject weekCounter;
     public GameObject moneyCounter;
 
-    private static GameManager instance;
+    private static GameManager Instance;
 
     private Text weekCounterText;
     private Text moneyCounterText;
@@ -14,8 +14,18 @@ public class GameManager : MonoBehaviour
     private int money;
     private void Awake()
     {
-        if (instance == null) instance = this;
-        else Destroy(this.gameObject);
+        // Check if the UI Manager doesn't already exist
+        if (Instance == null)
+        {
+            Debug.Log("UI Manager Instanced");
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Debug.LogError("Another UI Manager Instanced");
+            DestroyImmediate(this);
+        }
     }
    
     void Start()
@@ -34,7 +44,7 @@ public class GameManager : MonoBehaviour
     }
     public static GameManager GetInstance()
     {
-        return instance;
+        return Instance;
     }
     public void OnNextTurnButtonPressed()
     {
