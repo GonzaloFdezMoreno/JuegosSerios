@@ -1,14 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject weekCounter;
+    public GameObject moneyCounter;
+
     private static GameManager instance;
 
-    private Text daysCounter;
-    private int currentDay;
+    private Text weekCounterText;
+    private Text moneyCounterText;
+    private int currentWeek;
+    private int money;
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -17,8 +20,12 @@ public class GameManager : MonoBehaviour
    
     void Start()
     {
-        currentDay = 1;
-        UpdateDaysCounter();
+        currentWeek = 1;
+        if(weekCounter != null)weekCounterText=weekCounter.GetComponent<Text>();
+        UpdateWeekCounter();
+        money = 100;
+        if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<Text>();
+        UpdateWeekCounter();
     }
 
     void Update()
@@ -31,12 +38,20 @@ public class GameManager : MonoBehaviour
     }
     public void OnNextTurnButtonPressed()
     {
-        currentDay++;
-        UpdateDaysCounter();
+        currentWeek++;
+        UpdateWeekCounter();
     }
-    private void UpdateDaysCounter()
+    private void UpdateWeekCounter()
     {
-        daysCounter = GameObject.Find("DaysCounter").GetComponent<Text>();
-        if (daysCounter != null) daysCounter.text = "Día " + currentDay;
+        if (weekCounterText != null) weekCounterText.text = "Semana " + currentWeek;
+    }
+    public void UpdateMoney(int amount)
+    {
+        money += amount;
+        UpdateMoneyCounter();
+    }
+    private void UpdateMoneyCounter()
+    {
+        if (moneyCounterText != null) moneyCounterText.text = "Dinero: " + money + " €";
     }
 }
