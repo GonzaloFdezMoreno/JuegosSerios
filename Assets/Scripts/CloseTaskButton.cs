@@ -1,15 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Structure : MonoBehaviour
+public class CloseTaskButton : MonoBehaviour
 {
     public GameObject taskCanvas;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Button btn = GetComponent<Button>();
+        btn.onClick.AddListener(OnCloseButtonPressed);
     }
 
     // Update is called once per frame
@@ -17,11 +18,11 @@ public class Structure : MonoBehaviour
     {
         
     }
-    private void OnMouseDown()
+    public void OnCloseButtonPressed()
     {
-        if(taskCanvas != null)
+        if (taskCanvas != null)
         {
-            taskCanvas.SetActive(true);
+            taskCanvas.SetActive(false);
         }
     }
 }

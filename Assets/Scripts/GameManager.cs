@@ -1,15 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject weekCounter;
-    public GameObject moneyCounter;
-
     private static GameManager Instance;
-
-    private Text weekCounterText;
-    private Text moneyCounterText;
     private int currentWeek;
     private int money;
     private void Awake()
@@ -31,11 +24,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentWeek = 1;
-        if(weekCounter != null)weekCounterText=weekCounter.GetComponent<Text>();
-        UpdateWeekCounter();
+        UIManager.GetInstance().UpdateWeekCounter(currentWeek);
         money = 100;
-        if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<Text>();
-        UpdateMoneyCounter();
+        UIManager.GetInstance().UpdateMoneyCounter(money);
     }
 
     void Update()
@@ -49,19 +40,11 @@ public class GameManager : MonoBehaviour
     public void OnNextTurnButtonPressed()
     {
         currentWeek++;
-        UpdateWeekCounter();
-    }
-    private void UpdateWeekCounter()
-    {
-        if (weekCounterText != null) weekCounterText.text = "Semana " + currentWeek;
+        UIManager.GetInstance().UpdateWeekCounter(currentWeek);
     }
     public void UpdateMoney(int amount)
     {
         money += amount;
-        UpdateMoneyCounter();
-    }
-    private void UpdateMoneyCounter()
-    {
-        if (moneyCounterText != null) moneyCounterText.text = "Dinero: " + money + " €";
+        UIManager.GetInstance().UpdateMoneyCounter(money);
     }
 }

@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     // Instance
-    static public UIManager Instance;
+    static private UIManager Instance;
+
+    public GameObject weekCounter;
+    public GameObject moneyCounter;
+
+    private Text weekCounterText;
+    private Text moneyCounterText;
 
     private void Awake()
     {
@@ -21,6 +28,9 @@ public class UIManager : MonoBehaviour
             Debug.LogError("Another UI Manager Instanced");
             DestroyImmediate(this);
         }
+
+        if (weekCounter != null) weekCounterText = weekCounter.GetComponent<Text>();
+        if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<Text>();
     }
 
     // Start is called before the first frame update
@@ -33,5 +43,20 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public static UIManager GetInstance()
+    {
+        return Instance;
+ 
+    }
+    public void UpdateWeekCounter(int currentWeek)
+    {
+        if (weekCounterText != null) weekCounterText.text = "Semana " + currentWeek;
+    }
+    
+    public void UpdateMoneyCounter(int money)
+    {
+        if (moneyCounterText != null) moneyCounterText.text = "Dinero: " + money + " €";
     }
 }
