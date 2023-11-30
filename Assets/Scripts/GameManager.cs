@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         UpdateWeekCounter();
         money = 100;
         if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<Text>();
-        UpdateWeekCounter();
+        UpdateMoneyCounter();
     }
 
     void Update()
