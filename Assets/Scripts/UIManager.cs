@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,11 +10,9 @@ public class UIManager : MonoBehaviour
 
     public GameObject weekCounter;
     public GameObject moneyCounter;
-    public GameObject ActionsCounter;
 
     private Text weekCounterText;
     private Text moneyCounterText;
-    private Text actionsCounterText;
 
     private void Awake()
     {
@@ -34,7 +31,6 @@ public class UIManager : MonoBehaviour
 
         if (weekCounter != null) weekCounterText = weekCounter.GetComponent<Text>();
         if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<Text>();
-        if (ActionsCounter != null) actionsCounterText = ActionsCounter.GetComponent<Text>();
     }
 
     // Start is called before the first frame update
@@ -57,20 +53,10 @@ public class UIManager : MonoBehaviour
     public void UpdateWeekCounter(int currentWeek)
     {
         if (weekCounterText != null) weekCounterText.text = "Semana " + currentWeek;
-       
     }
     
     public void UpdateMoneyCounter(int money)
     {
         if (moneyCounterText != null) moneyCounterText.text = "Dinero: " + money + " €";
     }
-
-    public void UpdateRemActions(int remAct)
-    {
-
-        if (actionsCounterText != null) actionsCounterText.text = "Act: " + remAct;
-
-
-    }
-
 }
