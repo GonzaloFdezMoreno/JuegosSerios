@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 2892551477616044700}
   - component: {fileID: 6232244477331984303}
   - component: {fileID: 5027643027080870176}
-  - component: {fileID: 8652239379954966455}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -200,20 +199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6232244477331984303}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &8652239379954966455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741890538300069028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0c0a50f8ff2ba84da51db3deaa088ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskCanvas: {fileID: 676524138783720674}
+      m_Calls:
+      - m_Target: {fileID: 676524138783720674}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2920608485463374221
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,14 +13,12 @@ public class GameManager : MonoBehaviour
         // Check if the UI Manager doesn't already exist
         if (Instance == null)
         {
-            Debug.Log("UI Manager Instanced");
             Instance = this;
             DontDestroyOnLoad(this);
         }
         else
         {
-            Debug.LogError("Another UI Manager Instanced");
-            DestroyImmediate(this);
+            Destroy(this);
         }
     }
    

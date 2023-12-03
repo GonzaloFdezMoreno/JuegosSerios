@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CorralTasks : Task
 {
+    public Item item;
     int currentEggs;
     int hensNumber;
     const int maxHensNumber = 20;
@@ -59,8 +60,15 @@ public class CorralTasks : Task
     }
     public void CollectEggs()
     {
-        Debug.Log("Huevos recogidos: " + currentEggs);
-        currentEggs = 0;
+        if (currentEggs > 0)
+        {
+            Debug.Log("Huevos recogidos: " + currentEggs);
+            item = new Item();
+            item.amount = currentEggs;
+            InventoryManager.GetInstance().AddItem(item);
+            currentEggs = 0;
+        }
+        
     }
     void UpdateSickHens()
     {
