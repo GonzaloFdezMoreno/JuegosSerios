@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject[] structures;
+
     private static GameManager Instance;
     private int currentWeek;
     private int money;
@@ -41,10 +44,18 @@ public class GameManager : MonoBehaviour
     {
         currentWeek++;
         UIManager.GetInstance().UpdateWeekCounter(currentWeek);
+        foreach (GameObject obj in structures)
+        {
+            obj.GetComponent<Task>().OnNextTurn();
+        }
     }
     public void UpdateMoney(int amount)
     {
         money += amount;
         UIManager.GetInstance().UpdateMoneyCounter(money);
+    }
+    public int GetCurrentWeek()
+    {
+        return currentWeek;
     }
 }

@@ -11,7 +11,7 @@ public class ResActionButton : MonoBehaviour
     {
         gm = GameManager.GetInstance();
         Button btn = GetComponent<Button>();
-        btn.onClick.AddListener(gm.DestActPressed);
+        //btn.onClick.AddListener(gm.DestActPressed);
     }
 
 }
