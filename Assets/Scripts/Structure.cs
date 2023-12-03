@@ -24,4 +24,8 @@ public class Structure : MonoBehaviour
             taskCanvas.SetActive(true);
         }
     }
+    public GameObject GetTaskCanvas()
+    {
+        return taskCanvas;
+    }
 }
