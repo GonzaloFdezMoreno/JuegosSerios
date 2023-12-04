@@ -45,10 +45,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (evSpw.whenAppear > actions)
-        {
-            evSpw.popEvent();
-        }
+       
 
 
     }
@@ -79,6 +76,10 @@ public class GameManager : MonoBehaviour
         //actions -= acts;
         actions--;
         UIManager.GetInstance().UpdateRemainingActions(actions);
+        if (evSpw.whenAppear > actions)
+        {
+            evSpw.popEvent();
+        }
     }
 
     public int GetCurrentWeek()
