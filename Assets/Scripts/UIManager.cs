@@ -10,9 +10,11 @@ public class UIManager : MonoBehaviour
 
     public GameObject weekCounter;
     public GameObject moneyCounter;
+    public GameObject actionCounter;
 
     private Text weekCounterText;
     private Text moneyCounterText;
+    private Text actCounterText;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class UIManager : MonoBehaviour
 
         if (weekCounter != null) weekCounterText = weekCounter.GetComponent<Text>();
         if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<Text>();
+        if (actionCounter != null) actCounterText = actionCounter.GetComponent<Text>();
     }
 
     // Start is called before the first frame update
@@ -57,4 +60,11 @@ public class UIManager : MonoBehaviour
     {
         if (moneyCounterText != null) moneyCounterText.text = "Dinero: " + money + " €";
     }
+    
+    public void UpdateRemainingActions(int act)
+    {
+        if (actCounterText != null) actCounterText.text = "Act: " + act;
+    }
+
+    
 }
