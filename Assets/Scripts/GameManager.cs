@@ -59,11 +59,16 @@ public class GameManager : MonoBehaviour
         UIManager.GetInstance().UpdateWeekCounter(currentWeek);
         actions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
+        
         foreach (GameObject obj in structures)
         {
             obj.GetComponent<Task>().OnNextTurn();
         }
         evSpw.newChance(currentWeek);
+        if (currentWeek % 4 == 0 && currentWeek != 0) { 
+            evSpw.popEvent(0);
+            UpdateMoney(-100);
+        }
     }
     public void UpdateMoney(int amount)
     {
@@ -78,7 +83,7 @@ public class GameManager : MonoBehaviour
         UIManager.GetInstance().UpdateRemainingActions(actions);
         if (evSpw.whenAppear > actions)
         {
-            evSpw.popEvent();
+            evSpw.popEvent(1);
         }
     }
 

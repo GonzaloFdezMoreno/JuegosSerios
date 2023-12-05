@@ -47,15 +47,26 @@ public class EventProbPop : MonoBehaviour
     }
 
 
-    public void popEvent()
+    public void popEvent(int type)
     {
-        if (!popped) { 
+        if (type == 0)
+        {
             this.gameObject.SetActive(true);
-            evText.text = "Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
-                "\n El otro dia me enteré de que Paco ha decidido mudarse a tro sitio\n" +
-                "Es una pena que en este lugar cada vez haya menos gente...";
-            popped = true;
+            evText.text = "Debes pagar la luz \n\n\n\n\n -100€";
+            
+        }
+        else
+        {
+            if (!popped) { 
+                this.gameObject.SetActive(true);
+                evText.text = "Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
+                    "\n El otro dia me enteré de que Paco ha decidido mudarse a tro sitio\n" +
+                    "Es una pena que en este lugar cada vez haya menos gente...";
+                popped = true;
+            }
         }
     }
 
 }
+
+
