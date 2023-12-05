@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private int currentWeek;
     private int money;
     private int actions;
+    private int maxActions;
     private void Awake()
     {
         // Check if the UI Manager doesn't already exist
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
         money = 100;
         UIManager.GetInstance().UpdateMoneyCounter(money);
         actions = 84;
+        maxActions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
 
         
@@ -76,11 +78,15 @@ public class GameManager : MonoBehaviour
         UIManager.GetInstance().UpdateMoneyCounter(money);
     }
 
-    public void UpdateRemAct()
+    public void UpdateRemAct(int acts)
     {
         //actions -= acts;
         actions--;
         UIManager.GetInstance().UpdateRemainingActions(actions);
+        if(actions == maxActions - 1&& currentWeek % 4 == 0)
+        {
+            evSpw.popEvent(0);
+        }
         if (evSpw.whenAppear > actions)
         {
             evSpw.popEvent(1);

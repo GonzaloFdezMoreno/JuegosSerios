@@ -11,6 +11,7 @@ public class EventProbPop : MonoBehaviour
     public int appear;
     public int whenAppear;
     private bool popped = false;
+    private bool poppedFix = false;
 
     public Text evText;
     public GameObject evMes;
@@ -32,6 +33,7 @@ public class EventProbPop : MonoBehaviour
     public void newChance(int week)
     {
         popped = false;
+        poppedFix = false;
         appear = Random.Range(0, 100);
 
         this.gameObject.SetActive(false);
@@ -51,16 +53,22 @@ public class EventProbPop : MonoBehaviour
     {
         if (type == 0)
         {
-            this.gameObject.SetActive(true);
-            evText.text = "Debes pagar la luz \n\n\n\n\n -100€";
-            
+            if (!poppedFix) { 
+                this.gameObject.SetActive(true);
+                evText.text = "Debes pagar la luz \n\n\n\n\n -100€";
+                poppedFix = true;
+            }
+            else 
+            {
+                this.gameObject.SetActive(false);
+            }
         }
         else
         {
             if (!popped) { 
                 this.gameObject.SetActive(true);
                 evText.text = "Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
-                    "\n El otro dia me enteré de que Paco ha decidido mudarse a tro sitio\n" +
+                    "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
                     "Es una pena que en este lugar cada vez haya menos gente...";
                 popped = true;
             }
