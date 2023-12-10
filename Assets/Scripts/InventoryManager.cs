@@ -5,16 +5,19 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    // Instance
     static private InventoryManager Instance;
+
     public List<Item> items;
     public Transform itemContent;
+
+    // Inventario
     public GameObject inventoryItem;
 
     // Inventario de ventas
     public GameObject sellingInventoryItem;
     public Transform sellingItemContent;
     public GameObject itemName;
+    public GameObject itemImage;
     public GameObject costText;
 
     private Item selectedItemToSell;
@@ -52,7 +55,11 @@ public class InventoryManager : MonoBehaviour
         int index = -1;
         foreach(Item i in items)
         {
-            if (i.itemName == item.itemName) index = items.IndexOf(i);
+            if (i.itemName == item.itemName)
+            {
+                index = items.IndexOf(i);
+                break;
+            }
         }
         if (index == -1) // Si el item no estaba ya en el inventario
         {
@@ -108,9 +115,8 @@ public class InventoryManager : MonoBehaviour
     {
         string name = item.transform.Find("Name").GetComponent<Text>().text;
         string amount = item.transform.Find("Amount").GetComponent<Text>().text;
-        // TODO: mostrar el sprite del objeto a vender
         itemName.GetComponent<Text>().text = name;
-        costText.GetComponent<Text>().text = "¿Quieres vender " + amount + " " + name + "?";
+        costText.GetComponent<Text>().text = "¿Quieres vender " + amount + " " + name.ToLower() + "?";
         foreach (Item i in items)
         {
             if (i.itemName == name)
@@ -119,6 +125,9 @@ public class InventoryManager : MonoBehaviour
                 break;
             }
         }
+        // TODO: comprobar que se muestra el sprite del objeto a vender
+        itemImage.SetActive(true);
+        itemImage.GetComponent<Image>().sprite = selectedItemToSell.sprite;
     }
     public void SellItem()
     {
@@ -133,8 +142,8 @@ public class InventoryManager : MonoBehaviour
     public void DeselectItemToSell()
     {
         selectedItemToSell = null;
+        itemImage.SetActive(false);
         itemName.GetComponent<Text>().text = "";
         costText.GetComponent<Text>().text = "";
-        // TODO: esconder el sprite del objeto a vender
     }
 }
