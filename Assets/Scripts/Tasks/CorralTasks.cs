@@ -63,9 +63,9 @@ public class CorralTasks : Task
         if (currentEggs > 0)
         {
             Debug.Log("Huevos recogidos: " + currentEggs);
-            item = (Item)ScriptableObject.CreateInstance("Item");
-            item.amount = currentEggs;
-            InventoryManager.GetInstance().AddItem(item);
+            Item newItem = (Item)ScriptableObject.Instantiate(item);
+            newItem.amount = currentEggs;
+            InventoryManager.GetInstance().AddItem(newItem);
             currentEggs = 0;
         }
         

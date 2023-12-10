@@ -11,8 +11,13 @@ public class InventoryManager : MonoBehaviour
     public Transform itemContent;
     public GameObject inventoryItem;
 
-    // Cantidad de cada item en el inventario
-    int eggsAmount = 0;
+    // Inventario de ventas
+    public GameObject sellingInventoryItem;
+    public Transform sellingItemContent;
+    public GameObject itemName;
+    public GameObject costText;
+
+    private Item selectedItemToSell;
     private void Awake()
     {
         // Check if the UI Manager doesn't already exist
@@ -66,6 +71,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void ListItems()
     {
+        // Inventario
         foreach (Transform item in itemContent)
         {
             Destroy(item.gameObject);
@@ -73,10 +79,62 @@ public class InventoryManager : MonoBehaviour
         foreach (Item item in items)
         {
             GameObject obj = Instantiate(inventoryItem, itemContent);
+            var itemName = obj.transform.Find("Name").GetComponent<Text>();
             var itemAmount = obj.transform.Find("Amount").GetComponent<Text>();
             //var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
+            itemName.text = item.itemName;
             itemAmount.text = item.amount.ToString();
             //itemSprite.sprite = item.sprite;
         }
+
+        // Inventario de ventas
+        foreach (Transform item in sellingItemContent)
+        {
+            Destroy(item.gameObject);
+        }
+        foreach (Item item in items)
+        {
+            GameObject obj = Instantiate(sellingInventoryItem, sellingItemContent);
+            var itemName = obj.transform.Find("Name").GetComponent<Text>();
+            var itemAmount = obj.transform.Find("Amount").GetComponent<Text>();
+            //var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
+            itemName.text = item.itemName;
+            itemAmount.text = item.amount.ToString();
+            //itemSprite.sprite = item.sprite;
+            obj.GetComponent<Button>().onClick.AddListener(()=> { SelectToSell(obj); });
+        }
+    }
+    public void SelectToSell(GameObject item)
+    {
+        string name = item.transform.Find("Name").GetComponent<Text>().text;
+        string amount = item.transform.Find("Amount").GetComponent<Text>().text;
+        // TODO: mostrar el sprite del objeto a vender
+        itemName.GetComponent<Text>().text = name;
+        costText.GetComponent<Text>().text = "¿Quieres vender " + amount + " " + name + "?";
+        foreach (Item i in items)
+        {
+            if (i.itemName == name)
+            {
+                selectedItemToSell = i;
+                break;
+            }
+        }
+    }
+    public void SellItem()
+    {
+        if (selectedItemToSell != null)
+        {
+            // TODO: el precio no venga cableado
+            GameManager.GetInstance().UpdateMoney(selectedItemToSell.amount * 5);
+            RemoveItem(selectedItemToSell);
+            DeselectItemToSell();
+        }
+    }
+    public void DeselectItemToSell()
+    {
+        selectedItemToSell = null;
+        itemName.GetComponent<Text>().text = "";
+        costText.GetComponent<Text>().text = "";
+        // TODO: esconder el sprite del objeto a vender
     }
 }
