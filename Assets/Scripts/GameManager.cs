@@ -78,9 +78,9 @@ public class GameManager : MonoBehaviour
         UIManager.GetInstance().UpdateMoneyCounter(money);
     }
 
-    public void UpdateRemAct(int acts)
+    public void UpdateRemAct()
     {
-        actions -= acts;
+        //actions -= acts;
         actions--;
         UIManager.GetInstance().UpdateRemainingActions(actions);
         if(actions == maxActions - 1&& currentWeek % 4 == 0)

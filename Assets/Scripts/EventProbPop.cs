@@ -1,7 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
-
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +14,8 @@ public class EventProbPop : MonoBehaviour
     private bool poppedFix = false;
 
     public Text evText;
-    public GameObject evMes;
 
-   
+    string line;
 
     // Start is called before the first frame update
     void Start()
@@ -51,11 +50,16 @@ public class EventProbPop : MonoBehaviour
 
     public void popEvent(int type)
     {
+        StreamReader sr;
         if (type == 0)
         {
             if (!poppedFix) { 
                 this.gameObject.SetActive(true);
-                evText.text = "Debes pagar la luz \n\n\n\n\n -100€";
+                sr = new StreamReader("Assets/textos/TutoText1.txt");
+                line=sr.ReadToEnd();
+
+                evText.text = line;//"Debes pagar la luz \n\n\n\n\n -100€";
+                sr.Close();
                 poppedFix = true;
             }
             else 
@@ -67,9 +71,12 @@ public class EventProbPop : MonoBehaviour
         {
             if (!popped) { 
                 this.gameObject.SetActive(true);
-                evText.text = "Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
+                sr = new StreamReader("Assets/textos/TutoText2.txt");
+                line = sr.ReadToEnd();
+                evText.text = line;/*"Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
                     "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
-                    "Es una pena que en este lugar cada vez haya menos gente...";
+                    "Es una pena que en este lugar cada vez haya menos gente...";*/
+                sr.Close();
                 popped = true;
             }
         }
