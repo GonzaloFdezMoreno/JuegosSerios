@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class CorralTasks : Task
 {
-    public Item item;
+    public Item eggs;
+    public Item hensFeed;
     int currentEggs;
     int hensNumber;
     const int maxHensNumber = 20;
@@ -62,7 +64,7 @@ public class CorralTasks : Task
     {
         if (currentEggs > 0)
         {
-            Item newItem = (Item)ScriptableObject.Instantiate(item);
+            Item newItem = (Item)ScriptableObject.Instantiate(eggs);
             newItem.amount = currentEggs;
             InventoryManager.GetInstance().AddItem(newItem);
             currentEggs = 0;
@@ -89,11 +91,14 @@ public class CorralTasks : Task
     }
     public void FeedHens()
     {
-        hungry = false;
+        if (hungry && InventoryManager.GetInstance().UseItem(hensFeed, hensNumber)) 
+        {
+            hungry = false;
+        }
     }
     void UpdateHensNumber()
     {
-        // Si hay gallinas enfermas durante 
+        // Si hay gallinas enfermas  
         if (sickHens > 0 && GameManager.GetInstance().GetCurrentWeek() > (sickStartTurn + maxSickTurns))
         {
             int rand = Random.Range(1, sickHens + 1);

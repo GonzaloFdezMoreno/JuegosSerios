@@ -1834,7 +1834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Irse a dormir
+  m_Text: Siguiente semana
 --- !u!222 &631691346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1985,7 +1985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501c16ca85efa524380ac7b95c7cbce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: fb830186f2792b0469b43f51ad7d37a3, type: 2}
+  eggs: {fileID: 11400000, guid: fb830186f2792b0469b43f51ad7d37a3, type: 2}
+  hensFeed: {fileID: 11400000, guid: 525332a06d0cef24987190a1b8734bef, type: 2}
 --- !u!1 &770417071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,18 +2380,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2605834575334411935}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &917425136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917425132}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f92076d609a7949bed60a452451f7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &925036866 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 507490821027519477, guid: 53f8ffb9ca75fb349909791380ac77cd,
@@ -4523,6 +4512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   itemContent: {fileID: 1719578368}
+  hensFeed: {fileID: 11400000, guid: 525332a06d0cef24987190a1b8734bef, type: 2}
   inventoryItem: {fileID: 7033742589142811319, guid: 53f8ffb9ca75fb349909791380ac77cd,
     type: 3}
   sellingInventoryItem: {fileID: 547207844007181251, guid: 8a45ab288f219b54097a1f84ed19cac1,
@@ -6862,11 +6852,7 @@ PrefabInstance:
         type: 3}
       insertIndex: 2
       addedObject: {fileID: 1911449520}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 676524138783720674, guid: 3f9f9f47b79432644b508a8e4cda70b2,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 917425136}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f9f9f47b79432644b508a8e4cda70b2, type: 3}
 --- !u!1001 &3316483600030934692
 PrefabInstance:

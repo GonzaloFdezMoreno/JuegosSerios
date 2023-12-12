@@ -10,6 +10,9 @@ public class InventoryManager : MonoBehaviour
     public List<Item> items;
     public Transform itemContent;
 
+    // Items que hay inicialmente en el inventario
+    public Item hensFeed;
+
     // Inventario
     public GameObject inventoryItem;
 
@@ -42,6 +45,9 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         items = new List<Item>();
+        Item newItem = (Item)ScriptableObject.Instantiate(hensFeed);
+        newItem.amount = 20;
+        AddItem(newItem);
         ListItems();
     }
 
@@ -145,5 +151,30 @@ public class InventoryManager : MonoBehaviour
         itemImage.SetActive(false);
         itemName.GetComponent<Text>().text = "";
         costText.GetComponent<Text>().text = "";
+    }
+    public bool UseItem(Item item, int amount)
+    {
+        int availableAmount = 0;
+        string itemName = item.itemName;
+        Item itemInInventory = null;
+        foreach (Item i in items)
+        {
+            if (i.itemName == itemName)
+            {
+                itemInInventory = i;
+                availableAmount = i.amount;
+                break;
+            }
+        }
+        if (availableAmount < amount) return false;
+        int newAmount = availableAmount - amount;
+        if (newAmount > 0)
+        {
+            itemInInventory.amount = newAmount;
+            ListItems();
+        }
+        else RemoveItem(itemInInventory);
+
+        return true;
     }
 }

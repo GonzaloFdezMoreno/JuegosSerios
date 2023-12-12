@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 830fa5baa2afd684b99f5fab5fb82a63, type: 3}
-  m_Name: Eggs
+  m_Name: Milk
   m_EditorClassIdentifier: 
-  id: 1
-  itemName: Huevos
+  id: 2
+  itemName: Leche
   amount: 0
   sprite: {fileID: 0}
