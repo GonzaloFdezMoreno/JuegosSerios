@@ -90,4 +90,14 @@ public class GameManager : MonoBehaviour
     {
         return actions;
     }
+    public bool PastureAvailable()
+    {
+        foreach (GameObject obj in structures)
+        {
+            if (obj.GetComponent<PastureTasks>() != null && obj.GetComponent<PastureTasks>().IsAvailable())
+                return true;
+                
+        }
+        return false;
+    }
 }

@@ -7,11 +7,13 @@ public class InventoryManager : MonoBehaviour
 {
     static private InventoryManager Instance;
 
-    public List<Item> items;
+    private List<Item> items;
     public Transform itemContent;
 
     // Items que hay inicialmente en el inventario
-    public Item hensFeed;
+    //public Item hensFeed;
+    public Item[] startingItems;
+    public int[] startingItemsAmount;
 
     // Inventario
     public GameObject inventoryItem;
@@ -44,11 +46,7 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        items = new List<Item>();
-        Item newItem = (Item)ScriptableObject.Instantiate(hensFeed);
-        newItem.amount = 20;
-        AddItem(newItem);
-        ListItems();
+        CreateStartingItems();
     }
 
     // Update is called once per frame
@@ -176,5 +174,18 @@ public class InventoryManager : MonoBehaviour
         else RemoveItem(itemInInventory);
 
         return true;
+    }
+    private void CreateStartingItems()
+    {
+        items = new List<Item>();
+        int index = 0;
+        foreach(Item i in startingItems)
+        {
+            Item newItem = (Item)ScriptableObject.Instantiate(i);
+            newItem.amount = startingItemsAmount[index];
+            AddItem(newItem);
+            index++;
+        }
+        ListItems();
     }
 }

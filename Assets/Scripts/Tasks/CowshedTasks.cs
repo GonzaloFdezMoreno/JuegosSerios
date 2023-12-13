@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cowshed : Task
+public class CowshedTasks : Task
 {
     public Item milk;
     public Item fertilizer;
+    public Item hay;
     bool milked; // Si se ha ordeñado ya a las vacas en el turno actual
     int cowsNumber;
     int sickCows; // Numero de vacas enfermas
     bool hungry; // Si las vacas tienen hambre
+    const int dailyMeal = 14;
 
     // Turno en el que comenzaron a estar hambrientas
     int hungryStartTurn;
@@ -49,6 +51,9 @@ public class Cowshed : Task
             hungry = true;
             hungryStartTurn = GameManager.GetInstance().GetCurrentWeek();
         }
+        UpdateSickCows();
+        UpdateCowsNumber();
+        Debug.Log("Nº vacas: " + cowsNumber + ", de las cuales enfermas: " + sickCows);
     }
     public void MilkCows()
     {
@@ -62,7 +67,22 @@ public class Cowshed : Task
     }
     public void FeedCows()
     {
-        hungry = false;  
+        if (hungry && InventoryManager.GetInstance().UseItem(hay, cowsNumber * dailyMeal)) 
+        {
+            hungry = false;
+        }
+    }
+    public void Pasture()
+    {
+        if (GameManager.GetInstance().PastureAvailable())
+        {
+            hungry = false;
+            Debug.Log("A pastar!");
+        }
+    }
+    public void HealCows()
+    {
+        sickCows = 0;
     }
     void UpdateSickCows()
     {

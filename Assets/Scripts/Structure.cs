@@ -19,9 +19,10 @@ public class Structure : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if(taskCanvas != null)
+        if (taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen()) 
         {
             taskCanvas.SetActive(true);
+            UIManager.GetInstance().OnUICanvasOpen();
         }
     }
     public GameObject GetTaskCanvas()
