@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         }
         evSpw.newChance(currentWeek);
         if (currentWeek % 4 == 0 && currentWeek != 0) { 
-            evSpw.popEvent(0);
+            evSpw.popEvent(2);
             UpdateMoney(-100);
         }
     }

@@ -13,6 +13,10 @@ public class EventProbPop : MonoBehaviour
     private bool popped = false;
     private bool poppedFix = false;
 
+    public GameObject case1;
+    public GameObject case2;
+    public GameObject caseS;
+
     public Text evText;
 
     string line;
@@ -55,6 +59,9 @@ public class EventProbPop : MonoBehaviour
         {
             if (!poppedFix) { 
                 this.gameObject.SetActive(true);
+                case1.SetActive(true);
+                case2.SetActive(false);
+                caseS.SetActive(false);
                 sr = new StreamReader("Assets/textos/TutoText1.txt");
                 line=sr.ReadToEnd();
 
@@ -67,7 +74,7 @@ public class EventProbPop : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
-        else
+        else if (type == 1)
         {
             if (!popped) { 
                 this.gameObject.SetActive(true);
@@ -80,7 +87,45 @@ public class EventProbPop : MonoBehaviour
                 popped = true;
             }
         }
+        else
+        {
+            if (!popped)
+            {
+                this.gameObject.SetActive(true);
+                case1.SetActive(false);
+                case2.SetActive(true);
+                caseS.SetActive(false);
+                sr = new StreamReader("Assets/textos/TutoText2.txt");
+                line = sr.ReadToEnd();
+                evText.text = line;/*"Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
+                    "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
+                    "Es una pena que en este lugar cada vez haya menos gente...";*/
+
+                sr.Close();
+
+
+                popped = true;
+            }
+        }
     }
+
+
+    public void nextText(int result)
+    {
+        case1.SetActive(true);
+        case2.SetActive(false);
+        caseS.SetActive(false);
+        if (result == 0)
+        {
+            evText.text = "Muchas Gracias";
+        }
+        else
+        {
+            evText.text = "Que pena";
+        }
+
+    }
+
 
 }
 
