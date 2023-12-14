@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class CorralTasks : Task
 {
-    public Item item;
+    public Item eggs;
+    public Item hensFeed;
     int currentEggs;
     int hensNumber;
     const int maxHensNumber = 20;
@@ -62,10 +64,9 @@ public class CorralTasks : Task
     {
         if (currentEggs > 0)
         {
-            Debug.Log("Huevos recogidos: " + currentEggs);
-            item = new Item();
-            item.amount = currentEggs;
-            InventoryManager.GetInstance().AddItem(item);
+            Item newItem = (Item)ScriptableObject.Instantiate(eggs);
+            newItem.amount = currentEggs;
+            InventoryManager.GetInstance().AddItem(newItem);
             currentEggs = 0;
         }
         
@@ -90,12 +91,15 @@ public class CorralTasks : Task
     }
     public void FeedHens()
     {
-        hungry = false;
+        if (hungry && InventoryManager.GetInstance().UseItem(hensFeed, hensNumber)) 
+        {
+            hungry = false;
+        }
     }
     void UpdateHensNumber()
     {
-        // Si hay gallinas enfermas durante 
-        if (sickHens > 0 && GameManager.GetInstance().GetCurrentWeek() > (sickStartTurn + maxSickTurns)) 
+        // Si hay gallinas enfermas  
+        if (sickHens > 0 && GameManager.GetInstance().GetCurrentWeek() > (sickStartTurn + maxSickTurns))
         {
             int rand = Random.Range(1, sickHens + 1);
             hensNumber -= rand;
@@ -104,7 +108,7 @@ public class CorralTasks : Task
             if (sickHens < 0) sickHens = 0;
         }
         // Si no, pueden nacer gallinas
-        else if (Random.Range(0, 10) < 4) 
+        else if (hensNumber > 0 && Random.Range(0, 10) < 4)  
         {
             hensNumber += 2;
             if (hensNumber > maxHensNumber) hensNumber = maxHensNumber;

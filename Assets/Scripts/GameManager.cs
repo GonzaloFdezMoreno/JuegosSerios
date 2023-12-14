@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        evSpw = eventFrame.GetComponent<EventProbPop>();
-        evSpw.newChance(0);
+        //evSpw = eventFrame.GetComponent<EventProbPop>();
+        //evSpw.newChance(0);
         currentWeek = 1;
         UIManager.GetInstance().UpdateWeekCounter(currentWeek);
         money = 100;
@@ -96,5 +96,19 @@ public class GameManager : MonoBehaviour
     public int GetCurrentWeek()
     {
         return currentWeek;
+    }
+    public int GetRemainingActions()
+    {
+        return actions;
+    }
+    public bool PastureAvailable()
+    {
+        foreach (GameObject obj in structures)
+        {
+            if (obj.GetComponent<PastureTasks>() != null && obj.GetComponent<PastureTasks>().IsAvailable())
+                return true;
+                
+        }
+        return false;
     }
 }
