@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        //evSpw = eventFrame.GetComponent<EventProbPop>();
-        //evSpw.newChance(0);
+        evSpw = eventFrame.GetComponent<EventProbPop>();
+        evSpw.newChance(0);
         currentWeek = 1;
         UIManager.GetInstance().UpdateWeekCounter(currentWeek);
         money = 100;
