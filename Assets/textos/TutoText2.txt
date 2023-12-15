@@ -1,5 +1,6 @@
-Un vecino ha venido a visitarte
-
-Hola vecino, como le va?"
-El otro dia me enteré de que Paco ha decidido mudarse a otro sitio,
-es una pena que en este lugar cada vez haya menos gente...
+Saturnino: Dentro de estas instalaciones tendrás que recoger los recursos que te aportan los animales, sin embargo deberás alimentarlos y mantenerlos saludables todo lo posible
+Saturnino: Podrás recoger los recursos y alimentarlas 1 sola vez por semana, no te preocupes ese pienso que comen les aguanta lo suficiente
+Saturnino: Recuerda, si notas que el recurso aportado es bajo es posible que estén enfermas, por lo que tendrás que llamar al veterinario si no quieres que se te mueran
+Saturnino: Por que no pruebas a recoger algo ya que estamos?
+exit
+end

@@ -23,6 +23,7 @@ public class Structure : MonoBehaviour
         {
             taskCanvas.SetActive(true);
             UIManager.GetInstance().OnUICanvasOpen();
+            GameManager.GetInstance().nextTutorial(1);
         }
     }
     public GameObject GetTaskCanvas()

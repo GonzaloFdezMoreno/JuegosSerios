@@ -7,14 +7,19 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject eventFrame;
+    [SerializeField]
+    private GameObject tutoFrame;
 
     private EventProbPop evSpw;
+    private TutorialNarr tuto;
 
     private static GameManager Instance;
     private int currentWeek;
     private int money;
     private int actions;
     private int maxActions;
+    private bool tutorial = true;
+
     private void Awake()
     {
         // Check if the UI Manager doesn't already exist
@@ -41,6 +46,10 @@ public class GameManager : MonoBehaviour
         actions = 84;
         maxActions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
+
+        tuto= tutoFrame.GetComponent<TutorialNarr>();
+        tuto.showTuto(0);
+       
 
         
     }
@@ -111,4 +120,19 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
+
+    public void nextTutorial(int i)
+    {
+        if (tutorial) {
+            if (i < 10)
+            {
+                tuto.showTuto(i);
+            }
+            else
+            {
+                tutorial = false;
+            }
+        }
+    }
+
 }
