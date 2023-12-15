@@ -6,6 +6,7 @@ using UnityEngine;
 public class Structure : MonoBehaviour
 {
     public GameObject taskCanvas;
+    public bool onTutorial = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,10 @@ public class Structure : MonoBehaviour
         {
             taskCanvas.SetActive(true);
             UIManager.GetInstance().OnUICanvasOpen();
-            GameManager.GetInstance().nextTutorial(1);
+            if (onTutorial) { 
+                GameManager.GetInstance().nextTutorial(1);
+                onTutorial = false;
+            }
         }
     }
     public GameObject GetTaskCanvas()
