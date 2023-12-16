@@ -7,13 +7,19 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject eventFrame;
+    [SerializeField]
+    private GameObject tutoFrame;
 
     private EventProbPop evSpw;
+    private TutorialNarr tuto;
 
     private static GameManager Instance;
     private int currentWeek;
     private int money;
     private int actions;
+    private int maxActions;
+    private bool tutorial = true;
+
     private void Awake()
     {
         // Check if the UI Manager doesn't already exist
@@ -31,14 +37,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        //evSpw = eventFrame.GetComponent<EventProbPop>();
-        //evSpw.newChance(0);
+        evSpw = eventFrame.GetComponent<EventProbPop>();
+        evSpw.newChance(0);
         currentWeek = 1;
         UIManager.GetInstance().UpdateWeekCounter(currentWeek);
         money = 100;
         UIManager.GetInstance().UpdateMoneyCounter(money);
         actions = 84;
+        maxActions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
+
+        tuto= tutoFrame.GetComponent<TutorialNarr>();
+        tuto.showTuto(0);
+       
 
         
     }
@@ -59,11 +70,16 @@ public class GameManager : MonoBehaviour
         UIManager.GetInstance().UpdateWeekCounter(currentWeek);
         actions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
+        
         foreach (GameObject obj in structures)
         {
             obj.GetComponent<Task>().OnNextTurn();
         }
-        //evSpw.newChance(currentWeek);
+        evSpw.newChance(currentWeek);
+        if (currentWeek % 4 == 0 && currentWeek != 0) { 
+            evSpw.popEvent(2);
+            UpdateMoney(-100);
+        }
     }
     public void UpdateMoney(int amount)
     {
@@ -71,14 +87,18 @@ public class GameManager : MonoBehaviour
         UIManager.GetInstance().UpdateMoneyCounter(money);
     }
 
-    public void UpdateRemAct()
+    public void UpdateRemAct(int acts)
     {
-        //actions -= acts;
-        actions--;
+        actions -= acts;
+        //actions--;
         UIManager.GetInstance().UpdateRemainingActions(actions);
+        if(actions == maxActions - 1&& currentWeek % 4 == 0)
+        {
+            evSpw.popEvent(0);
+        }
         if (evSpw.whenAppear > actions)
         {
-            evSpw.popEvent();
+            evSpw.popEvent(1);
         }
     }
 
@@ -100,4 +120,19 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
+
+    public void nextTutorial(int i)
+    {
+        if (tutorial) {
+            if (i < 10)
+            {
+                tuto.showTuto(i);
+            }
+            else
+            {
+                tutorial = false;
+            }
+        }
+    }
+
 }

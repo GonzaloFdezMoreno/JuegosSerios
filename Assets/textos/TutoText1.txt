@@ -1,0 +1,6 @@
+Saturnino: Cuanto tiempo! Soy yo, tu abuelo Saturnino, te acuerdas de mi? Cuanto has crecido.
+Saturnino: Si estás aqui significa que has leido la carta que te envié y estas dispuesto a tomar mi puesto trabajando en la granja.
+Saturnino: Tranquilo, no te pongas nervioso que aqui estoy yo para enseñarte como funcionan estas cosas.
+Saturnino: Por ahora empecemos con llevarte a una de las instalaciones, el corral por ejemplo.
+exit
+end
