@@ -13,11 +13,7 @@ public class Structure : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     private void OnMouseDown()
     {
         if (taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen()) 

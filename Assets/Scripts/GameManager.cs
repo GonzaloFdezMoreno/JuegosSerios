@@ -54,12 +54,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void Update()
-    {
-       
-
-
-    }
     public static GameManager GetInstance()
     {
         return Instance;

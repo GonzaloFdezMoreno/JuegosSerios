@@ -42,11 +42,7 @@ public class UIManager : MonoBehaviour
         UICanvasIsOpen = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public static UIManager GetInstance()
     {

@@ -26,6 +26,12 @@ public class InventoryManager : MonoBehaviour
     public GameObject costText;
 
     private Item selectedItemToSell;
+
+    // Textos para las tareas del huerto
+    public GameObject noTomatoSeedsText;
+    public GameObject noCarrotSeedsText;
+    public GameObject noPeaSeedsText;
+    public GameObject noLettuceSeedsText;
     private void Awake()
     {
         // Check if the UI Manager doesn't already exist
@@ -49,11 +55,6 @@ public class InventoryManager : MonoBehaviour
         CreateStartingItems();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void AddItem(Item item)
     {
         int index = -1;
@@ -174,6 +175,50 @@ public class InventoryManager : MonoBehaviour
         else RemoveItem(itemInInventory);
 
         return true;
+    }
+    public void ShowNoSeedsText(OrchardTask.Vegetable type)
+    {
+        switch (type)
+        {
+            case OrchardTask.Vegetable.Tomatoes:
+                noTomatoSeedsText.SetActive(true);
+                break;
+            case OrchardTask.Vegetable.Carrots:
+                noCarrotSeedsText.SetActive(true);
+                break;
+            case OrchardTask.Vegetable.Peas:
+                noPeaSeedsText.SetActive(true);
+                break;
+            case OrchardTask.Vegetable.Lettuce:
+                noLettuceSeedsText.SetActive(true);
+                break;
+            default: break;
+        }
+        StartCoroutine(WaitAndInvoke(2.0f, type));
+    }
+    private IEnumerator WaitAndInvoke(float delay, OrchardTask.Vegetable type)
+    {
+        yield return new WaitForSeconds(delay);
+        HideNoSeedsText(type);
+    }
+    void HideNoSeedsText(OrchardTask.Vegetable type)
+    {
+        switch (type)
+        {
+            case OrchardTask.Vegetable.Tomatoes:
+                noTomatoSeedsText.SetActive(false);
+                break;
+            case OrchardTask.Vegetable.Carrots:
+                noCarrotSeedsText.SetActive(false);
+                break;
+            case OrchardTask.Vegetable.Peas:
+                noPeaSeedsText.SetActive(false);
+                break;
+            case OrchardTask.Vegetable.Lettuce:
+                noLettuceSeedsText.SetActive(false);
+                break;
+            default: break;
+        }
     }
     private void CreateStartingItems()
     {
