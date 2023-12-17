@@ -1,5 +1,6 @@
-Un vecino ha venido a visitarte
-
-Hola vecino, como le va?"
-El otro dia me enteré de que Paco ha decidido mudarse a otro sitio,
-es una pena que en este lugar cada vez haya menos gente...
+Saturnino: Aqui podrás ver los recursos de los que dispones y la cantidad de estos 
+Saturnino: Ya que estamos, veamos 
+Saturnino: Recuerda, si notas que el recurso aportado es bajo es posible que estén enfermas, por lo que tendrás que llamar al veterinario si no quieres que se te mueran
+Saturnino: Por que no pruebas a recoger algo ya que estamos?
+exit
+end
