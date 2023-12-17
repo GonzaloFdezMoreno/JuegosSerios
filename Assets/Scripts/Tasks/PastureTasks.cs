@@ -11,11 +11,7 @@ public class PastureTasks : Task
         available = true;   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public bool IsAvailable()
     {
         return available;

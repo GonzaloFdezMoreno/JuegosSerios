@@ -38,11 +38,6 @@ public class CorralTasks : Task
         CreateEggs();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public override void OnNextTurn()
     {
         base.OnNextTurn();

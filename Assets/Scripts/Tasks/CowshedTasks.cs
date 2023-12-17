@@ -37,11 +37,6 @@ public class CowshedTasks : Task
         hungryStartTurn = GameManager.GetInstance().GetCurrentWeek();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public override void OnNextTurn()
     {
         base.OnNextTurn();
@@ -70,6 +65,9 @@ public class CowshedTasks : Task
         if (hungry && InventoryManager.GetInstance().UseItem(hay, cowsNumber * dailyMeal)) 
         {
             hungry = false;
+            Item newItem = (Item)ScriptableObject.Instantiate(fertilizer);
+            newItem.amount = cowsNumber;
+            InventoryManager.GetInstance().AddItem(newItem);
         }
     }
     public void Pasture()
