@@ -1,5 +1,11 @@
 # GDD: A orillas del Duero
 
+Este juego es un proyecto académico de la Asignatura Juegos Serios de la FDI (UCM).
+
+Tiene licencia abierta.
+
+Gameplay: https://www.youtube.com/watch?v=gLOrmUa5QJY&ab_channel=DAVIDCASIANOFLORES
+
 ## Índice
 
 1. [Descripción](#desc)
