@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         evSpw.newChance(0);
         currentWeek = 1;
         UIManager.GetInstance().UpdateWeekCounter(currentWeek);
-        money = 100;
+        money = 1000;
         UIManager.GetInstance().UpdateMoneyCounter(money);
         actions = 84;
         maxActions = 84;
@@ -85,6 +85,10 @@ public class GameManager : MonoBehaviour
     {
         money += amount;
         UIManager.GetInstance().UpdateMoneyCounter(money);
+        if (money > 1200)
+        {
+            nextTutorial(8);
+        }
     }
     public int GetCurrentMoney()
     {
