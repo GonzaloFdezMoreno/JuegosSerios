@@ -1,4 +1,0 @@
-Saturnino: Veo que ya tienes el dinero suficiente para comprar el tractor
-Saturnino: Venga vamos rápido a la tienda 
-exit
-end
