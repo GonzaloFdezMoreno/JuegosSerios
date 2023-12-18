@@ -79,6 +79,9 @@ public class EventProbPop : MonoBehaviour
         {
             if (!popped) { 
                 this.gameObject.SetActive(true);
+                case1.SetActive(true);
+                case2.SetActive(false);
+                caseS.SetActive(false);
                 sr = new StreamReader("Assets/textos/EventText1.txt");
                 line = sr.ReadToEnd();
                 evText.text = line;/*"Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
