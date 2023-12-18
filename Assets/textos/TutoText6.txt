@@ -1,5 +1,5 @@
-Saturnino: Oh, ya estas de vuelta? Esta semana tendremos a alguien que vendrá a visitarnos aunque aun no sé cuando
-Saturnino: Ya te lo comenté antes no? De vez en cuando viene gente de los alrededores
-Saturnino: Por lo pronto ve haciendo las tareas de la anterior semana y cuando aparezca ya veremos que hacemos
+Abuelo Saturnino: ¡Oh! ¿Ya estás de vuelta? Esta semana tendremos a alguien que vendrá a visitarnos aunque aún no sé cuándo.
+Abuelo Saturnino: Ya te lo comenté antes, ¿no? De vez en cuando viene gente de los alrededores.
+Abuelo Saturnino: Por lo pronto ve haciendo las tareas de esta semana. Ya sabes, alimentar a los animales y esas cosas. Cuando aparezca ya veremos qué hacemos.
 exit
 end

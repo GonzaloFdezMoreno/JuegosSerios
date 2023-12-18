@@ -6,6 +6,7 @@ using UnityEngine;
 public class Structure : MonoBehaviour
 {
     public GameObject taskCanvas;
+    public GameObject frame;
     public bool onTutorial1 = true;
     public bool onTutorial2 = true;
     // Start is called before the first frame update
@@ -34,6 +35,14 @@ public class Structure : MonoBehaviour
                 onTutorial2 = false;
             }
         }
+    }
+    private void OnMouseOver()
+    {
+        if (frame != null) frame.SetActive(true);
+    }
+    private void OnMouseExit()
+    {
+        if (frame != null) frame.SetActive(false);
     }
     public GameObject GetTaskCanvas()
     {

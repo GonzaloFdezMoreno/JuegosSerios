@@ -1,12 +1,13 @@
-Saturnino: El huerto es en parte similar al resto de las instalaciones de animales, pero con una ligera diferencia
-Saturnino: Aqui primero deberás plantar las semillas y esperar algunas semanas a que crezcan, pero es recomendable visitarla en caso de que crezcan malas hierbas
-Saturnino: Las plantas no son como los animales, pero en estos caso es como si las hicieses una revision medica..
-Saturnino: ...por qué estás echando pienso a la tierra?
-Saturnino: Dije que son como, no que sean iguales, además, estas tierras contienen muchos nutrientes por lo que no es necesario comprar abono 
-Saturnino: Por supuesto, sin semillas no hay plantación, por lo que necesitarás comprarlas
-Saturnino: Lo siguiente en lo que pone en la list- digo el siguiente lugar donde tenemos que ir es...
-Saturnino: ...
-Saturnino: Veo que estas cansado, tanto mental como fisicamente
-Saturnino: Que tal si continuamos otro día, por lo pronto descansa, aunque te advierto que esta vida va a resultarte bastante exaustiva
+Abuelo Saturnino: El huerto es en parte similar al resto de las instalaciones de animales, pero con una ligera diferencia.
+Abuelo Saturnino: Aquí primero deberás plantar las semillas y esperar algunas semanas a que crezcan, pero es recomendable vigilarlas por si aparece alguna plaga.
+Abuelo Saturnino: Las plantas no son como los animales, pero en este caso es como si les hicieses una revisión médica.
+Abuelo Saturnino: ...
+Abuelo Saturnino: ¿Por qué estás echando pienso a la tierra?
+Abuelo Saturnino: Dije que son como, no que sean iguales. A la tierra tienes que echarle abono para fertilizarla y que las plantas crezcan más sanas y fuertes.
+Abuelo Saturnino: Por supuesto, sin semillas no hay plantación, por lo que necesitarás comprarlas.
+Abuelo Saturnino: Lo siguiente que pone en la list... Digo el siguiente lugar donde tenemos que ir es...
+Abuelo Saturnino: ...
+Abuelo Saturnino: Veo que estas cansado, tanto mental como físicamente.
+Abuelo Saturnino: ¿Qué tal si continuamos otro día? Por lo pronto descansa, aunque te advierto que esta vida va a resultarte bastante exaustiva.
 exit
 end
