@@ -1,0 +1,5 @@
+Saturnino: Oh, ya estas de vuelta? Esta semana tendremos a alguien que vendrá a visitarnos aunque aun no sé cuando
+Saturnino: Ya te lo comenté antes no? De vez en cuando viene gente de los alrededores
+Saturnino: Por lo pronto ve haciendo las tareas de la anterior semana y cuando aparezca ya veremos que hacemos
+exit
+end

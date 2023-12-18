@@ -1,0 +1,10 @@
+Saturnino: Oh, ya está aqui
+Saturnino: Parece que Doña Paqui ha venido a hacernos una visita
+Saturnino: Visitas como estas no son frecuentes por lo que veamos a ver que nos cuenta
+Saturnino: Cuando aparezca alguien u ocurra algun suceso importante deberás ver que te cuentan
+Saturnino: En algunos casos solo vendrán a contarte cosas, en otros te pediran algo que tengas y en algunos casos te ofrecerán algo en lo que tendrás que decidir si aceptas o no la oferta, teniendo sus pros y contras según el momento en el que te encuentres
+Saturnino: Estos momentos pueden ayudarte mucho en algunos apuros, pero ultimamente, siento que hay menos gente que viene a visitarme
+Saturnino: Ya que estamos, hablemos con Doña Paqui.
+*Decides irte después de estar 3 horas escuchandolos hablar de los viejos tiempos*
+exit
+end
