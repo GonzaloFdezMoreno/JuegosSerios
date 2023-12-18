@@ -74,6 +74,12 @@ public class GameManager : MonoBehaviour
             evSpw.popEvent(2);
             UpdateMoney(-100);
         }
+        if(currentWeek == 2)
+        {
+            nextTutorial(5);
+            evSpw.setAppear(60);
+            AdvanceTutorialNumber();
+        }
     }
     public void UpdateMoney(int amount)
     {
@@ -89,13 +95,18 @@ public class GameManager : MonoBehaviour
         actions -= acts;
         //actions--;
         UIManager.GetInstance().UpdateRemainingActions(actions);
-        if(actions == maxActions - 1&& currentWeek % 4 == 0)
-        {
-            evSpw.popEvent(0);
-        }
+        //if(actions == maxActions - 1&& currentWeek % 4 == 0)
+        //{
+        //    evSpw.popEvent(0);
+        //}
+        
         if (evSpw.whenAppear > actions)
         {
-            evSpw.popEvent(1);
+            if (currentWeek == 2) { 
+                evSpw.popEvent(1);
+                nextTutorial(6);
+                evSpw.setIsEventTutorial(true);
+            }
         }
     }
 

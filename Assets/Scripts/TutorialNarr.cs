@@ -117,6 +117,91 @@ public class TutorialNarr : MonoBehaviour
             sr.Close();
 
         }
+        else if (type == 5)
+        {
+            this.gameObject.SetActive(true);
+            sr = new StreamReader("Assets/textos/TutoText6.txt");
+
+            line = sr.ReadLine();
+            while (line != "end")
+            {
+                parrafo[i] = line;
+                line = sr.ReadLine();
+                i++;
+            }
+
+            evText.text = parrafo[0];
+            sr.Close();
+
+        }
+        else if (type == 6)
+        {
+            this.gameObject.SetActive(true);
+            sr = new StreamReader("Assets/textos/TutoText7.txt");
+
+            line = sr.ReadLine();
+            while (line != "end")
+            {
+                parrafo[i] = line;
+                line = sr.ReadLine();
+                i++;
+            }
+
+            evText.text = parrafo[0];
+            sr.Close();
+
+        }
+        else if (type == 7)
+        {
+            this.gameObject.SetActive(true);
+            sr = new StreamReader("Assets/textos/TutoText8.txt");
+
+            line = sr.ReadLine();
+            while (line != "end")
+            {
+                parrafo[i] = line;
+                line = sr.ReadLine();
+                i++;
+            }
+
+            evText.text = parrafo[0];
+            sr.Close();
+
+        }
+        else if (type == 8)
+        {
+            this.gameObject.SetActive(true);
+            sr = new StreamReader("Assets/textos/TutoText9.txt");
+
+            line = sr.ReadLine();
+            while (line != "end")
+            {
+                parrafo[i] = line;
+                line = sr.ReadLine();
+                i++;
+            }
+
+            evText.text = parrafo[0];
+            sr.Close();
+
+        }
+        else if (type == 9)
+        {
+            this.gameObject.SetActive(true);
+            sr = new StreamReader("Assets/textos/TutoText10.txt");
+
+            line = sr.ReadLine();
+            while (line != "end")
+            {
+                parrafo[i] = line;
+                line = sr.ReadLine();
+                i++;
+            }
+
+            evText.text = parrafo[0];
+            sr.Close();
+
+        }
         i = 1;
         UIManager.GetInstance().OnUICanvasOpen();
     }

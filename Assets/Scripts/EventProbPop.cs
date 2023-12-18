@@ -20,6 +20,7 @@ public class EventProbPop : MonoBehaviour
     public Text evText;
 
     string line;
+    bool tutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -130,6 +131,23 @@ public class EventProbPop : MonoBehaviour
 
     }
 
+    public void setAppear(int num)
+    {
+        whenAppear = num;
+    }
+
+    public void setIsEventTutorial(bool isTu)
+    {
+        tutorial = isTu;
+    }
+
+    public void postEventTutorial()
+    {
+        if (tutorial) { 
+            GameManager.GetInstance().nextTutorial(7);
+            tutorial=false;
+        }
+    }
 
 }
 

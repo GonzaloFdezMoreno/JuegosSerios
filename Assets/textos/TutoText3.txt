@@ -7,6 +7,6 @@ Abuelo Saturnino: Y ahora que recuerdo, cuando no eras más que un chiquillo te 
 Abuelo Saturnino: ¿Cómo era? Tengo un tractor amarillo... que es lo que se lleva ahora... 
 Abuelo Saturnino: Tengo un tractor amarillo... Porque ella e' la última moda...
 Abuelo Saturnino: Vale, ya me callo, no me mires así. Pero, ¿no te gustaría conseguir uno de verdad?
-Abuelo Saturnino: Veamos si en la tienda lo venden.
+Abuelo Saturnino: Vamos a casa y veamos en el catálogo si en la tienda lo venden.
 exit
 end
