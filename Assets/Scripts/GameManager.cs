@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         }
         evSpw.newChance(currentWeek);
         if (currentWeek % 4 == 0 && currentWeek != 0) { 
-            evSpw.popEvent(2);
+            evSpw.popEvent(0);
             UpdateMoney(-100);
         }
         if(currentWeek == 2)
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         UIManager.GetInstance().UpdateMoneyCounter(money);
         if (money > 1200)
         {
-            nextTutorial(8);
+            nextTutorial(9);
         }
     }
     public int GetCurrentMoney()
