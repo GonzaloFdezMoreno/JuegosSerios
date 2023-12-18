@@ -83,7 +83,10 @@ public class GameManager : MonoBehaviour
         money += amount;
         UIManager.GetInstance().UpdateMoneyCounter(money);
     }
-
+    public int GetCurrentMoney()
+    {
+        return money;
+    }
     public void UpdateRemAct(int acts)
     {
         actions -= acts;
