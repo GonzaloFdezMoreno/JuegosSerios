@@ -1,4 +1,4 @@
-Abuelo Saturnino: Veo que ya tienes el dinero suficiente para comprar el tractor
-Abuelo Saturnino: Venga vamos rápido a la tienda 
+Abuelo Saturnino: Veo que ya tienes el dinero suficiente para comprar el tractor.
+Abuelo Saturnino: ¡Venga, vamos rápido a la tienda!
 exit
 end

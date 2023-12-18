@@ -56,10 +56,10 @@ public class ShopManager : MonoBehaviour
             GameObject obj = Instantiate(shopInventoryItem, shopItemContent);
             var itemName = obj.transform.Find("Name").GetComponent<Text>();
             //var itemAmount = obj.transform.Find("Amount").GetComponent<Text>();
-            //var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
+            var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
             itemName.text = item.itemName;
             //itemAmount.text = item.amount.ToString();
-            //itemSprite.sprite = item.sprite;
+            itemSprite.sprite = item.sprite;
             obj.GetComponent<Button>().onClick.AddListener(() => { SelectToBuy(obj); });
         }
     }
@@ -83,7 +83,7 @@ public class ShopManager : MonoBehaviour
         amountText.SetActive(true);
         prizeText.SetActive(true);
         // TODO: el precio no venga cableado
-        //currentUnitPrize = ?
+        currentUnitPrize = selectedItemToBuy.prize;
         ResetAmountAndPrizeText();
     }
     public void BuyItem()
@@ -105,6 +105,7 @@ public class ShopManager : MonoBehaviour
         itemName.GetComponent<Text>().text = "";
         descriptionText.GetComponent<Text>().text = "";
         selectedAmount = 1;
+        currentUnitPrize = 0;
         amountText.SetActive(false);
         prizeText.SetActive(false);
     }

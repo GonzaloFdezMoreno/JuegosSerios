@@ -16,4 +16,6 @@ MonoBehaviour:
   itemName: Heno
   amount: 0
   sprite: {fileID: 1869911393, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
-  description: 
+  description: El heno es el alimento ideal para las vacas cuando no dispones de
+    un terreno para que pasten.
+  prize: 2

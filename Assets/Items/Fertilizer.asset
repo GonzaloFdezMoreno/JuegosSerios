@@ -16,4 +16,5 @@ MonoBehaviour:
   itemName: Abono
   amount: 0
   sprite: {fileID: -1573980721, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
-  description: 
+  description: El abono sirve para fertilizar el huerto.
+  prize: 10

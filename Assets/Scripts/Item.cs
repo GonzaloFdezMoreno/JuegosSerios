@@ -10,5 +10,5 @@ public class Item : ScriptableObject
     public int amount;
     public Sprite sprite;
     public string description;
-
+    public int prize;
 }

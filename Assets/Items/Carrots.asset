@@ -17,3 +17,4 @@ MonoBehaviour:
   amount: 0
   sprite: {fileID: 1489291174, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
   description: 
+  prize: 2

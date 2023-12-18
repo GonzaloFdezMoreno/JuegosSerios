@@ -139,7 +139,7 @@ public class InventoryManager : MonoBehaviour
         if (selectedItemToSell != null)
         {
             // TODO: el precio no venga cableado
-            GameManager.GetInstance().UpdateMoney(selectedItemToSell.amount * 5);
+            GameManager.GetInstance().UpdateMoney(selectedItemToSell.amount * selectedItemToSell.prize);
             RemoveItem(selectedItemToSell);
             DeselectItemToSell();
         }
