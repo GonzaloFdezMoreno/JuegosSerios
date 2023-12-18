@@ -27,6 +27,13 @@ public class CowshedTasks : Task
     // antes de morir
     const int maxSickTurns = 2;
 
+    // Coste de acciones de las tareas
+    const int milkActCost = 20;
+    const int feedActCost = 8;
+    const int pastureActCost = 15;
+    const int healActCost = 30;
+    const int healMoneyCost = 80;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,35 +59,43 @@ public class CowshedTasks : Task
     }
     public void MilkCows()
     {
-        if (!milked)
+        if (!milked && GameManager.GetInstance().GetRemainingActions() >= milkActCost)
         {
             Item newItem = (Item)ScriptableObject.Instantiate(milk);
             newItem.amount = cowsNumber * Random.Range(16, 18);
             InventoryManager.GetInstance().AddItem(newItem);
             milked = true;
+            GameManager.GetInstance().SpendActions(milkActCost);
         }
     }
     public void FeedCows()
     {
-        if (hungry && InventoryManager.GetInstance().UseItem(hay, cowsNumber * dailyMeal)) 
+        if (GameManager.GetInstance().GetRemainingActions() >= feedActCost && InventoryManager.GetInstance().UseItem(hay, cowsNumber * dailyMeal)) 
         {
             hungry = false;
             Item newItem = (Item)ScriptableObject.Instantiate(fertilizer);
             newItem.amount = cowsNumber;
             InventoryManager.GetInstance().AddItem(newItem);
+            GameManager.GetInstance().SpendActions(feedActCost);
         }
     }
     public void Pasture()
     {
-        if (GameManager.GetInstance().PastureAvailable())
+        if (GameManager.GetInstance().PastureAvailable() && GameManager.GetInstance().GetRemainingActions() >= pastureActCost) 
         {
             hungry = false;
+            GameManager.GetInstance().SpendActions(pastureActCost);
             Debug.Log("A pastar!");
         }
     }
     public void HealCows()
     {
-        sickCows = 0;
+        if (GameManager.GetInstance().GetRemainingActions() >= healActCost)
+        {
+            sickCows = 0;
+            GameManager.GetInstance().SpendActions(healActCost);
+            GameManager.GetInstance().UpdateMoney(-healMoneyCost);
+        }
     }
     void UpdateSickCows()
     {

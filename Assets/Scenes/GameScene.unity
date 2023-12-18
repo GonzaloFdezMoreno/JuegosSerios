@@ -3833,8 +3833,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 332, y: -32}
-  m_SizeDelta: {x: 199.0912, y: 110.9747}
+  m_AnchoredPosition: {x: 132, y: 4}
+  m_SizeDelta: {x: 147.0918, y: 101.8455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &770417074
 MonoBehaviour:
@@ -11252,8 +11252,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 332, y: -186.43}
-  m_SizeDelta: {x: 199.0912, y: 110.9747}
+  m_AnchoredPosition: {x: 132, y: -137.7261}
+  m_SizeDelta: {x: 147.0918, y: 101.8455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911449522
 MonoBehaviour:
@@ -12616,7 +12616,9 @@ PrefabInstance:
     - target: {fileID: 1153665552707050665, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
       propertyPath: m_text
-      value: Recoger huevos
+      value: 'Recoger
+
+        huevos'
       objectReference: {fileID: 0}
     - target: {fileID: 2920608485463374221, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
@@ -12665,13 +12667,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7780622563636324633, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 147.0918
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780622563636324633, guid: 3f9f9f47b79432644b508a8e4cda70b2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 101.8455
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780622563636324633, guid: 3f9f9f47b79432644b508a8e4cda70b2,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 332
+      value: 132
       objectReference: {fileID: 0}
     - target: {fileID: 7780622563636324633, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 124
+      value: 147.16684
       objectReference: {fileID: 0}
     - target: {fileID: 8082729666657380666, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
@@ -12883,9 +12895,54 @@ PrefabInstance:
       objectReference: {fileID: 1637999463}
     - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1637999462}
+      objectReference: {fileID: 1637999463}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1637999461}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DeselectItemToBuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OnUICanvasClose
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ShopManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016481700927114109, guid: 46e49b7983034a349a3925160aea34d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1833624806976090188, guid: 46e49b7983034a349a3925160aea34d1,
         type: 3}
       propertyPath: m_Pivot.x

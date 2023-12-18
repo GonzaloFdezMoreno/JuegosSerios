@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
     {
         return money;
     }
-    public void UpdateRemAct(int acts)
+    public void SpendActions(int acts)
     {
         actions -= acts;
         //actions--;

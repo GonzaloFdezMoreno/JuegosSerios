@@ -27,6 +27,12 @@ public class CorralTasks : Task
     // antes de morir
     const int maxSickTurns = 2;
 
+    // Coste de acciones de las tareas
+    const int collectEggsActCost = 10;
+    const int feedActCost = 8;
+    const int healActCost = 15;
+    const int healMoneyCost = 50;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,12 +63,13 @@ public class CorralTasks : Task
     }
     public void CollectEggs()
     {
-        if (currentEggs > 0)
+        if (currentEggs > 0 && GameManager.GetInstance().GetRemainingActions() >= collectEggsActCost) 
         {
             Item newItem = (Item)ScriptableObject.Instantiate(eggs);
             newItem.amount = currentEggs;
             InventoryManager.GetInstance().AddItem(newItem);
             currentEggs = 0;
+            GameManager.GetInstance().SpendActions(collectEggsActCost);
         }
         
     }
@@ -82,13 +89,19 @@ public class CorralTasks : Task
     }
     public void HealHens()
     {
-        sickHens = 0;
+        if (GameManager.GetInstance().GetRemainingActions() >= healActCost)
+        {
+            sickHens = 0;
+            GameManager.GetInstance().SpendActions(healActCost);
+            GameManager.GetInstance().UpdateMoney(-healMoneyCost);
+        }
     }
     public void FeedHens()
     {
-        if (hungry && InventoryManager.GetInstance().UseItem(hensFeed, hensNumber)) 
+        if (GameManager.GetInstance().GetRemainingActions() >= feedActCost && InventoryManager.GetInstance().UseItem(hensFeed, hensNumber)) 
         {
             hungry = false;
+            GameManager.GetInstance().SpendActions(feedActCost);
         }
     }
     void UpdateHensNumber()

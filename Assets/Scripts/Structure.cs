@@ -19,9 +19,9 @@ public class Structure : MonoBehaviour
     private void OnMouseDown()
     {
         int tutoNumber = GameManager.GetInstance().GetonTutorialNumber();
-        if (taskCanvas != null) taskCanvas.SetActive(true);
-        if (!UIManager.GetInstance().GetUICanvasIsOpen()) 
+        if (taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen()) 
         {
+            taskCanvas.SetActive(true);
             UIManager.GetInstance().OnUICanvasOpen();
             if (onTutorial1&& tutoNumber==1) { 
                 GameManager.GetInstance().nextTutorial(1);
