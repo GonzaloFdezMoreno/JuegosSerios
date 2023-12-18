@@ -93,10 +93,10 @@ public class InventoryManager : MonoBehaviour
             GameObject obj = Instantiate(inventoryItem, itemContent);
             var itemName = obj.transform.Find("Name").GetComponent<Text>();
             var itemAmount = obj.transform.Find("Amount").GetComponent<Text>();
-            //var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
+            var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
             itemName.text = item.itemName;
             itemAmount.text = item.amount.ToString();
-            //itemSprite.sprite = item.sprite;
+            itemSprite.sprite = item.sprite;
         }
 
         // Inventario de ventas
@@ -109,10 +109,10 @@ public class InventoryManager : MonoBehaviour
             GameObject obj = Instantiate(sellingInventoryItem, sellingItemContent);
             var itemName = obj.transform.Find("Name").GetComponent<Text>();
             var itemAmount = obj.transform.Find("Amount").GetComponent<Text>();
-            //var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
+            var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
             itemName.text = item.itemName;
             itemAmount.text = item.amount.ToString();
-            //itemSprite.sprite = item.sprite;
+            itemSprite.sprite = item.sprite;
             obj.GetComponent<Button>().onClick.AddListener(()=> { SelectToSell(obj); });
         }
     }

@@ -52,9 +52,6 @@ public class GameManager : MonoBehaviour
         tuto= tutoFrame.GetComponent<TutorialNarr>();
         tuto.showTuto(0);
         AdvanceTutorialNumber();
-       
-
-        
     }
 
     public static GameManager GetInstance()
@@ -143,5 +140,5 @@ public class GameManager : MonoBehaviour
     {
         nTuto++;
     }
-
+    
 }

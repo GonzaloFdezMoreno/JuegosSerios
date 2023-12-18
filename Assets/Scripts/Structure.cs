@@ -7,8 +7,8 @@ public class Structure : MonoBehaviour
 {
     public GameObject taskCanvas;
     public GameObject frame;
-    public bool onTutorial1 = true;
-    public bool onTutorial2 = true;
+    bool onTutorial1 = true;
+    bool onTutorial2 = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +18,11 @@ public class Structure : MonoBehaviour
     
     private void OnMouseDown()
     {
-        int tutoNumber = GameManager.GetInstance().GetonTutorialNumber();
         if (taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen()) 
         {
             taskCanvas.SetActive(true);
             UIManager.GetInstance().OnUICanvasOpen();
+            int tutoNumber = GameManager.GetInstance().GetonTutorialNumber();
             if (onTutorial1&& tutoNumber==1) { 
                 GameManager.GetInstance().nextTutorial(1);
                 GameManager.GetInstance().AdvanceTutorialNumber();

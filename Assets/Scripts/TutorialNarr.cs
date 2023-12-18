@@ -118,6 +118,7 @@ public class TutorialNarr : MonoBehaviour
 
         }
         i = 1;
+        UIManager.GetInstance().OnUICanvasOpen();
     }
 
 
@@ -131,11 +132,9 @@ public class TutorialNarr : MonoBehaviour
         }
         else
         {
+            UIManager.GetInstance().OnUICanvasClose();
             this.gameObject.SetActive(false);
         }
-       
-
-        
     }
 
 

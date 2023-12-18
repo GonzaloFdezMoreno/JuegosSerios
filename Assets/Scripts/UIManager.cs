@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     private Text moneyCounterText;
     private Text actCounterText;
 
-    bool UICanvasIsOpen;
+    bool UICanvasIsOpen = false;
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UICanvasIsOpen = false;
+
     }
 
     
@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
     
     public void UpdateRemainingActions(int act)
     {
-        if (actCounterText != null) actCounterText.text = "Act: " + act;
+        if (actCounterText != null) actCounterText.text = "Acciones: " + act;
     }
 
     public void OnUICanvasOpen()
