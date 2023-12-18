@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     private int maxActions;
     private bool tutorial = true;
 
+    int nTuto = 0;
+
     private void Awake()
     {
         // Check if the UI Manager doesn't already exist
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
 
         tuto= tutoFrame.GetComponent<TutorialNarr>();
         tuto.showTuto(0);
+        AdvanceTutorialNumber();
        
 
         
@@ -127,6 +130,15 @@ public class GameManager : MonoBehaviour
                 tutorial = false;
             }
         }
+    }
+
+    public int GetonTutorialNumber()
+    {
+        return nTuto;
+    }
+    public void AdvanceTutorialNumber()
+    {
+        nTuto++;
     }
 
 }

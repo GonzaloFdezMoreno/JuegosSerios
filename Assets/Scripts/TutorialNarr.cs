@@ -83,6 +83,40 @@ public class TutorialNarr : MonoBehaviour
             sr.Close();
 
         }
+        else if (type == 3)
+        {
+            this.gameObject.SetActive(true);
+            sr = new StreamReader("Assets/textos/TutoText4.txt");
+
+            line = sr.ReadLine();
+            while (line != "end")
+            {
+                parrafo[i] = line;
+                line = sr.ReadLine();
+                i++;
+            }
+
+            evText.text = parrafo[0];
+            sr.Close();
+
+        }
+        else if (type == 4)
+        {
+            this.gameObject.SetActive(true);
+            sr = new StreamReader("Assets/textos/TutoText5.txt");
+
+            line = sr.ReadLine();
+            while (line != "end")
+            {
+                parrafo[i] = line;
+                line = sr.ReadLine();
+                i++;
+            }
+
+            evText.text = parrafo[0];
+            sr.Close();
+
+        }
         i = 1;
     }
 

@@ -1,0 +1,12 @@
+Saturnino: En la tienda tendrás una serie de productos los cuales podrás obtener si tienes el dinero necesario
+Saturnino: Ah mira ahí esta el tractor...
+Saturnino: ¡¡¡AVE MARÍA PURÍSIMA eso si que es caro!!!!
+Saturnino: No nos desanimemos con los ahorros que tenemos  y lo que ganemos en estos dias deberíamos ser capaces de lo grarlo, aun es pronto para rendirse
+Saturnino: Mientras trabajemos duro conseguiremos el dinero necesario, y aunque no parezca que vendiendo al mercado se gana mucho no es la unica forma de conseguir dinero
+Saturnino: De vez en cuando vendrá algun vecino del pueblo que esta dado un paseo o viene a hacernos alguna visita para contarnos algo o preguntarnos si tenemos algo que nos pida
+Saturnino: Son tan amables que nos darán más dinero de lo que suele costar el producto en el mercado
+Saturnino: Lastima que cada vez aparezca menos gente
+Saturnino: Bueno, prosigamos con el tour, si he dicho tour, tan raro te parece que este anciano diga esa palabra?
+Saturnino: Lo siguiente es ver el huerto
+exit
+end
