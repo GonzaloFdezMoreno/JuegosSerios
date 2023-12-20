@@ -1,0 +1,10 @@
+Abuelo Saturnino: ¡Oh, ya está aquí!
+Abuelo Saturnino: Parece que Doña Paqui ha venido a hacernos una visita.
+Abuelo Saturnino: Visitas como estas no son frecuentes por lo que veamos a ver qué nos cuenta.
+Abuelo Saturnino: Cuando aparezca alguien u ocurra algun suceso importante deberás ver qué te cuentan.
+Abuelo Saturnino: En algunos casos solo vendrán a contarte cosas, en otros te pedirán algo que tengas y en algunos casos te ofrecerán algo en lo que tendrás que decidir si aceptas o no la oferta, teniendo sus pros y contras según el momento en el que te encuentres.
+Abuelo Saturnino: Estos momentos pueden ayudarte mucho en algunos apuros. Pero últimamente, siento que hay menos gente que viene a visitarme.
+Abuelo Saturnino: Ya que estamos, hablemos con Doña Paqui.
+*Decides irte después de estar 3 horas escuchandolos hablar de los viejos tiempos*
+exit
+end

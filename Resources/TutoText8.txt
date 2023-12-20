@@ -1,0 +1,12 @@
+Abuelo Saturnino: Además de tener visitas de la gente, cada cierto tiempo vendrán personas no muy agradables que vienen a por tu dinero y/o terrenos.
+Abuelo Saturnino: La gente que te pida terrenos, querrá ocupar una parte de tu granja, por lo que esa zona quedará inutilizada, pero a cambio recibirás una gran suma de dinero.
+Abuelo Saturnino: En cuanto a los que te cobran dinero...
+Abuelo Saturnino: Por desgracia no hay nada que podamos hacer, debemos pagar los impuestos.
+Abuelo Saturnino: Debemos tener la cantidad que nos piden para ese entonces, sino corremos el riesgo de perder nuestra amada granja.
+Abuelo Saturnino: Es por ello que debes ser responsable con los gastos que produzcas cuando yo no esté.
+Abuelo Saturnino: Pero seguro que eso es pan comido para ti, cosas como estas o la declaración de la renta seguro que las has estudiado.
+Abuelo Saturnino: ...
+Abuelo Saturnino: ...
+Abuelo Saturnino: ¿Verdad?
+exit
+end

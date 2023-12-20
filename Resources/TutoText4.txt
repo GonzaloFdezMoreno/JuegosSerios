@@ -1,0 +1,12 @@
+Abuelo Saturnino: En la tienda tendrás una serie de productos los cuales podrás adquirir si tienes el dinero necesario.
+Abuelo Saturnino: ¡Ah, mira! Ahí esta el tractor...
+Abuelo Saturnino: ¡¡¡AVE MARÍA PURÍSIMA eso sí que es caro!!!!
+Abuelo Saturnino: Bueno, no nos desanimemos. Con los ahorros que tenemos y lo que ganemos en estos días deberíamos ser capaces de lograrlo. Aún es pronto para rendirse.
+Abuelo Saturnino: Mientras trabajemos duro conseguiremos el dinero necesario, y aunque no parezca que vendiendo al mercado se gana mucho, no es la única forma de conseguir dinero.
+Abuelo Saturnino: De vez en cuando vendrá algún vecino del pueblo que está dado un paseo o viene a hacernos alguna visita para contarnos algo o preguntarnos si tenemos algo que él necesite.
+Abuelo Saturnino: Son tan amables que nos darán más dinero de lo que suele costar el producto en el mercado
+Abuelo Saturnino: Lástima que cada vez aparezca menos gente...
+Abuelo Saturnino: Bueno, prosigamos con el tour. Sí, he dicho tour. ¿Tan raro te parece que un anciano como yo use esa palabra?
+Abuelo Saturnino: Lo siguiente es ver el huerto.
+exit
+end
