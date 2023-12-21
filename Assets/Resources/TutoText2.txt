@@ -1,0 +1,5 @@
+Abuelo Saturnino: Dentro de estas instalaciones tendrás que recoger los recursos que te aportan los animales, sin embargo deberás alimentarlos y mantenerlos saludables todo lo posible.&
+Abuelo Saturnino: Podrás recoger los recursos y alimentarlas una sola vez por semana. No te preocupes, ese pienso que comen les aguanta lo suficiente.&
+Abuelo Saturnino: Recuerda, si notas que el recurso aportado es bajo es posible que estén enfermas, por lo que tendrás que llamar al veterinario si no quieres que se te mueran.&
+Abuelo Saturnino: ¿Por qué no pruebas a recoger algo ya que estamos?&
+Abuelo Saturnino: Cuando lo recojas este recurso aparecerá en tu inventario&

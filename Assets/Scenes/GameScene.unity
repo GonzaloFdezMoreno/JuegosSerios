@@ -284,6 +284,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evText: {fileID: 554677756}
+  tutoTexts:
+  - {fileID: 4900000, guid: 9aa83df74fc322345bf608b2603edb70, type: 3}
+  - {fileID: 4900000, guid: 6e126c066be4bf9409a88d0a9119247f, type: 3}
+  - {fileID: 4900000, guid: d633e3a9a44545f498d26e1fef6a1da2, type: 3}
+  - {fileID: 4900000, guid: 027abc13e07f7774799f8928fbdb05db, type: 3}
+  - {fileID: 4900000, guid: e6fbcc03c7b31e542acd80d19a41d5d6, type: 3}
+  - {fileID: 4900000, guid: 37e5872e7d75f7d4b83783fa9791e9a9, type: 3}
+  - {fileID: 4900000, guid: af13e5900ff93dc4a99f312399bbf486, type: 3}
+  - {fileID: 4900000, guid: 63b68d29182c35c43947a4665502c514, type: 3}
+  - {fileID: 4900000, guid: c4f836dc31200a54a831b7197b9d64cc, type: 3}
+  - {fileID: 4900000, guid: 3f5700296e81fb847ba4d7bb7381cc50, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &32434314
 GameObject:
   m_ObjectHideFlags: 0
@@ -3239,6 +3255,16 @@ PrefabInstance:
       propertyPath: caseS
       value: 
       objectReference: {fileID: 1988062169}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: txtLuzEvent
+      value: 
+      objectReference: {fileID: 4900000, guid: a4c9513a1253a084cabf3394f27c8465, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: txtTutoEvent
+      value: 
+      objectReference: {fileID: 4900000, guid: b05ee5cd66b8e2642910337a17be8406, type: 3}
     - target: {fileID: 1643814220495036091, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
       propertyPath: m_Name
