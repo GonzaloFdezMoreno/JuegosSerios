@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -92,7 +93,7 @@ public class InventoryManager : MonoBehaviour
         {
             GameObject obj = Instantiate(inventoryItem, itemContent);
             var itemName = obj.transform.Find("Name").GetComponent<Text>();
-            var itemAmount = obj.transform.Find("Amount").GetComponent<Text>();
+            var itemAmount = obj.transform.Find("Amount").GetComponent<TextMeshProUGUI>();
             var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
             itemName.text = item.itemName;
             itemAmount.text = item.amount.ToString();
@@ -108,7 +109,7 @@ public class InventoryManager : MonoBehaviour
         {
             GameObject obj = Instantiate(sellingInventoryItem, sellingItemContent);
             var itemName = obj.transform.Find("Name").GetComponent<Text>();
-            var itemAmount = obj.transform.Find("Amount").GetComponent<Text>();
+            var itemAmount = obj.transform.Find("Amount").GetComponent<TextMeshProUGUI>();
             var itemSprite = obj.transform.Find("Image").GetComponent<Image>();
             itemName.text = item.itemName;
             itemAmount.text = item.amount.ToString();
@@ -119,9 +120,9 @@ public class InventoryManager : MonoBehaviour
     public void SelectToSell(GameObject item)
     {
         string name = item.transform.Find("Name").GetComponent<Text>().text;
-        string amount = item.transform.Find("Amount").GetComponent<Text>().text;
-        itemName.GetComponent<Text>().text = name;
-        costText.GetComponent<Text>().text = "¿Quieres vender " + amount + " " + name.ToLower() + "?";
+        string amount = item.transform.Find("Amount").GetComponent<TextMeshProUGUI>().text;
+        itemName.GetComponent<TextMeshProUGUI>().text = name;
+        costText.GetComponent<TextMeshProUGUI>().text = "¿Quieres vender " + amount + " " + name.ToLower() + "?";
         foreach (Item i in items)
         {
             if (i.itemName == name)
@@ -148,8 +149,8 @@ public class InventoryManager : MonoBehaviour
     {
         selectedItemToSell = null;
         itemImage.SetActive(false);
-        itemName.GetComponent<Text>().text = "";
-        costText.GetComponent<Text>().text = "";
+        itemName.GetComponent<TextMeshProUGUI>().text = "";
+        costText.GetComponent<TextMeshProUGUI>().text = "";
     }
     public bool UseItem(Item item, int amount)
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,9 +13,9 @@ public class UIManager : MonoBehaviour
     public GameObject moneyCounter;
     public GameObject actionCounter;
 
-    private Text weekCounterText;
-    private Text moneyCounterText;
-    private Text actCounterText;
+    private TextMeshProUGUI weekCounterText;
+    private TextMeshProUGUI moneyCounterText;
+    private TextMeshProUGUI actCounterText;
 
     bool UICanvasIsOpen = false;
 
@@ -31,9 +32,9 @@ public class UIManager : MonoBehaviour
             Destroy(this);
         }
 
-        if (weekCounter != null) weekCounterText = weekCounter.GetComponent<Text>();
-        if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<Text>();
-        if (actionCounter != null) actCounterText = actionCounter.GetComponent<Text>();
+        if (weekCounter != null) weekCounterText = weekCounter.GetComponent<TextMeshProUGUI>();
+        if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<TextMeshProUGUI>();
+        if (actionCounter != null) actCounterText = actionCounter.GetComponent<TextMeshProUGUI>();
     }
 
     // Start is called before the first frame update

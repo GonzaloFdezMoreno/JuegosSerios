@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EventProbPop : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class EventProbPop : MonoBehaviour
     public GameObject case2;
     public GameObject caseS;
 
-    public Text evText;
+    public TextMeshProUGUI evText;
 
     public TextAsset txtTutoEvent;
     public TextAsset txtLuzEvent;

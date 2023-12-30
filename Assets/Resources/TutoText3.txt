@@ -1,10 +1,10 @@
-Abuelo Saturnino: Aquí podrás ver los recursos de los que dispones y la cantidad de estos.&
-Abuelo Saturnino: Ya que estamos, ¿quieres probar a vender algo? Tampoco es que te obligue, solo es para mostrarte la tienda.&
-Abuelo Saturnino: Al vender objetos recibirás el dinero correspondiente del valor del producto multiplicado por la cantidad que vendas.&
-Abuelo Saturnino: ¿Cómo? ¿Los precios? No, el precio del mercado va variando. Aquí no sabremos lo que conseguiremos hasta que los vendamos.&
-Abuelo Saturnino: ¿Cómo? ¿Que no te parece justo? Lo siento mucho, así es la vida aquí. Quizás por ello la gente empieza a escasear en este tipo de entornos...&
-Abuelo Saturnino: Y ahora que recuerdo, cuando no eras más que un chiquillo te encantaba jugar con aquel tractor amarillo mientras tarareabas esa canción...&
-Abuelo Saturnino: ¿Cómo era? Tengo un tractor amarillo... que es lo que se lleva ahora...& 
-Abuelo Saturnino: Tengo un tractor amarillo... Porque ella e' la última moda...&
-Abuelo Saturnino: Vale, ya me callo, no me mires así. Pero, ¿no te gustaría conseguir uno de verdad?&
-Abuelo Saturnino: Vamos a casa y veamos en el catálogo si en la tienda lo venden.&
+Abuelo Saturnino: Aquí podrás ver los recursos de los que dispones y la cantidad de estos.
+&Abuelo Saturnino: Ya que estamos, ¿quieres probar a vender algo? Tampoco es que te obligue, solo es para mostrarte la tienda.
+&Abuelo Saturnino: Al vender objetos recibirás el dinero correspondiente del valor del producto multiplicado por la cantidad que vendas.
+&Abuelo Saturnino: ¿Cómo? ¿Los precios? No, el precio del mercado va variando. Aquí no sabremos lo que conseguiremos hasta que los vendamos.
+&Abuelo Saturnino: ¿Cómo? ¿Que no te parece justo? Lo siento mucho, así es la vida aquí. Quizás por ello la gente empieza a escasear en este tipo de entornos...
+&Abuelo Saturnino: Y ahora que recuerdo, cuando no eras más que un chiquillo te encantaba jugar con aquel tractor amarillo mientras tarareabas esa canción...
+&Abuelo Saturnino: ¿Cómo era? Tengo un tractor amarillo... que es lo que se lleva ahora...
+&Abuelo Saturnino: Tengo un tractor amarillo... Porque ella e' la última moda...
+&Abuelo Saturnino: Vale, ya me callo, no me mires así. Pero, ¿no te gustaría conseguir uno de verdad?
+&Abuelo Saturnino: Vamos a casa y veamos en el catálogo si en la tienda lo venden.

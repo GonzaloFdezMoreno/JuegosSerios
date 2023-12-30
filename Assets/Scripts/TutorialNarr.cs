@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using static Unity.Burst.Intrinsics.X86;
 
 public class TutorialNarr : MonoBehaviour
 {
-    public Text evText;
+    public TextMeshProUGUI evText;
     [SerializeField]
     TextAsset[] tutoTexts=new TextAsset[15];
     string line;

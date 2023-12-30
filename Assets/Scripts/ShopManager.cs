@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class ShopManager : MonoBehaviour
     {
         string name = item.transform.Find("Name").GetComponent<Text>().text;
         //string amount = item.transform.Find("Amount").GetComponent<Text>().text;
-        itemName.GetComponent<Text>().text = name;
+        itemName.GetComponent<TextMeshProUGUI>().text = name;
         foreach (Item i in items)
         {
             if (i.itemName == name)
@@ -79,7 +80,7 @@ public class ShopManager : MonoBehaviour
         // TODO: comprobar que se muestra el sprite del objeto a vender
         itemImage.SetActive(true);
         itemImage.GetComponent<Image>().sprite = selectedItemToBuy.sprite;
-        descriptionText.GetComponent<Text>().text = selectedItemToBuy.description;
+        descriptionText.GetComponent<TextMeshProUGUI>().text = selectedItemToBuy.description;
         amountText.SetActive(true);
         prizeText.SetActive(true);
         // TODO: el precio no venga cableado
@@ -102,8 +103,8 @@ public class ShopManager : MonoBehaviour
     {
         selectedItemToBuy = null;
         itemImage.SetActive(false);
-        itemName.GetComponent<Text>().text = "";
-        descriptionText.GetComponent<Text>().text = "";
+        itemName.GetComponent<TextMeshProUGUI>().text = "";
+        descriptionText.GetComponent<TextMeshProUGUI>().text = "";
         selectedAmount = 1;
         currentUnitPrize = 0;
         amountText.SetActive(false);
@@ -143,10 +144,10 @@ public class ShopManager : MonoBehaviour
     }
     void UpdateAmountText()
     {
-        amountText.GetComponent<Text>().text = "x" + selectedAmount;
+        amountText.GetComponent<TextMeshProUGUI>().text = "x" + selectedAmount;
     }
     void UpdatePrizeText()
     {
-        prizeText.GetComponent<Text>().text = "Total: " + currentUnitPrize * selectedAmount + "€";
+        prizeText.GetComponent<TextMeshProUGUI>().text = "Total: " + currentUnitPrize * selectedAmount + "€";
     }
 }
