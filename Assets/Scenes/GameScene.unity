@@ -299,6 +299,22 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  toSetActive:
+  - {fileID: 768449383}
+  - {fileID: 1837963508}
+  - {fileID: 1530611028}
+  - {fileID: 608649300}
+  - {fileID: 1189435296}
+  - {fileID: 1626513469}
+  - {fileID: 253410524}
+  - {fileID: 298928238}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &32434314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,6 +1431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orchard
       objectReference: {fileID: 0}
+    - target: {fileID: 6741406220230508082, guid: 079b4b99ab9f23745967875ac0db969d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7801798504447910103, guid: 079b4b99ab9f23745967875ac0db969d,
         type: 3}
       propertyPath: frame
@@ -1489,7 +1510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &298928239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2942,7 +2963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &608649301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5999,6 +6020,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House
       objectReference: {fileID: 0}
+    - target: {fileID: 6741406220230508082, guid: 079b4b99ab9f23745967875ac0db969d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7801798504447910103, guid: 079b4b99ab9f23745967875ac0db969d,
         type: 3}
       propertyPath: frame
@@ -6977,6 +7003,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 507490821027519477, guid: 53f8ffb9ca75fb349909791380ac77cd,
     type: 3}
   m_PrefabInstance: {fileID: 1362823008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1189435296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6741406220230508082, guid: 079b4b99ab9f23745967875ac0db969d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1109656853}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1194698715 stripped
 RectTransform:
@@ -8853,7 +8885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1530611029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11950,7 +11982,7 @@ PrefabInstance:
     - target: {fileID: 6741406220230508082, guid: 079b4b99ab9f23745967875ac0db969d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7801798504447910103, guid: 079b4b99ab9f23745967875ac0db969d,
         type: 3}
@@ -14326,6 +14358,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pasture
       objectReference: {fileID: 0}
+    - target: {fileID: 6741406220230508082, guid: 079b4b99ab9f23745967875ac0db969d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7801798504447910103, guid: 079b4b99ab9f23745967875ac0db969d,
         type: 3}
       propertyPath: frame
@@ -15156,6 +15193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Corral
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741406220230508082, guid: 079b4b99ab9f23745967875ac0db969d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7801798504447910103, guid: 079b4b99ab9f23745967875ac0db969d,
         type: 3}

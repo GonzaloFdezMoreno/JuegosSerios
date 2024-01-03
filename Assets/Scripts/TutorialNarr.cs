@@ -11,9 +11,13 @@ public class TutorialNarr : MonoBehaviour
     public TextMeshProUGUI evText;
     [SerializeField]
     TextAsset[] tutoTexts=new TextAsset[15];
+    [SerializeField]
+    GameObject[] toSetActive=new GameObject[15];
     string line;
     private int i = 0;
     private string[] parrafo = new string[20];
+
+    private int tut = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +35,7 @@ public class TutorialNarr : MonoBehaviour
     {
         
         i = 0;
+        tut = type;
         StreamReader sr;
         if (type == 0)
         {
@@ -182,6 +187,31 @@ public class TutorialNarr : MonoBehaviour
         {
             UIManager.GetInstance().OnUICanvasClose();
             this.gameObject.SetActive(false);
+
+            if (tut == 0)
+            {
+                toSetActive[0].SetActive(true);
+                toSetActive[1].SetActive(true);
+            }
+            else if (tut == 1)
+            {
+                toSetActive[2].SetActive(true);
+                toSetActive[3].SetActive(true);
+            }
+            else if (tut == 2)
+            {
+                toSetActive[4].SetActive(true);
+            }
+            else if(tut == 3)
+            {
+                toSetActive[5].SetActive(true);
+                toSetActive[6].SetActive(true);
+            }
+            else if (tut == 4)
+            {
+                toSetActive[7].SetActive(true);
+            }
+
         }
     }
 
