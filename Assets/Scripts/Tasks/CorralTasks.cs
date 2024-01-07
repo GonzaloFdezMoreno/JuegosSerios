@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CorralTasks : Task
 {
     public Item eggs;
     public Item hensFeed;
+    public GameObject collectEggsCostText;
+    public GameObject feedCostText;
+    public GameObject healCostText;
+
     int currentEggs;
     int hensNumber;
     const int maxHensNumber = 20;
@@ -41,6 +46,7 @@ public class CorralTasks : Task
         hungry = true;
         hungryStartTurn = GameManager.GetInstance().GetCurrentWeek();
         CreateEggs();
+        UpdateCostTexts();
     }
 
     public override void OnNextTurn()
@@ -54,6 +60,7 @@ public class CorralTasks : Task
         UpdateSickHens();
         UpdateHensNumber();
         CreateEggs();
+        UpdateCostTexts();
     }
     void CreateEggs()
     {
@@ -120,5 +127,11 @@ public class CorralTasks : Task
             hensNumber += 2;
             if (hensNumber > maxHensNumber) hensNumber = maxHensNumber;
         }
+    }
+    void UpdateCostTexts()
+    {
+        collectEggsCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + collectEggsActCost;
+        feedCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + feedActCost;
+        healCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + healActCost + "\nCoste de dinero: " + healMoneyCost;
     }
 }

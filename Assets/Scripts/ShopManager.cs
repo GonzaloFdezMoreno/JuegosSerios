@@ -17,10 +17,12 @@ public class ShopManager : MonoBehaviour
     public GameObject descriptionText;
     public GameObject amountText;
     public GameObject prizeText;
+    public GameObject tractorPurchasedText;
 
     private Item selectedItemToBuy;
     private int selectedAmount;
     private int currentUnitPrize; // Precio por unidad del item seleccionado
+    bool tractorPurchased = false;
     private void Awake()
     {
         // Check if the Shop Manager doesn't already exist
@@ -92,12 +94,31 @@ public class ShopManager : MonoBehaviour
         if (selectedItemToBuy != null)
         {
             if (GameManager.GetInstance().GetCurrentMoney() < selectedAmount * currentUnitPrize) return;
-            GameManager.GetInstance().UpdateMoney(-selectedAmount * currentUnitPrize);
-            Item newItem = (Item)ScriptableObject.Instantiate(selectedItemToBuy);
-            newItem.amount = selectedAmount;
-            InventoryManager.GetInstance().AddItem(newItem);
+            if (selectedItemToBuy.itemName == "Tractor")
+            {
+                BuyTractor();
+            }
+            else
+            {
+                GameManager.GetInstance().UpdateMoney(-selectedAmount * currentUnitPrize);
+                Item newItem = (Item)ScriptableObject.Instantiate(selectedItemToBuy);
+                newItem.amount = selectedAmount;
+                InventoryManager.GetInstance().AddItem(newItem);
+            }
             DeselectItemToBuy();
         }
+    }
+    void BuyTractor()
+    {
+        if (tractorPurchased)
+        {
+            tractorPurchasedText.SetActive(true);
+            Invoke("HideTractorPurchasedText", 2.0f);
+            return;
+        }
+        GameManager.GetInstance().UpdateMoney(-currentUnitPrize);
+        GameManager.GetInstance().OnTractorPurchased();
+        tractorPurchased = true;
     }
     public void DeselectItemToBuy()
     {
@@ -112,12 +133,14 @@ public class ShopManager : MonoBehaviour
     }
     public void OnClickPlus1Button()
     {
+        if (selectedItemToBuy.itemName == "Tractor") return;
         selectedAmount++;
         UpdateAmountText();
         UpdatePrizeText();
     }
     public void OnClickPlus10Button()
     {
+        if (selectedItemToBuy.itemName == "Tractor") return;
         selectedAmount += 10;
         UpdateAmountText();
         UpdatePrizeText();
@@ -149,5 +172,9 @@ public class ShopManager : MonoBehaviour
     void UpdatePrizeText()
     {
         prizeText.GetComponent<TextMeshProUGUI>().text = "Total: " + currentUnitPrize * selectedAmount + "€";
+    }
+    void HideTractorPurchasedText()
+    {
+        tractorPurchasedText.SetActive(false);
     }
 }

@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     int nTuto = 0;
 
+    bool tractorPurchased = false;
+
     private void Awake()
     {
         // Check if the UI Manager doesn't already exist
@@ -155,5 +157,16 @@ public class GameManager : MonoBehaviour
     {
         nTuto++;
     }
-    
+    public void OnTractorPurchased()
+    {
+        tractorPurchased = true;
+    }
+    public void OnTractorSale()
+    {
+        tractorPurchased = false;
+    }
+    public bool IsTractorPurchased()
+    {
+        return tractorPurchased;
+    }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class OrchardTask : Task
 {
@@ -23,6 +24,13 @@ public class OrchardTask : Task
     public Item peaSeeds;
     public Item lettuceSeeds;
 
+    public GameObject collectCostText;
+    public GameObject plantTomatoCostText;
+    public GameObject plantCarrotCostText;
+    public GameObject plantPeaCostText;
+    public GameObject plantLettuceCostText;
+    public GameObject cleanOrchardCostText;
+
     const int orchardSpots = 4; // Numero de huecos para plantar en el huerto 
 
     //ArrayList spots; // Los huecos del huerto para plantar
@@ -32,7 +40,12 @@ public class OrchardTask : Task
     private int numGoodVegetable;
     private int numBadVegetable;
 
-    private int timeLifeVegetable; 
+    private int timeLifeVegetable;
+
+    // Coste de acciones de las tareas
+    const int plantActCost = 60;
+    const int collectActCost = 50;
+    const int cleanActCost = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +65,7 @@ public class OrchardTask : Task
             //spots.Add(s);
             spots[i] = s;
         }
+        UpdateCostTexts();
     }
     public override void OnNextTurn()
     {
@@ -64,6 +78,7 @@ public class OrchardTask : Task
                 Debug.Log(spots[i].vegType + " " + spots[i].age + " semanas");
             }
         }
+        UpdateCostTexts();
     }
     public void PlantTomatoes()
     {
@@ -83,6 +98,7 @@ public class OrchardTask : Task
     }
     public void Collect()
     {
+        if (!CanDoTask(collectActCost)) return;
         for (int i = 0; i < orchardSpots; i++)
         {
             // Si la planta ha dado frutos y no se han pochado
@@ -115,22 +131,24 @@ public class OrchardTask : Task
                 CleanSpot(i);
             }
         }
+        SpendActions(collectActCost);
     }
     // Tarea para limpiar todos los huecos del huerto con verduras pochas
     public void CleanOrchard()
     {
-        int cost = 0;
         for (int i = 0; i < orchardSpots; i++)
         {
             if (spots[i].vegType != Vegetable.NONE && spots[i].age >= spots[i].timeToDie)
             {
+                if (!CanDoTask(cleanActCost)) return;
                 CleanSpot(i);
-                cost++;
+                SpendActions(cleanActCost);
             }
         }
     }
     void Plant(Item item, Vegetable type)
     {
+        if (!CanDoTask(plantActCost)) return;
         int index = -1;
         //foreach (OrchardSpot i in spots)
         //{
@@ -173,6 +191,7 @@ public class OrchardTask : Task
                     break;
                 default: break;
             }
+            SpendActions(plantActCost);
         }
         else // Si no mostramos el texto de que no tenemos semillas
         {
@@ -185,5 +204,28 @@ public class OrchardTask : Task
         spots[index].age = 0;
         spots[index].timeToBloom = 0;
         spots[index].timeToDie = 0;
+    }
+    bool CanDoTask(int actCost)
+    {
+        int tractorDivFactor = 1;
+        if (GameManager.GetInstance().IsTractorPurchased()) tractorDivFactor = 2;
+        return GameManager.GetInstance().GetRemainingActions() >= actCost / tractorDivFactor;
+    }
+    void SpendActions(int actCost)
+    {
+        int tractorDivFactor = 1;
+        if (GameManager.GetInstance().IsTractorPurchased()) tractorDivFactor = 2;
+        GameManager.GetInstance().SpendActions(actCost / tractorDivFactor);
+    }
+    void UpdateCostTexts()
+    {
+        int tractorDivFactor = 1;
+        if (GameManager.GetInstance().IsTractorPurchased()) tractorDivFactor = 2;
+        collectCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + collectActCost / tractorDivFactor;
+        plantTomatoCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + plantActCost / tractorDivFactor + "\nNecesita: semillas de tomate";
+        plantCarrotCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + plantActCost / tractorDivFactor + "\nNecesita: semillas de zanahoria";
+        plantPeaCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + plantActCost / tractorDivFactor + "\nNecesita: semillas de guisante";
+        plantLettuceCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + plantActCost / tractorDivFactor + "\nNecesita: semillas de lechuga";
+        cleanOrchardCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + cleanActCost / tractorDivFactor;
     }
 }

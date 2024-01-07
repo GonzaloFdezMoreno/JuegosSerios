@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CowshedTasks : Task
 {
     public Item milk;
     public Item fertilizer;
     public Item hay;
+    public GameObject milkCostText;
+    public GameObject feedCostText;
+    public GameObject pastureCostText;
+    public GameObject healCostText; 
+
     bool milked; // Si se ha ordeñado ya a las vacas en el turno actual
     int cowsNumber;
     int sickCows; // Numero de vacas enfermas
@@ -42,8 +48,9 @@ public class CowshedTasks : Task
         sickCows = 0;
         hungry = true;
         hungryStartTurn = GameManager.GetInstance().GetCurrentWeek();
+        UpdateCostTexts();
     }
-
+   
     public override void OnNextTurn()
     {
         base.OnNextTurn();
@@ -56,6 +63,7 @@ public class CowshedTasks : Task
         UpdateSickCows();
         UpdateCowsNumber();
         Debug.Log("Nº vacas: " + cowsNumber + ", de las cuales enfermas: " + sickCows);
+        UpdateCostTexts();
     }
     public void MilkCows()
     {
@@ -121,5 +129,12 @@ public class CowshedTasks : Task
             if (cowsNumber < 0) cowsNumber = 0;
             if (sickCows < 0) sickCows = 0;
         }
+    }
+    void UpdateCostTexts()
+    {
+        milkCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + milkActCost;
+        feedCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + feedActCost + "\nNecesita: "+ cowsNumber * dailyMeal+" de heno";
+        pastureCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + pastureActCost + "\nNecesita: tener un terreno de pasto" ;
+        healCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + healActCost + "\nCoste de dinero: " + healMoneyCost;
     }
 }

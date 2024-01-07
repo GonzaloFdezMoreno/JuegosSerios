@@ -1,12 +1,12 @@
-Abuelo Saturnino: Al fin tenemos el tractor.
+Abuelo Saturnino: ¡Al fin tenemos el tractor!
 &Abuelo Saturnino: Puedo ver en tu cara la ilusión que te hace.
 &Abuelo Saturnino: Si es que ya sabía yo...
-&Abuelo Saturnino: Y te preguntarás este tractor amarillo... que usos puede tener?
+&Abuelo Saturnino: Y te preguntarás, este tractor amarillo... ¿qué usos puede tener?
 &Abuelo Saturnino: ¡Reduce el tiempo que tardas en el huerto!
 &Abuelo Saturnino: Gestionar el huerto consume mucho tiempo, pero con el tractor... ¡tardarás la mitad!
 &Abuelo Saturnino: Bueno, creo que ya no tengo nada más que enseñarte, a partir de ahora deberás apañartelas solo.
 &Abuelo Saturnino: Recuerda todo lo que te he contado y deberías estar bien, al menos por un tiempo.
-&Abuelo Saturnino: Yo? Es hora de que me marche, me mudaré a la ciudad donde estaré disfrutando de la vida de jubilado al fin.
+&Abuelo Saturnino: ¿Yo? Es hora de que me marche. Me mudaré a Benidorm donde estaré disfrutando de la vida de jubilado al fin.
 &Abuelo Saturnino: No tuve tanta suerte como para jubilarme a los 65 pero oye, ya tocaba descansar.
-&Abuelo Saturnino: Otra vez poniendo caras de preocupación, no te preocupes, sé que dejo la granja en buenas manos, e intentaré visitarte cuando pueda.
-&Abuelo Saturnino: Mucho ánimo, y suerte.
+&Abuelo Saturnino: Otra vez poniendo caras de preocupación. No te preocupes, sé que dejo la granja en buenas manos. Además intentaré visitarte cuando pueda.
+&Abuelo Saturnino: ¡Mucho ánimo y suerte!
