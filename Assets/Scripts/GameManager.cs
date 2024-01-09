@@ -79,8 +79,9 @@ public class GameManager : MonoBehaviour
             obj.GetComponent<Task>().OnNextTurn();
         }
         evSpw.newChance(currentWeek);
-        if (currentWeek+1 % 4 == 0 && currentWeek != 0) { 
+        if ((currentWeek+1) % 4 == 0 && currentWeek != 0) { 
             evSpw.popEvent(0);
+            Debug.Log("Hola");
             UpdateMoney(-100);
         }
         if(currentWeek+1 == 2)
@@ -116,6 +117,12 @@ public class GameManager : MonoBehaviour
                 nextTutorial(6);
                 evSpw.setIsEventTutorial(true);
             }
+            //else
+            //{
+            //    int evType = Random.Range(0, 4);
+            //    //tipo random de evento (aceptar/rechazar,beneficio,informacion) 
+            //    evSpw.popEvent(evType);
+            //}
         }
     }
 
