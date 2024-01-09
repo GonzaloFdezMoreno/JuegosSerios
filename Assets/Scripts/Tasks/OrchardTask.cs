@@ -70,11 +70,39 @@ public class OrchardTask : Task
     public override void OnNextTurn()
     {
         base.OnNextTurn();
+        GameManager.Season currentSeason = GameManager.GetInstance().GetCurrentSeason();
         for (int i = 0; i < orchardSpots; i++)
         {
             if (spots[i].vegType != Vegetable.NONE)
             {
-                spots[i].age++;
+                // Las verduras plantadas que crecen en la estacion actual, crecen en este turno.
+                // Las que estan plantadas y no crecen en la estacion actual mueren.
+                switch (currentSeason)
+                {
+                    case GameManager.Season.Spring:
+                        if (spots[i].vegType == Vegetable.Peas)
+                            spots[i].age++;
+                        else spots[i].age = spots[i].timeToDie;
+                        break;
+                    case GameManager.Season.Summer:
+                        if (spots[i].vegType == Vegetable.Tomatoes)
+                            spots[i].age++;
+                        else spots[i].age = spots[i].timeToDie;
+                        break;
+                    case GameManager.Season.Fall:
+                        if (spots[i].vegType == Vegetable.Lettuce)
+                            spots[i].age++;
+                        else spots[i].age = spots[i].timeToDie;
+                        break;
+                    case GameManager.Season.Winter:
+                        if (spots[i].vegType == Vegetable.Carrots)
+                            spots[i].age++;
+                        else spots[i].age = spots[i].timeToDie;
+                        break;
+                    default:
+                        break;
+                }
+                
                 Debug.Log(spots[i].vegType + " " + spots[i].age + " semanas");
             }
         }

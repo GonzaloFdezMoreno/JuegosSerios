@@ -12,10 +12,12 @@ public class UIManager : MonoBehaviour
     public GameObject weekCounter;
     public GameObject moneyCounter;
     public GameObject actionCounter;
+    public GameObject seasonCounter;
 
     private TextMeshProUGUI weekCounterText;
     private TextMeshProUGUI moneyCounterText;
     private TextMeshProUGUI actCounterText;
+    private TextMeshProUGUI seasonCounterText;
 
     bool UICanvasIsOpen = false;
 
@@ -35,6 +37,7 @@ public class UIManager : MonoBehaviour
         if (weekCounter != null) weekCounterText = weekCounter.GetComponent<TextMeshProUGUI>();
         if (moneyCounter != null) moneyCounterText = moneyCounter.GetComponent<TextMeshProUGUI>();
         if (actionCounter != null) actCounterText = actionCounter.GetComponent<TextMeshProUGUI>();
+        if (seasonCounter != null) seasonCounterText = seasonCounter.GetComponent<TextMeshProUGUI>();
     }
 
     // Start is called before the first frame update
@@ -63,6 +66,27 @@ public class UIManager : MonoBehaviour
     public void UpdateRemainingActions(int act)
     {
         if (actCounterText != null) actCounterText.text = "Acciones: " + act;
+    }
+
+    public void UpdateSeasonCounter(GameManager.Season season)
+    {
+        switch (season)
+        {
+            case GameManager.Season.Spring:
+                if (seasonCounterText != null) seasonCounterText.text = "Primavera";
+                break;
+            case GameManager.Season.Summer:
+                if (seasonCounterText != null) seasonCounterText.text = "Verano";
+                break;
+            case GameManager.Season.Fall:
+                if (seasonCounterText != null) seasonCounterText.text = "Otoño";
+                break;
+            case GameManager.Season.Winter:
+                if (seasonCounterText != null) seasonCounterText.text = "Invierno";
+                break;
+            default:
+                break;
+        }
     }
 
     public void OnUICanvasOpen()

@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Semillas de guisante
   amount: 0
   sprite: {fileID: 1391143722, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
-  description: Semillas de guisante.
+  description: Semillas de guisante. Solo crecen en primavera.
   prize: 4

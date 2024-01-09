@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
 
     bool tractorPurchased = false;
 
+    public enum Season { Spring, Summer, Fall, Winter };
+    Season currentSeason;
+
     private void Awake()
     {
         // Check if the UI Manager doesn't already exist
@@ -40,16 +43,17 @@ public class GameManager : MonoBehaviour
    
     void Start()
     {
-
         evSpw = eventFrame.GetComponent<EventProbPop>();
         evSpw.newChance(0);
-        currentWeek = 1;
-        UIManager.GetInstance().UpdateWeekCounter(currentWeek);
+        currentWeek = 0;
+        UIManager.GetInstance().UpdateWeekCounter(currentWeek + 1);
         money = 1000;
         UIManager.GetInstance().UpdateMoneyCounter(money);
         actions = 84;
         maxActions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
+        currentSeason = Season.Spring;
+        UIManager.GetInstance().UpdateSeasonCounter(currentSeason);
 
         tuto= tutoFrame.GetComponent<TutorialNarr>();
         tuto.showTuto(0);
@@ -63,10 +67,11 @@ public class GameManager : MonoBehaviour
     public void OnNextTurnButtonPressed()
     {
         currentWeek++;
-        UIManager.GetInstance().UpdateWeekCounter(currentWeek);
+        UIManager.GetInstance().UpdateWeekCounter(currentWeek + 1);
         actions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
-        
+        OnNextTurnSeasonLogic();
+
         foreach (GameObject obj in structures)
         {
             obj.GetComponent<Task>().OnNextTurn();
@@ -87,10 +92,6 @@ public class GameManager : MonoBehaviour
     {
         money += amount;
         UIManager.GetInstance().UpdateMoneyCounter(money);
-        if (money > 1200)
-        {
-            nextTutorial(9);
-        }
     }
     public int GetCurrentMoney()
     {
@@ -160,6 +161,11 @@ public class GameManager : MonoBehaviour
     public void OnTractorPurchased()
     {
         tractorPurchased = true;
+        if (tutorial)
+        {
+            nextTutorial(9);
+            tutorial = false;
+        }
     }
     public void OnTractorSale()
     {
@@ -168,5 +174,18 @@ public class GameManager : MonoBehaviour
     public bool IsTractorPurchased()
     {
         return tractorPurchased;
+    }
+    void OnNextTurnSeasonLogic()
+    {
+        if (currentWeek % 12 == 0)
+        {
+            currentSeason++;
+            if (currentSeason > Season.Winter) currentSeason = Season.Spring;
+            UIManager.GetInstance().UpdateSeasonCounter(currentSeason);
+        }
+    }
+    public Season GetCurrentSeason()
+    {
+        return currentSeason;
     }
 }

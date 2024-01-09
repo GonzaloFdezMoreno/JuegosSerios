@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 6
   itemName: Pienso
   amount: 0
-  sprite: {fileID: -801379164, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
+  sprite: {fileID: -1502967041, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
   description: El alimento de las gallinas.
   prize: 5

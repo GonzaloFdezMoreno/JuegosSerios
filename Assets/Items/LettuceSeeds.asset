@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 18
   itemName: Semillas de lechuga
   amount: 0
-  sprite: {fileID: -1502967041, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
-  description: Semillas de lechuga.
+  sprite: {fileID: -34454918, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
+  description: "Semillas de lechuga. Solo crecen en oto\xF1o."
   prize: 3
