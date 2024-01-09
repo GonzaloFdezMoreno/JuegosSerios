@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     private int actions;
     private int maxActions;
     private bool tutorial = true;
+    private bool inventoryTutorial = true;
+    private bool onlyOnce = false;
 
     int nTuto = 0;
 
@@ -141,7 +143,20 @@ public class GameManager : MonoBehaviour
         if (tutorial) {
             if (i < 10)
             {
-                tuto.showTuto(i);
+               
+                if (i != 2)
+                {
+                    tuto.showTuto(i);
+                }
+                else
+                {
+                    if (inventoryTutorial){
+                        tuto.showTuto(i);
+                        inventoryTutorial = false;
+                        AdvanceTutorialNumber();
+                    }
+                }
+               
             }
             else
             {
@@ -156,7 +171,9 @@ public class GameManager : MonoBehaviour
     }
     public void AdvanceTutorialNumber()
     {
+       
         nTuto++;
+        
     }
     public void OnTractorPurchased()
     {
