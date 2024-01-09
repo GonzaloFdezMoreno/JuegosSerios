@@ -79,11 +79,11 @@ public class GameManager : MonoBehaviour
             obj.GetComponent<Task>().OnNextTurn();
         }
         evSpw.newChance(currentWeek);
-        if (currentWeek % 4 == 0 && currentWeek != 0) { 
+        if (currentWeek+1 % 4 == 0 && currentWeek != 0) { 
             evSpw.popEvent(0);
             UpdateMoney(-100);
         }
-        if(currentWeek == 2)
+        if(currentWeek+1 == 2)
         {
             nextTutorial(5);
             evSpw.setAppear(60);
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         
         if (evSpw.whenAppear > actions)
         {
-            if (currentWeek == 2) { 
+            if (currentWeek+1 == 2) { 
                 evSpw.popEvent(1);
                 nextTutorial(6);
                 evSpw.setIsEventTutorial(true);
