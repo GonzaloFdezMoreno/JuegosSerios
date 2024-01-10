@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private bool tutorial = true;
     private bool inventoryTutorial = true;
     private bool onlyOnce = false;
+    private bool evTutoAppeared = false;
 
     int nTuto = 0;
 
@@ -112,10 +113,11 @@ public class GameManager : MonoBehaviour
         
         if (evSpw.whenAppear > actions)
         {
-            if (currentWeek+1 == 2) { 
+            if (currentWeek+1 == 2 &&!evTutoAppeared) { 
                 evSpw.popEvent(1);
                 nextTutorial(6);
                 evSpw.setIsEventTutorial(true);
+                evTutoAppeared = true;
             }
             //else
             //{
