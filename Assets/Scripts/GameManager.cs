@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private static GameManager Instance;
     private int currentWeek;
+    private const int weeksPerSeason = 12;
     private int money;
     private int actions;
     private int maxActions;
@@ -82,7 +83,6 @@ public class GameManager : MonoBehaviour
         evSpw.newChance(currentWeek);
         if ((currentWeek+1) % 4 == 0 && currentWeek != 0) { 
             evSpw.popEvent(0);
-            Debug.Log("Hola");
             UpdateMoney(-100);
         }
         if(currentWeek+1 == 2)
@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour
     }
     void OnNextTurnSeasonLogic()
     {
-        if (currentWeek % 12 == 0)
+        if (currentWeek % weeksPerSeason == 0)
         {
             currentSeason++;
             if (currentSeason > Season.Winter) currentSeason = Season.Spring;
@@ -213,5 +213,9 @@ public class GameManager : MonoBehaviour
     public Season GetCurrentSeason()
     {
         return currentSeason;
+    }
+    public int GetWeeksPerSeason()
+    {
+        return weeksPerSeason;
     }
 }

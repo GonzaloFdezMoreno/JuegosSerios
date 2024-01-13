@@ -121,8 +121,6 @@ public class InventoryManager : MonoBehaviour
     {
         string name = item.transform.Find("Name").GetComponent<Text>().text;
         string amount = item.transform.Find("Amount").GetComponent<TextMeshProUGUI>().text;
-        itemName.GetComponent<TextMeshProUGUI>().text = name;
-        costText.GetComponent<TextMeshProUGUI>().text = "¿Quieres vender " + amount + " " + name.ToLower() + "?";
         foreach (Item i in items)
         {
             if (i.itemName == name)
@@ -131,6 +129,8 @@ public class InventoryManager : MonoBehaviour
                 break;
             }
         }
+        itemName.GetComponent<TextMeshProUGUI>().text = name;
+        costText.GetComponent<TextMeshProUGUI>().text = "¿Quieres vender " + amount + " " + name.ToLower() + " por " + selectedItemToSell.amount * selectedItemToSell.prize + "€?";
         // TODO: comprobar que se muestra el sprite del objeto a vender
         itemImage.SetActive(true);
         itemImage.GetComponent<Image>().sprite = selectedItemToSell.sprite;

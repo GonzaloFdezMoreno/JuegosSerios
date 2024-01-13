@@ -192,6 +192,7 @@ public class TutorialNarr : MonoBehaviour
             {
                 toSetActive[0].SetActive(true);
                 toSetActive[1].SetActive(true);
+                toSetActive[7].SetActive(true);
             }
             else if (tut == 1)
             {
@@ -209,7 +210,7 @@ public class TutorialNarr : MonoBehaviour
             }
             else if (tut == 4)
             {
-                toSetActive[7].SetActive(true);
+                toSetActive[8].SetActive(true);
             }
 
         }
