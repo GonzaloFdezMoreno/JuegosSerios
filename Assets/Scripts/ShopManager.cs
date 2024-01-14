@@ -22,7 +22,6 @@ public class ShopManager : MonoBehaviour
     private Item selectedItemToBuy;
     private int selectedAmount;
     private int currentUnitPrize; // Precio por unidad del item seleccionado
-    bool tractorPurchased = false;
     private void Awake()
     {
         // Check if the Shop Manager doesn't already exist
@@ -110,7 +109,7 @@ public class ShopManager : MonoBehaviour
     }
     void BuyTractor()
     {
-        if (tractorPurchased)
+        if (GameManager.GetInstance().IsTractorPurchased())
         {
             tractorPurchasedText.SetActive(true);
             Invoke("HideTractorPurchasedText", 2.0f);
@@ -118,7 +117,6 @@ public class ShopManager : MonoBehaviour
         }
         GameManager.GetInstance().UpdateMoney(-currentUnitPrize);
         GameManager.GetInstance().OnTractorPurchased();
-        tractorPurchased = true;
     }
     public void DeselectItemToBuy()
     {
