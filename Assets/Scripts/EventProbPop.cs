@@ -156,19 +156,18 @@ public class EventProbPop : MonoBehaviour
         if (result == 0)
         {
             evText.text = "Muchas gracias";
-            case1.SetActive(true);
-            case2.SetActive(false);
-            caseS.SetActive(false);
+            
         }
         else if(result==1)
         {
             evText.text = "Que pena";
-            case1.SetActive(true);
-            case2.SetActive(false);
-            caseS.SetActive(false);
+            
         }
         else
         {
+            case1.SetActive(true);
+            case2.SetActive(false);
+            caseS.SetActive(false);
             string product;
             if (prodVent == 0)
             {
@@ -202,10 +201,10 @@ public class EventProbPop : MonoBehaviour
             {
                 GameManager.GetInstance().UpdateMoney(200);
                 evText.text = "Muchas gracias";
-
-                case1.SetActive(true);
-                case2.SetActive(false);
-                caseS.SetActive(false);
+            }
+            else
+            {
+                evText.text = "No tienes suficiente";
             }
             
         }

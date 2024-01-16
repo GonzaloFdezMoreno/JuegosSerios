@@ -10,11 +10,16 @@ public class GameManager : MonoBehaviour
     private GameObject eventFrame;
     [SerializeField]
     private GameObject tutoFrame;
+    
+    [SerializeField]
+    private GameObject natFrame;
+
 
     public GameObject pauseFrame;
 
     private EventProbPop evSpw;
     private TutorialNarr tuto;
+    private Naturalvents naturalEv;
 
     private static GameManager Instance;
     private int currentWeek;
@@ -54,6 +59,7 @@ public class GameManager : MonoBehaviour
         endTutorial();
 
         evSpw = eventFrame.GetComponent<EventProbPop>();
+        naturalEv = natFrame.GetComponent<Naturalvents>();
         evSpw.newChance(0);
         currentWeek = 0;
         UIManager.GetInstance().UpdateWeekCounter(currentWeek + 1);
@@ -114,6 +120,11 @@ public class GameManager : MonoBehaviour
         if ((currentWeek+1) % 4 == 0 && currentWeek != 0) { 
             evSpw.popEvent(0);
             UpdateMoney(-100);
+        }
+        int natEv = Random.Range(0, 100);
+        if (natEv <= 10)
+        {
+            naturalEv.showWindow((int)currentSeason);
         }
         /*if (tutorial)
         {*/
