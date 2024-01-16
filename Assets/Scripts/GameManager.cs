@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
    
     void Start()
     {
+        endTutorial();
+
         evSpw = eventFrame.GetComponent<EventProbPop>();
         evSpw.newChance(0);
         currentWeek = 0;
@@ -58,10 +60,18 @@ public class GameManager : MonoBehaviour
         UIManager.GetInstance().UpdateRemainingActions(actions);
         currentSeason = Season.Spring;
         UIManager.GetInstance().UpdateSeasonCounter(currentSeason);
-
-        tuto= tutoFrame.GetComponent<TutorialNarr>();
-        tuto.showTuto(0);
-        AdvanceTutorialNumber();
+        tuto = tutoFrame.GetComponent<TutorialNarr>();
+        if (tutorial)
+        {
+            
+            tuto.showTuto(0);
+            AdvanceTutorialNumber();
+        }
+        else
+        {
+            tuto.ShowAllHidden();
+        }
+       
     }
 
     public static GameManager GetInstance()
@@ -85,12 +95,16 @@ public class GameManager : MonoBehaviour
             evSpw.popEvent(0);
             UpdateMoney(-100);
         }
-        if(currentWeek+1 == 2)
-        {
-            nextTutorial(5);
-            evSpw.setAppear(60);
-            AdvanceTutorialNumber();
-        }
+        /*if (tutorial)
+        {*/
+            if (currentWeek + 1 == 2)
+            {
+                nextTutorial(5);
+                evSpw.setAppear(60);
+                AdvanceTutorialNumber();
+            }
+        //}
+        
     }
     public void UpdateMoney(int amount)
     {
@@ -113,8 +127,9 @@ public class GameManager : MonoBehaviour
         
         if (evSpw.whenAppear > actions)
         {
+            Debug.Log("Salta");
             if (currentWeek+1 == 2 &&!evTutoAppeared) { 
-                evSpw.popEvent(1);
+                evSpw.popEvent(3);
                 nextTutorial(6);
                 evSpw.setIsEventTutorial(true);
                 evTutoAppeared = true;
@@ -218,4 +233,16 @@ public class GameManager : MonoBehaviour
     {
         return weeksPerSeason;
     }
+
+
+    public void endTutorial()
+    {
+        tutorial = false;
+    }
+
+    public bool IsOnTutorial()
+    {
+        return tutorial;
+    }
+
 }

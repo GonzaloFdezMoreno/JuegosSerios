@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Xml.Serialization;
+using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -233,5 +235,28 @@ public class InventoryManager : MonoBehaviour
             index++;
         }
         ListItems();
+    }
+
+    public bool GiveItem(string itemname,int amount)
+    {
+        int index = -1;
+        foreach (Item i in items)
+        {
+            if (i.itemName == itemname)
+            {
+                index = items.IndexOf(i);
+                break;
+            }
+        }
+        if (index != -1)
+        {
+            if (items[index].amount > amount)
+            {
+                items[index].amount -= amount;
+                return true;
+            }
+        }
+        return false;
+        
     }
 }

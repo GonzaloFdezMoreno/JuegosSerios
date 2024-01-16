@@ -216,5 +216,17 @@ public class TutorialNarr : MonoBehaviour
         }
     }
 
+    public void ShowAllHidden()
+    {
+        for(int i = 0; i < toSetActive.Length; i++)
+        {
+            if(toSetActive[i] != null)
+            {
+                toSetActive[i].SetActive(true);
+            }
+        }
+        
+    } 
+
 
 }

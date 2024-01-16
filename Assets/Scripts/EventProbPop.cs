@@ -11,6 +11,7 @@ public class EventProbPop : MonoBehaviour
     
     public int appear;
     public int whenAppear;
+
     private bool popped = false;
     private bool poppedFix = false;
 
@@ -22,6 +23,12 @@ public class EventProbPop : MonoBehaviour
 
     public TextAsset txtTutoEvent;
     public TextAsset txtLuzEvent;
+    [SerializeField]
+    TextAsset[] eventTexts = new TextAsset[15];
+
+    int prodVent=-1;
+
+    public int randEvent;
 
     string line;
     bool tutorial;
@@ -97,7 +104,7 @@ public class EventProbPop : MonoBehaviour
                 popped = true;
             }
         }
-        else
+        else if (type==2)
         {
             if (!popped)
             {
@@ -105,13 +112,36 @@ public class EventProbPop : MonoBehaviour
                 case1.SetActive(false);
                 case2.SetActive(true);
                 caseS.SetActive(false);
-                sr = new StreamReader("Assets/textos/LuzText.txt");
-                line = sr.ReadToEnd();
+                
                 evText.text = line;/*"Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
                     "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
                     "Es una pena que en este lugar cada vez haya menos gente...";*/
 
-                sr.Close();
+                
+
+
+                popped = true;
+            }
+        }
+        else if (type == 3)
+        {
+            if (!popped)
+            {
+                this.gameObject.SetActive(true);
+                case1.SetActive(false);
+                case2.SetActive(false);
+                caseS.SetActive(true);
+
+                randEvent= Random.Range(0, 6);
+                line = eventTexts[randEvent].text;
+                prodVent = randEvent;
+                //sr = new StreamReader("Assets/textos/LuzText.txt");
+                //line = sr.ReadToEnd();
+                evText.text = line;/*"Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
+                    "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
+                    "Es una pena que en este lugar cada vez haya menos gente...";*/
+
+                
 
 
                 popped = true;
@@ -122,16 +152,62 @@ public class EventProbPop : MonoBehaviour
 
     public void nextText(int result)
     {
-        case1.SetActive(true);
-        case2.SetActive(false);
-        caseS.SetActive(false);
+        
         if (result == 0)
         {
             evText.text = "Muchas Gracias";
+            case1.SetActive(true);
+            case2.SetActive(false);
+            caseS.SetActive(false);
+        }
+        else if(result==1)
+        {
+            evText.text = "Que pena";
+            case1.SetActive(true);
+            case2.SetActive(false);
+            caseS.SetActive(false);
         }
         else
         {
-            evText.text = "Que pena";
+            string product;
+            if (prodVent == 0)
+            {
+                product = "Huevos";
+            }
+            else if (prodVent == 1)
+            {
+                product = "Huevos";
+            }
+            else if (prodVent == 2)
+            {
+                product = "Huevos";
+            }
+            else if (prodVent == 3)
+            {
+                product = "Huevos";
+            }
+            else if (prodVent == 4)
+            {
+                product = "Huevos";
+            }
+            else if (prodVent == 5)
+            {
+                product = "Huevos";
+            }
+            else 
+            {
+                product = "Huevos";
+            }
+            if (InventoryManager.GetInstance().GiveItem("Tomates", 10))
+            {
+                GameManager.GetInstance().UpdateMoney(200);
+                evText.text = "Muchas Gracias";
+
+                case1.SetActive(true);
+                case2.SetActive(false);
+                caseS.SetActive(false);
+            }
+            
         }
 
     }
