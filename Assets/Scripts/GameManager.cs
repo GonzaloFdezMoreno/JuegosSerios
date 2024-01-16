@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     private GameObject eventFrame;
     [SerializeField]
     private GameObject tutoFrame;
+
+    public GameObject pauseFrame;
 
     private EventProbPop evSpw;
     private TutorialNarr tuto;
@@ -27,6 +30,7 @@ public class GameManager : MonoBehaviour
     int nTuto = 0;
 
     bool tractorPurchased = false;
+    bool isPaused = false;
 
     public enum Season { Spring, Summer, Fall, Winter };
     Season currentSeason;
@@ -37,7 +41,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
         else
         {
@@ -72,6 +76,22 @@ public class GameManager : MonoBehaviour
             tuto.ShowAllHidden();
         }
        
+    }
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if(!isPaused)
+            {
+                pauseFrame.SetActive(true);
+                isPaused = true;
+            }
+            else
+            {
+                pauseFrame.SetActive(false);
+                isPaused = false;
+            }
+        }
     }
 
     public static GameManager GetInstance()
@@ -244,5 +264,12 @@ public class GameManager : MonoBehaviour
     {
         return tutorial;
     }
-
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+    public void OnResume()
+    {
+        isPaused = false;
+    }
 }
