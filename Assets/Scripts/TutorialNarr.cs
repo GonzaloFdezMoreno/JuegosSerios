@@ -36,7 +36,6 @@ public class TutorialNarr : MonoBehaviour
         
         i = 0;
         tut = type;
-        StreamReader sr;
         if (type == 0)
         {
             
