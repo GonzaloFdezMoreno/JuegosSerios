@@ -155,7 +155,7 @@ public class EventProbPop : MonoBehaviour
         
         if (result == 0)
         {
-            evText.text = "Muchas Gracias";
+            evText.text = "Muchas gracias";
             case1.SetActive(true);
             case2.SetActive(false);
             caseS.SetActive(false);
@@ -198,10 +198,10 @@ public class EventProbPop : MonoBehaviour
             {
                 product = "Huevos";
             }
-            if (InventoryManager.GetInstance().GiveItem("Tomates", 10))
+            if (InventoryManager.GetInstance().GiveItem(product, 10))
             {
                 GameManager.GetInstance().UpdateMoney(200);
-                evText.text = "Muchas Gracias";
+                evText.text = "Muchas gracias";
 
                 case1.SetActive(true);
                 case2.SetActive(false);

@@ -250,9 +250,11 @@ public class InventoryManager : MonoBehaviour
         }
         if (index != -1)
         {
-            if (items[index].amount > amount)
+            if (items[index].amount >= amount)
             {
                 items[index].amount -= amount;
+                if (items[index].amount == 0) RemoveItem(items[index]);
+                ListItems();
                 return true;
             }
         }
