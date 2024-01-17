@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Reflection;
 
 public class EventProbPop : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class EventProbPop : MonoBehaviour
     int prodVent=-1;
 
     public int randEvent;
+    bool company=false;
 
     string line;
     bool tutorial;
@@ -66,7 +68,7 @@ public class EventProbPop : MonoBehaviour
 
     public void popEvent(int type)
     {
-        StreamReader sr;
+        UIManager.GetInstance().OnUICanvasClose();
         if (type == 0)
         {
             if (!poppedFix) { 
@@ -132,7 +134,7 @@ public class EventProbPop : MonoBehaviour
                 case2.SetActive(false);
                 caseS.SetActive(true);
 
-                randEvent= Random.Range(0, 6);
+                randEvent= Random.Range(1, 7);
                 line = eventTexts[randEvent].text;
                 prodVent = randEvent;
                 //sr = new StreamReader("Assets/textos/LuzText.txt");
@@ -147,39 +149,67 @@ public class EventProbPop : MonoBehaviour
                 popped = true;
             }
         }
+
+        else if (type == 4)
+        {
+            if (!popped)
+            {
+                this.gameObject.SetActive(true);
+                case1.SetActive(false);
+                case2.SetActive(true);
+                caseS.SetActive(false);
+                //Compañía
+                line = eventTexts[7].text;
+                
+                //sr = new StreamReader("Assets/textos/LuzText.txt");
+                //line = sr.ReadToEnd();
+                evText.text = line;/*"Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
+                    "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
+                    "Es una pena que en este lugar cada vez haya menos gente...";*/
+
+                company = true;
+
+
+                popped = true;
+            }
+        }
     }
 
 
     public void nextText(int result)
     {
-        
+        case1.SetActive(true);
+        case2.SetActive(false);
+        caseS.SetActive(false);
+
         if (result == 0)
         {
             evText.text = "Muchas gracias";
+            if (company)
+            {
+                //deshabilitar el pasto
+                company = false;
+            }
+           
             
         }
         else if(result==1)
         {
             evText.text = "Que pena";
+            company = false;
             
         }
         else
         {
-            case1.SetActive(true);
-            case2.SetActive(false);
-            caseS.SetActive(false);
+            
             string product;
-            if (prodVent == 0)
+            if (prodVent == 1)
             {
-                product = "Huevos";
-            }
-            else if (prodVent == 1)
-            {
-                product = "Huevos";
+                product = "Tomates";
             }
             else if (prodVent == 2)
             {
-                product = "Huevos";
+                product = "Lechugas";
             }
             else if (prodVent == 3)
             {
@@ -187,11 +217,15 @@ public class EventProbPop : MonoBehaviour
             }
             else if (prodVent == 4)
             {
-                product = "Huevos";
+                product = "Leche";
             }
             else if (prodVent == 5)
             {
-                product = "Huevos";
+                product = "Zanahorias";
+            }
+            else if (prodVent == 6)
+            {
+                product = "Guisantes";
             }
             else 
             {
@@ -227,6 +261,12 @@ public class EventProbPop : MonoBehaviour
             GameManager.GetInstance().nextTutorial(7);
             tutorial=false;
         }
+    }
+
+    public void CloseEvent()
+    {
+        UIManager.GetInstance().OnUICanvasClose();
+        this.gameObject.SetActive(false);
     }
 
 }

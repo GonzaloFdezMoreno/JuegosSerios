@@ -6627,6 +6627,46 @@ PrefabInstance:
       propertyPath: txtTutoEvent
       value: 
       objectReference: {fileID: 4900000, guid: b05ee5cd66b8e2642910337a17be8406, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: eventTexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 63d018da4c8f3454fa40bb7795a246ad, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: eventTexts.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: f2634944d282032469cb74550462f4b0, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: eventTexts.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: 0ca1812cbd24cf04aa8fbbf8a5e43fa2, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: eventTexts.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: aef4dcf010a990e44b49ebaa665fccf5, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: eventTexts.Array.data[4]
+      value: 
+      objectReference: {fileID: 4900000, guid: 7d850758703bbf94cb3a1f5901cd0877, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: eventTexts.Array.data[5]
+      value: 
+      objectReference: {fileID: 4900000, guid: da7c58b803072494890a7315c71653eb, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: eventTexts.Array.data[6]
+      value: 
+      objectReference: {fileID: 4900000, guid: 2843e543a8a78c34dbd058a15a09228b, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: eventTexts.Array.data[7]
+      value: 
+      objectReference: {fileID: 4900000, guid: eabdbf3d002f0bf46a04e9965e1c7f8b, type: 3}
     - target: {fileID: 1643814220495036091, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
       propertyPath: m_Name
@@ -8190,6 +8230,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2104591701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &812400412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8186798624222941551, guid: 4ece667693e88cc4dbc7a961ff01fc95,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104591701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812400410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55436d96231c2c4aa8f693c7944966b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &839277206 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 507490821027519477, guid: 53f8ffb9ca75fb349909791380ac77cd,
@@ -21441,14 +21493,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 647523896}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 647523897}
+        m_TargetAssemblyTypeName: EventProbPop, Assembly-CSharp
+        m_MethodName: nextText
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22116,6 +22168,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1637999460}
     m_Modifications:
+    - target: {fileID: 317661284442483747, guid: 4ece667693e88cc4dbc7a961ff01fc95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 317661284442483747, guid: 4ece667693e88cc4dbc7a961ff01fc95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 812400412}
+    - target: {fileID: 317661284442483747, guid: 4ece667693e88cc4dbc7a961ff01fc95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 317661284442483747, guid: 4ece667693e88cc4dbc7a961ff01fc95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Naturalvents, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1882898934202814252, guid: 4ece667693e88cc4dbc7a961ff01fc95,
         type: 3}
       propertyPath: m_Pivot.x

@@ -33,5 +33,10 @@ public class Naturalvents : MonoBehaviour
         UIManager.GetInstance().OnUICanvasOpen();
 
     }
+    public void CloseEvent()
+    {
+        UIManager.GetInstance().OnUICanvasClose();
+        this.gameObject.SetActive(false);
+    }
 
-  }
+}

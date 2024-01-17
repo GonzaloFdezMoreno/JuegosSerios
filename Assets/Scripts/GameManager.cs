@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
             UpdateMoney(-100);
         }
         int natEv = Random.Range(0, 100);
-        if (natEv <= 10)
+        if (natEv <= 10 && !tutorial)
         {
             naturalEv.showWindow((int)currentSeason);
         }
@@ -158,19 +158,21 @@ public class GameManager : MonoBehaviour
         
         if (evSpw.whenAppear > actions)
         {
-            Debug.Log("Salta");
+            
             if (currentWeek+1 == 2 &&!evTutoAppeared) { 
                 evSpw.popEvent(3);
                 nextTutorial(6);
                 evSpw.setIsEventTutorial(true);
                 evTutoAppeared = true;
             }
-            //else
-            //{
-            //    int evType = Random.Range(0, 4);
-            //    //tipo random de evento (aceptar/rechazar,beneficio,informacion) 
-            //    evSpw.popEvent(evType);
-            //}
+            else
+            {
+                Debug.Log("Salta");
+                int evType = Random.Range(2, 5);
+                //tipo random de evento (aceptar/rechazar,beneficio,informacion) 
+                //evSpw.popEvent(evType);
+                evSpw.popEvent(4);
+            }
         }
     }
 
