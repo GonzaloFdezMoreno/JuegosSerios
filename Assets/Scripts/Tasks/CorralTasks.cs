@@ -11,6 +11,11 @@ public class CorralTasks : Task
     public GameObject feedCostText;
     public GameObject healCostText;
 
+    public GameObject chicken1;
+    public GameObject chicken2;
+    public GameObject chicken3;
+    public GameObject chicken4;
+
     int currentEggs;
     int hensNumber;
     const int maxHensNumber = 20;
@@ -47,6 +52,7 @@ public class CorralTasks : Task
         hungryStartTurn = GameManager.GetInstance().GetCurrentWeek();
         CreateEggs();
         UpdateCostTexts();
+        UpdateAnim();
     }
 
     public override void OnNextTurn()
@@ -91,6 +97,7 @@ public class CorralTasks : Task
             if (sickHens == 0) sickStartTurn = GameManager.GetInstance().GetCurrentWeek();
             sickHens += Random.Range(1, 3);
             if (sickHens > hensNumber) sickHens = hensNumber;
+            UpdateAnim();
         }
     }
     public void HealHens()
@@ -98,6 +105,7 @@ public class CorralTasks : Task
         if (GameManager.GetInstance().GetRemainingActions() >= healActCost)
         {
             sickHens = 0;
+            UpdateAnim();
             GameManager.GetInstance().SpendActions(healActCost);
             GameManager.GetInstance().UpdateMoney(-healMoneyCost);
         }
@@ -120,12 +128,14 @@ public class CorralTasks : Task
             sickHens -= rand;
             if (hensNumber < 0) hensNumber = 0;
             if (sickHens < 0) sickHens = 0;
+            UpdateAnim();
         }
         // Si no, pueden nacer gallinas
         else if (hensNumber > 0 && Random.Range(0, 10) < 4)  
         {
             hensNumber += 2;
             if (hensNumber > maxHensNumber) hensNumber = maxHensNumber;
+            UpdateAnim();
         }
     }
     void UpdateCostTexts()
@@ -133,5 +143,69 @@ public class CorralTasks : Task
         collectEggsCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + collectEggsActCost;
         feedCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + feedActCost;
         healCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + healActCost + "\nCoste de dinero: " + healMoneyCost;
+    }
+    void UpdateAnim()
+    {
+        if (hensNumber == 0)
+        {
+            chicken1.SetActive(false);
+            chicken2.SetActive(false);
+            chicken3.SetActive(false);
+            chicken4.SetActive(false);
+        }
+        else if (hensNumber <= 5)
+        {
+            chicken1.SetActive(true);
+            chicken2.SetActive(true);
+            chicken3.SetActive(false);
+            chicken4.SetActive(false);
+
+            chicken1.GetComponent<Animator>().Play("PolloNormal");
+            chicken2.GetComponent<Animator>().Play("PolloNormal");
+            
+            
+        }
+        else if (hensNumber <= 10)
+        {
+            chicken1.SetActive(true);
+            chicken2.SetActive(true);
+            chicken3.SetActive(true);
+            chicken4.SetActive(false);
+
+            chicken1.GetComponent<Animator>().Play("PolloNormal");
+            chicken2.GetComponent<Animator>().Play("PolloNormal");
+            chicken3.GetComponent<Animator>().Play("PolloNormal");
+        }
+        else
+        {
+            chicken1.SetActive(true);
+            chicken2.SetActive(true);
+            chicken3.SetActive(true);
+            chicken4.SetActive(true);
+            chicken1.GetComponent<Animator>().Play("PolloNormal");
+            chicken2.GetComponent<Animator>().Play("PolloNormal");
+            chicken3.GetComponent<Animator>().Play("PolloNormal");
+            chicken4.GetComponent<Animator>().Play("PolloNormal");
+        }
+
+        if (sickHens <= 5) chicken1.GetComponent<Animator>().Play("PolloEnfermo");
+        else if (sickHens <= 10)
+        {
+            chicken1.GetComponent<Animator>().Play("PolloEnfermo");
+            chicken2.GetComponent<Animator>().Play("PolloEnfermo");
+        }
+        else if (sickHens <= 15)
+        {
+            chicken1.GetComponent<Animator>().Play("PolloEnfermo");
+            chicken2.GetComponent<Animator>().Play("PolloEnfermo");
+            chicken3.GetComponent<Animator>().Play("PolloEnfermo");
+        }
+        else
+        {
+            chicken1.GetComponent<Animator>().Play("PolloEnfermo");
+            chicken2.GetComponent<Animator>().Play("PolloEnfermo");
+            chicken3.GetComponent<Animator>().Play("PolloEnfermo");
+            chicken4.GetComponent<Animator>().Play("PolloEnfermo");
+        }
     }
 }

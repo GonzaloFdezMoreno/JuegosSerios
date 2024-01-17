@@ -19,8 +19,6 @@ public class SheepTasks : Task
     public GameObject sheep2;
     public GameObject sheep3;
 
-    public Sprite sheepSprite1;
-    public Sprite sheepSprite2;
 
     bool cheeseProduced; // Si se ha producido queso en el turno actual
     bool canShear; // Si se puede esquilar en el turno actual
