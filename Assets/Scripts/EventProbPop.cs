@@ -25,7 +25,9 @@ public class EventProbPop : MonoBehaviour
     public TextAsset txtTutoEvent;
     public TextAsset txtLuzEvent;
     [SerializeField]
-    TextAsset[] eventTexts = new TextAsset[15];
+    TextAsset[] eventTexts = new TextAsset[10];
+    [SerializeField]
+    TextAsset[] narrTexts = new TextAsset[10];
 
     int prodVent=-1;
 
@@ -111,10 +113,13 @@ public class EventProbPop : MonoBehaviour
             if (!popped)
             {
                 this.gameObject.SetActive(true);
-                case1.SetActive(false);
-                case2.SetActive(true);
+                case1.SetActive(true);
+                case2.SetActive(false);
                 caseS.SetActive(false);
-                
+
+                randEvent = Random.Range(0, 10);
+                line = narrTexts[randEvent].text;
+
                 evText.text = line;/*"Un vecino ha venido a visitarte\n\n\n\n Hola vecino, como le va?" +
                     "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
                     "Es una pena que en este lugar cada vez haya menos gente...";*/
@@ -189,6 +194,7 @@ public class EventProbPop : MonoBehaviour
             {
                 //deshabilitar el pasto
                 GameManager.GetInstance().SellPasture();
+                GameManager.GetInstance().Dealed();
                 company = false;
             }
            

@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     bool tractorPurchased = false;
     bool isPaused = false;
 
+    bool companyDealed = false;
+
     public enum Season { Spring, Summer, Fall, Winter };
     Season currentSeason;
 
@@ -56,7 +58,7 @@ public class GameManager : MonoBehaviour
    
     void Start()
     {
-        endTutorial();
+        //endTutorial();
 
         evSpw = eventFrame.GetComponent<EventProbPop>();
         naturalEv = natFrame.GetComponent<Naturalvents>();
@@ -107,6 +109,11 @@ public class GameManager : MonoBehaviour
     public void OnNextTurnButtonPressed()
     {
         currentWeek++;
+        if (currentWeek+1 > 2)
+        {
+            //a partir de la segunda semana ya pueden salir eventos normales
+            endTutorial();
+        }
         UIManager.GetInstance().UpdateWeekCounter(currentWeek + 1);
         actions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
@@ -117,6 +124,7 @@ public class GameManager : MonoBehaviour
             obj.GetComponent<Task>().OnNextTurn();
         }
         evSpw.newChance(currentWeek);
+        Debug.Log("intento");
         if ((currentWeek+1) % 4 == 0 && currentWeek != 0) { 
             evSpw.popEvent(0);
             UpdateMoney(-100);
@@ -134,15 +142,15 @@ public class GameManager : MonoBehaviour
             }
             naturalEv.showWindow((int)currentSeason);
         }
-        /*if (tutorial)
-        {*/
+        if (tutorial)
+        {
             if (currentWeek + 1 == 2)
             {
                 nextTutorial(5);
                 evSpw.setAppear(60);
                 AdvanceTutorialNumber();
             }
-        //}
+        }
         
     }
     public void UpdateMoney(int amount)
@@ -168,18 +176,25 @@ public class GameManager : MonoBehaviour
         {
             
             if (currentWeek+1 == 2 &&!evTutoAppeared) { 
-                evSpw.popEvent(3);
+                evSpw.popEvent(1);
                 nextTutorial(6);
                 evSpw.setIsEventTutorial(true);
                 evTutoAppeared = true;
             }
-            else
-            {
-                Debug.Log("Salta");
-                int evType = Random.Range(2, 5);
-                //tipo random de evento (aceptar/rechazar,beneficio,informacion) 
-                //evSpw.popEvent(evType);
-                evSpw.popEvent(4);
+            if (!tutorial) {
+                if (!companyDealed)
+                {
+                    Debug.Log("Salta");
+                    int evType = Random.Range(2, 5);
+                    //si no está hecho el trato con la compañia puede seguir apareciendo
+                    evSpw.popEvent(evType);
+                }
+                else
+                {
+                    int evType = Random.Range(2, 4);
+                    evSpw.popEvent(evType);
+                }
+
             }
         }
     }
@@ -314,5 +329,9 @@ public class GameManager : MonoBehaviour
     public bool IsPaused()
     {
         return isPaused;
+    }
+    public void Dealed()
+    {
+        companyDealed = true;
     }
 }
