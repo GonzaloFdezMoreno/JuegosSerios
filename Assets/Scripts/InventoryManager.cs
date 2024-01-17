@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Xml.Serialization;
-using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
