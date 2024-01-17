@@ -22,12 +22,17 @@ public class EventProbPop : MonoBehaviour
 
     public TextMeshProUGUI evText;
 
+    public Image img;
+
     public TextAsset txtTutoEvent;
     public TextAsset txtLuzEvent;
     [SerializeField]
     TextAsset[] eventTexts = new TextAsset[10];
     [SerializeField]
     TextAsset[] narrTexts = new TextAsset[10];
+
+    [SerializeField]
+    Sprite[] images = new Sprite[3];
 
     int prodVent=-1;
 
@@ -85,6 +90,7 @@ public class EventProbPop : MonoBehaviour
                 Debug.Log(line);
                 evText.text = line;//"Debes pagar la luz \n\n\n\n\n -100€";
                 //sr.Close();
+                img.GetComponent<Image>().sprite = images[2];
                 poppedFix = true;
             }
             else 
@@ -106,6 +112,7 @@ public class EventProbPop : MonoBehaviour
                     "Es una pena que en este lugar cada vez haya menos gente...";*/
                 //sr.Close();
                 popped = true;
+                img.GetComponent<Image>().sprite = images[0];
             }
         }
         else if (type==2)
@@ -124,9 +131,7 @@ public class EventProbPop : MonoBehaviour
                     "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
                     "Es una pena que en este lugar cada vez haya menos gente...";*/
 
-                
-
-
+                img.GetComponent<Image>().sprite = images[1];
                 popped = true;
             }
         }
@@ -148,8 +153,8 @@ public class EventProbPop : MonoBehaviour
                     "\n El otro dia me enteré de que Paco ha decidido mudarse a otro sitio\n" +
                     "Es una pena que en este lugar cada vez haya menos gente...";*/
 
-                
 
+                img.GetComponent<Image>().sprite = images[1];
 
                 popped = true;
             }
@@ -173,7 +178,7 @@ public class EventProbPop : MonoBehaviour
                     "Es una pena que en este lugar cada vez haya menos gente...";*/
 
                 company = true;
-
+                img.GetComponent<Image>().sprite = images[2];
 
                 popped = true;
             }

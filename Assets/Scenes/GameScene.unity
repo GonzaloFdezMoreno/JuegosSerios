@@ -6918,6 +6918,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
+      propertyPath: img
+      value: 
+      objectReference: {fileID: 1927318869}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
       propertyPath: case1
       value: 
       objectReference: {fileID: 1972151612}
@@ -6946,6 +6951,29 @@ PrefabInstance:
       propertyPath: txtTutoEvent
       value: 
       objectReference: {fileID: 4900000, guid: b05ee5cd66b8e2642910337a17be8406, type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: images.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: images.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: e4f6f26be7d763e48bfb7a076a34e73d,
+        type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: images.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: e4f6f26be7d763e48bfb7a076a34e73d,
+        type: 3}
+    - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: e4f6f26be7d763e48bfb7a076a34e73d,
+        type: 3}
     - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
       propertyPath: narrTexts.Array.data[0]
@@ -7044,7 +7072,7 @@ PrefabInstance:
     - target: {fileID: 1643814220495036091, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6894534606244553706, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
