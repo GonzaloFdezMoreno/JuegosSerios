@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SheepTasks : Task
 {
@@ -12,6 +13,13 @@ public class SheepTasks : Task
     public GameObject pastureCostText;
     public GameObject healCostText;
     public GameObject cannotShearText;
+
+    public GameObject sheep1;
+    public GameObject sheep2;
+    public GameObject sheep3;
+
+    public Sprite sheepSprite1;
+    public Sprite sheepSprite2;
 
     bool cheeseProduced; // Si se ha producido queso en el turno actual
     bool canShear; // Si se puede esquilar en el turno actual
@@ -123,6 +131,16 @@ public class SheepTasks : Task
         if (GameManager.GetInstance().GetRemainingActions() >= healActCost)
         {
             sickSheeps = 0;
+            if (canShear)
+            {
+                sheep1.GetComponent<Image>().sprite = sheepSprite1;
+                sheep2.GetComponent<Image>().sprite = sheepSprite1;
+                sheep3.GetComponent<Image>().sprite = sheepSprite1;
+            }
+            else
+            {
+
+            }
             GameManager.GetInstance().SpendActions(healActCost);
             GameManager.GetInstance().UpdateMoney(-healMoneyCost);
         }
@@ -139,6 +157,16 @@ public class SheepTasks : Task
             if (sickSheeps == 0) sickStartTurn = GameManager.GetInstance().GetCurrentWeek();
             sickSheeps++;
             if (sickSheeps > sheepNumber) sickSheeps = sheepNumber;
+            if (canShear)
+            {
+                if (sickSheeps == 1) sheep1.GetComponent<Image>().sprite = sheepSprite2;
+                if (sickSheeps == 2) sheep2.GetComponent<Image>().sprite = sheepSprite2;
+                if (sickSheeps == 3) sheep3.GetComponent<Image>().sprite = sheepSprite2;
+            }
+            else
+            {
+
+            }
         }
     }
     void UpdateSheepsNumber()
@@ -150,6 +178,21 @@ public class SheepTasks : Task
             sickSheeps -= rand;
             if (sheepNumber < 0) sheepNumber = 0;
             if (sickSheeps < 0) sickSheeps = 0;
+            if (sheepNumber == 0)
+            {
+                sheep1.SetActive(false);
+                sheep2.SetActive(false);
+                sheep3.SetActive(false);
+            }
+            if (sheepNumber == 1)
+            {
+                sheep2.SetActive(false);
+                sheep3.SetActive(false);
+            }
+            if (sheepNumber == 2)
+            {
+                sheep3.SetActive(false);
+            }
         }
     }
     void HideCannotShearText()
