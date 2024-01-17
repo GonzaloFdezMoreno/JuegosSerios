@@ -194,6 +194,19 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
+    public void SellPasture()
+    {
+        foreach (GameObject obj in structures)
+        {
+            if (obj.GetComponent<PastureTasks>() != null && obj.GetComponent<PastureTasks>().IsAvailable())
+            {
+                obj.GetComponent<PastureTasks>().Sell();
+                UpdateMoney(1000);
+                return;
+            }
+
+        }
+    }
 
     public void nextTutorial(int i)
     {
@@ -284,5 +297,14 @@ public class GameManager : MonoBehaviour
     public void OnResume()
     {
         isPaused = false;
+    }
+    public void PauseClicked()
+    {
+        pauseFrame.SetActive(true);
+        isPaused = true;
+    }
+    public bool IsPaused()
+    {
+        return isPaused;
     }
 }

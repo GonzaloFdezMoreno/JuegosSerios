@@ -21,13 +21,13 @@ public class HouseStructure : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log(onTutorial);
-        if (!onTutorial && taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen()) 
+        if (!onTutorial && taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen() && !GameManager.GetInstance().IsPaused()) 
         {
             taskCanvas.SetActive(true);
             UIManager.GetInstance().OnUICanvasOpen();
             return;
         }
-        if (shopCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen())
+        if (shopCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen() && !GameManager.GetInstance().IsPaused()) 
         {
             shopCanvas.SetActive(true);
             UIManager.GetInstance().OnUICanvasOpen();
@@ -55,7 +55,7 @@ public class HouseStructure : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (frame != null) frame.SetActive(true);
+        if (frame != null && !GameManager.GetInstance().IsPaused()) frame.SetActive(true);
     }
     private void OnMouseExit()
     {

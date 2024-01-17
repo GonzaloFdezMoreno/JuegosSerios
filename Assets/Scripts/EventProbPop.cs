@@ -188,6 +188,7 @@ public class EventProbPop : MonoBehaviour
             if (company)
             {
                 //deshabilitar el pasto
+                GameManager.GetInstance().SellPasture();
                 company = false;
             }
            
