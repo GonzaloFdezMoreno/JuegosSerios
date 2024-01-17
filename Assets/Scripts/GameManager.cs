@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     
     [SerializeField]
     private GameObject natFrame;
+    [SerializeField]
+    private GameObject endFrame;
 
 
     public GameObject pauseFrame;
@@ -157,6 +159,12 @@ public class GameManager : MonoBehaviour
     {
         money += amount;
         UIManager.GetInstance().UpdateMoneyCounter(money);
+
+        if (money <= 0)
+        {
+            endFrame.SetActive(true);
+            UIManager.GetInstance().OnUICanvasOpen();
+        }
     }
     public int GetCurrentMoney()
     {
