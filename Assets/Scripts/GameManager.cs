@@ -111,11 +111,7 @@ public class GameManager : MonoBehaviour
     public void OnNextTurnButtonPressed()
     {
         currentWeek++;
-        if (currentWeek+1 > 2)
-        {
-            //a partir de la segunda semana ya pueden salir eventos normales
-            endTutorial();
-        }
+       
         UIManager.GetInstance().UpdateWeekCounter(currentWeek + 1);
         actions = 84;
         UIManager.GetInstance().UpdateRemainingActions(actions);
@@ -189,7 +185,7 @@ public class GameManager : MonoBehaviour
                 evSpw.setIsEventTutorial(true);
                 evTutoAppeared = true;
             }
-            if (!tutorial) {
+            if (currentWeek+1>2) {
                 if (!companyDealed)
                 {
                     Debug.Log("Salta");
