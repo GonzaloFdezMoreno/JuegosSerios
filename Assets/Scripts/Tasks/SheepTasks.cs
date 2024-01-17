@@ -67,9 +67,10 @@ public class SheepTasks : Task
         hungryStartTurn = GameManager.GetInstance().GetCurrentWeek();
         UpdateCostTexts();
 
-        sheep1.GetComponent<Animator>().Play("OvejaNormal");
+        /*sheep1.GetComponent<Animator>().Play("OvejaNormal");
         sheep2.GetComponent<Animator>().Play("OvejaNormal");
-        sheep3.GetComponent<Animator>().Play("OvejaNormal");
+        sheep3.GetComponent<Animator>().Play("OvejaNormal");*/
+        UpdateAnim();
     }
 
     public override void OnNextTurn()
@@ -84,6 +85,7 @@ public class SheepTasks : Task
         if (!canShear && GameManager.GetInstance().GetCurrentWeek() >= lastShearWeek + weeksToShear) 
         {
             canShear = true;
+            UpdateAnim();
         }
         UpdateSickSheeps();
         UpdateSheepsNumber();
@@ -92,6 +94,7 @@ public class SheepTasks : Task
     }
     public void ProduceCheese()
     {
+        if (sheepNumber == 0) return;
         if (!cheeseProduced && GameManager.GetInstance().GetRemainingActions() >= cheeseProdActCost)
         {
             Item newItem = (Item)ScriptableObject.Instantiate(cheese);
@@ -103,6 +106,7 @@ public class SheepTasks : Task
     }
     public void ShearSheeps()
     {
+        if (sheepNumber == 0) return;
         if (GameManager.GetInstance().GetRemainingActions() >= sheerActCost * sheepNumber) 
         {
             if(canShear)
@@ -113,6 +117,7 @@ public class SheepTasks : Task
                 canShear = false;
                 lastShearWeek = GameManager.GetInstance().GetCurrentWeek();
                 GameManager.GetInstance().SpendActions(sheerActCost * sheepNumber);
+                UpdateAnim();
             }
             else
             {
@@ -124,6 +129,7 @@ public class SheepTasks : Task
 
     public void Pasture()
     {
+        if (sheepNumber == 0) return;
         if (GameManager.GetInstance().PastureAvailable() && GameManager.GetInstance().GetRemainingActions() >= pastureActCost)
         {
             hungry = false;
@@ -133,19 +139,11 @@ public class SheepTasks : Task
     }
     public void HealSheeps()
     {
+        if (sheepNumber == 0) return;
         if (GameManager.GetInstance().GetRemainingActions() >= healActCost)
         {
             sickSheeps = 0;
-            if (canShear)
-            {
-                sheep1.GetComponent<Animator>().Play("OvejaNormal");
-                sheep2.GetComponent<Animator>().Play("OvejaNormal");
-                sheep3.GetComponent<Animator>().Play("OvejaNormal");
-            }
-            else
-            {
-
-            }
+            UpdateAnim();
             GameManager.GetInstance().SpendActions(healActCost);
             GameManager.GetInstance().UpdateMoney(-healMoneyCost);
         }
@@ -162,16 +160,7 @@ public class SheepTasks : Task
             if (sickSheeps == 0) sickStartTurn = GameManager.GetInstance().GetCurrentWeek();
             sickSheeps++;
             if (sickSheeps > sheepNumber) sickSheeps = sheepNumber;
-            if (canShear)
-            {
-                if (sickSheeps == 1) sheep1.GetComponent<Animator>().Play("OvejaEnferma");
-                if (sickSheeps == 2) sheep2.GetComponent<Animator>().Play("OvejaEnferma");
-                if (sickSheeps == 3) sheep3.GetComponent<Animator>().Play("OvejaEnferma");
-            }
-            else
-            {
-
-            }
+            UpdateAnim();
         }
     }
     void UpdateSheepsNumber()
@@ -183,21 +172,7 @@ public class SheepTasks : Task
             sickSheeps -= rand;
             if (sheepNumber < 0) sheepNumber = 0;
             if (sickSheeps < 0) sickSheeps = 0;
-            if (sheepNumber == 0)
-            {
-                sheep1.SetActive(false);
-                sheep2.SetActive(false);
-                sheep3.SetActive(false);
-            }
-            if (sheepNumber == 1)
-            {
-                sheep2.SetActive(false);
-                sheep3.SetActive(false);
-            }
-            if (sheepNumber == 2)
-            {
-                sheep3.SetActive(false);
-            }
+            UpdateAnim();
         }
     }
     void HideCannotShearText()
@@ -210,5 +185,120 @@ public class SheepTasks : Task
         shearCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + sheerActCost * sheepNumber;
         pastureCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + pastureActCost + "\nNecesita: tener un terreno de pasto";
         healCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + healActCost + "\nCoste de dinero: " + healMoneyCost;
+    }
+    void UpdateAnim()
+    {
+        if (sheepNumber == 0)
+        {
+            sheep1.SetActive(false);
+            sheep2.SetActive(false);
+            sheep3.SetActive(false);
+        }
+        else if (sheepNumber == 1)
+        {
+            sheep2.SetActive(false);
+            sheep3.SetActive(false);
+            if (canShear)
+            {
+                sheep1.GetComponent<Animator>().Play("OvejaNormal");
+                if (sickSheeps == 1) sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                else if (sickSheeps == 2)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                }
+                else if (sickSheeps == 3)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                }
+            }
+            else
+            {
+                sheep1.GetComponent<Animator>().Play("OvejaEsquilada");
+                if (sickSheeps == 1) sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                else if (sickSheeps == 2)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                }
+                else if (sickSheeps == 3)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                }
+            }
+        }
+        else if (sheepNumber == 2)
+        {
+            sheep3.SetActive(false);
+            if (canShear)
+            {
+                sheep1.GetComponent<Animator>().Play("OvejaNormal");
+                sheep2.GetComponent<Animator>().Play("OvejaNormal");
+                if (sickSheeps == 1) sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                else if (sickSheeps == 2)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                    sheep2.GetComponent<Animator>().Play("OvejaEnferma");
+                }
+                else if (sickSheeps == 3)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                    sheep2.GetComponent<Animator>().Play("OvejaEnferma");
+                }
+            }
+            else
+            {
+                sheep1.GetComponent<Animator>().Play("OvejaEsquilada");
+                sheep2.GetComponent<Animator>().Play("OvejaEsquilada");
+                if (sickSheeps == 1) sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                else if (sickSheeps == 2)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                    sheep2.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                }
+                else if (sickSheeps == 3)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                    sheep2.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                }
+            }
+        }
+        else if (sheepNumber == 3)
+        {
+            if (canShear)
+            {
+                sheep1.GetComponent<Animator>().Play("OvejaNormal");
+                sheep2.GetComponent<Animator>().Play("OvejaNormal");
+                sheep3.GetComponent<Animator>().Play("OvejaNormal");
+                if (sickSheeps == 1) sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                else if (sickSheeps == 2)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                    sheep2.GetComponent<Animator>().Play("OvejaEnferma");
+                }
+                else if (sickSheeps == 3)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                    sheep2.GetComponent<Animator>().Play("OvejaEnferma");
+                    sheep3.GetComponent<Animator>().Play("OvejaEnferma");
+                }
+            }
+            else
+            {
+                sheep1.GetComponent<Animator>().Play("OvejaEsquilada");
+                sheep2.GetComponent<Animator>().Play("OvejaEsquilada");
+                sheep3.GetComponent<Animator>().Play("OvejaEsquilada");
+                if (sickSheeps == 1) sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                else if (sickSheeps == 2)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                    sheep2.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                }
+                else if (sickSheeps == 3)
+                {
+                    sheep1.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                    sheep2.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                    sheep3.GetComponent<Animator>().Play("OvejaEnfermaEsquilada");
+                }
+            }
+        }
     }
 }

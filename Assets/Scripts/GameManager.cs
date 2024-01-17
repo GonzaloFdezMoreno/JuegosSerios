@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     private static GameManager Instance;
     private int currentWeek;
-    private const int weeksPerSeason = 12;
+    private const int weeksPerSeason = 8;
     private int money;
     private int actions;
     private int maxActions;
