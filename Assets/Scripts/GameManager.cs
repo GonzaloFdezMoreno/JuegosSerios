@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("intento");
         if ((currentWeek+1) % 4 == 0 && currentWeek != 0) { 
             evSpw.popEvent(0);
-            UpdateMoney(-100);
+            UpdateMoney(-250);
         }
         int natEv = Random.Range(0, 100);
         if (natEv <= 10 && !tutorial)
@@ -333,5 +333,6 @@ public class GameManager : MonoBehaviour
     public void Dealed()
     {
         companyDealed = true;
+        UpdateMoney(1000);
     }
 }
