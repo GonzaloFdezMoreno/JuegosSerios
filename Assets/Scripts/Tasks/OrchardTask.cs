@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class OrchardTask : Task
 {
@@ -30,6 +31,18 @@ public class OrchardTask : Task
     public GameObject plantPeaCostText;
     public GameObject plantLettuceCostText;
     public GameObject cleanOrchardCostText;
+
+    public GameObject plant1;
+    public GameObject plant2;
+    public GameObject plant3;
+    public GameObject plant4;
+
+    public Sprite plantGrowth0;
+    public Sprite plantGrowth1;
+    public Sprite plantGrowth2;
+    public Sprite plantGrowth3;
+    public Sprite plantGrowth4;
+    public Sprite plantGrowth5;
 
     const int orchardSpots = 4; // Numero de huecos para plantar en el huerto 
 
@@ -81,23 +94,51 @@ public class OrchardTask : Task
                 {
                     case GameManager.Season.Spring:
                         if (spots[i].vegType == Vegetable.Peas)
+                        {
                             spots[i].age++;
-                        else spots[i].age = spots[i].timeToDie;
+                            if (spots[i].age == spots[i].timeToBloom) UpdatePlantSprite(i, plantGrowth1);
+                        }
+                        else
+                        {
+                            spots[i].age = spots[i].timeToDie;
+                            UpdatePlantSprite(i, plantGrowth0);
+                        }
                         break;
                     case GameManager.Season.Summer:
                         if (spots[i].vegType == Vegetable.Tomatoes)
+                        {
                             spots[i].age++;
-                        else spots[i].age = spots[i].timeToDie;
+                            if (spots[i].age == spots[i].timeToBloom) UpdatePlantSprite(i, plantGrowth4);
+                        }
+                        else
+                        {
+                            spots[i].age = spots[i].timeToDie;
+                            UpdatePlantSprite(i, plantGrowth0);
+                        }
                         break;
                     case GameManager.Season.Fall:
                         if (spots[i].vegType == Vegetable.Lettuce)
+                        {
                             spots[i].age++;
-                        else spots[i].age = spots[i].timeToDie;
+                            if (spots[i].age == spots[i].timeToBloom) UpdatePlantSprite(i, plantGrowth3);
+                        }
+                        else
+                        {
+                            spots[i].age = spots[i].timeToDie;
+                            UpdatePlantSprite(i, plantGrowth0);
+                        }
                         break;
                     case GameManager.Season.Winter:
                         if (spots[i].vegType == Vegetable.Carrots)
+                        {
                             spots[i].age++;
-                        else spots[i].age = spots[i].timeToDie;
+                            if (spots[i].age == spots[i].timeToBloom) UpdatePlantSprite(i, plantGrowth2);
+                        }
+                        else
+                        {
+                            spots[i].age = spots[i].timeToDie;
+                            UpdatePlantSprite(i, plantGrowth0);
+                        }
                         break;
                     default:
                         break;
@@ -219,6 +260,7 @@ public class OrchardTask : Task
                     break;
                 default: break;
             }
+            UpdatePlantSprite(index, plantGrowth5);
             SpendActions(plantActCost);
         }
         else // Si no mostramos el texto de que no tenemos semillas
@@ -232,6 +274,7 @@ public class OrchardTask : Task
         spots[index].age = 0;
         spots[index].timeToBloom = 0;
         spots[index].timeToDie = 0;
+        UpdatePlantSprite(index, null);
     }
     bool CanDoTask(int actCost)
     {
@@ -255,5 +298,48 @@ public class OrchardTask : Task
         plantPeaCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + plantActCost / tractorDivFactor + "\nNecesita: semillas de guisante";
         plantLettuceCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + plantActCost / tractorDivFactor + "\nNecesita: semillas de lechuga";
         cleanOrchardCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + cleanActCost / tractorDivFactor;
+    }
+    void UpdatePlantSprite(int index, Sprite sprite)
+    {
+        if (index == 0)
+        {
+            if (sprite == null)
+            {
+                plant1.SetActive(false);
+                return;
+            }
+            plant1.SetActive(true);
+            plant1.GetComponent<Image>().sprite = sprite;
+        }
+        else if (index == 1)
+        {
+            if (sprite == null)
+            {
+                plant2.SetActive(false);
+                return;
+            }
+            plant2.SetActive(true);
+            plant2.GetComponent<Image>().sprite = sprite;
+        }
+        else if (index == 2)
+        {
+            if (sprite == null)
+            {
+                plant3.SetActive(false);
+                return;
+            }
+            plant3.SetActive(true);
+            plant3.GetComponent<Image>().sprite = sprite;
+        }
+        else if (index == 3)
+        {
+            if (sprite == null)
+            {
+                plant4.SetActive(false);
+                return;
+            }
+            plant4.SetActive(true);
+            plant4.GetComponent<Image>().sprite = sprite;
+        }
     }
 }
