@@ -18,7 +18,7 @@ public class Structure : MonoBehaviour
     
     private void OnMouseDown()
     {
-        if (taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen()) 
+        if (taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen() && !GameManager.GetInstance().IsPaused()) 
         {
             taskCanvas.SetActive(true);
             UIManager.GetInstance().OnUICanvasOpen();
@@ -44,7 +44,7 @@ public class Structure : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (frame != null) frame.SetActive(true);
+        if (frame != null && !GameManager.GetInstance().IsPaused()) frame.SetActive(true);
     }
     private void OnMouseExit()
     {
