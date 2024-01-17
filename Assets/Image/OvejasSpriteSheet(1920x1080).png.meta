@@ -114,7 +114,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 72
+        y: 216
         width: 96
         height: 72
       alignment: 0
@@ -135,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 72
+        y: 216
         width: 96
         height: 72
       alignment: 0
@@ -156,7 +156,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 144
         width: 96
         height: 72
       alignment: 0
@@ -177,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 144
         width: 96
         height: 72
       alignment: 0
@@ -189,6 +189,90 @@ TextureImporter:
       bones: []
       spriteID: 0f9bb24ce9b53144a8c2715d08dc53ce
       internalID: 230248492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OvejasSpriteSheet(1920x1080)_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 96
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9771d0fb450274746a676eac8afb9299
+      internalID: 989472119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OvejasSpriteSheet(1920x1080)_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 72
+        width: 96
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420a6defde330a94abe02518423930b2
+      internalID: 1835778295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OvejasSpriteSheet(1920x1080)_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf223ee3387bb341ba8075f8c7e58b7
+      internalID: 717603340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OvejasSpriteSheet(1920x1080)_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a4807b6d2045c449f2535f456fbe90
+      internalID: 746198724
       vertices: []
       indices: 
       edges: []
@@ -208,6 +292,10 @@ TextureImporter:
       OvejasSpriteSheet(1920x1080)_1: -712733258
       OvejasSpriteSheet(1920x1080)_2: 445652397
       OvejasSpriteSheet(1920x1080)_3: 230248492
+      OvejasSpriteSheet(1920x1080)_4: 989472119
+      OvejasSpriteSheet(1920x1080)_5: 1835778295
+      OvejasSpriteSheet(1920x1080)_6: 717603340
+      OvejasSpriteSheet(1920x1080)_7: 746198724
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
