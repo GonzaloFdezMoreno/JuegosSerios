@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 17
   itemName: Tractor
   amount: 0
-  sprite: {fileID: -374639988, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
+  sprite: {fileID: -1209433516, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
   description: "El tractor amarillo que siempre quisiste. Con \xE9l, las tareas del
     campo ser\xE1n mucho m\xE1s sencillas de realizar."
   prize: 3000

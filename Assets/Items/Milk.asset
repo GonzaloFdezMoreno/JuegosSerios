@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 2
   itemName: Leche
   amount: 0
-  sprite: {fileID: -2047269651, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
+  sprite: {fileID: -1470698759, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
   description: 
   prize: 10

@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 17
   itemName: Semillas de tomate
   amount: 0
-  sprite: {fileID: 261873616, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
+  sprite: {fileID: -374639988, guid: cea348d07ae47f44db69a40b5c5feb3d, type: 3}
   description: Semillas de tomate. Solo crecen en verano.
   prize: 3
