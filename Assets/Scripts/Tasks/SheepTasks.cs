@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SheepTasks : Task
 {
+
     public Item cheese;
     public Item wool;
     public GameObject cheeseProdCostText;
@@ -133,9 +134,9 @@ public class SheepTasks : Task
             sickSheeps = 0;
             if (canShear)
             {
-                sheep1.GetComponent<Image>().sprite = sheepSprite1;
-                sheep2.GetComponent<Image>().sprite = sheepSprite1;
-                sheep3.GetComponent<Image>().sprite = sheepSprite1;
+                sheep1.GetComponent<Animator>().Play("OvejaNormal");
+                sheep2.GetComponent<Animator>().Play("OvejaNormal");
+                sheep3.GetComponent<Animator>().Play("OvejaNormal");
             }
             else
             {
@@ -159,9 +160,9 @@ public class SheepTasks : Task
             if (sickSheeps > sheepNumber) sickSheeps = sheepNumber;
             if (canShear)
             {
-                if (sickSheeps == 1) sheep1.GetComponent<Image>().sprite = sheepSprite2;
-                if (sickSheeps == 2) sheep2.GetComponent<Image>().sprite = sheepSprite2;
-                if (sickSheeps == 3) sheep3.GetComponent<Image>().sprite = sheepSprite2;
+                if (sickSheeps == 1) sheep1.GetComponent<Animator>().Play("OvejaEnferma");
+                if (sickSheeps == 2) sheep2.GetComponent<Animator>().Play("OvejaEnferma");
+                if (sickSheeps == 3) sheep3.GetComponent<Animator>().Play("OvejaEnferma");
             }
             else
             {
