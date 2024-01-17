@@ -124,6 +124,14 @@ public class GameManager : MonoBehaviour
         int natEv = Random.Range(0, 100);
         if (natEv <= 10 && !tutorial)
         {
+            foreach (GameObject obj in structures)
+            {
+                if (obj.GetComponent<OrchardTask>() != null)
+                {
+                    obj.GetComponent<OrchardTask>().KillPlants();
+                    break;
+                }
+            }
             naturalEv.showWindow((int)currentSeason);
         }
         /*if (tutorial)

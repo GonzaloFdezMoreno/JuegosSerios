@@ -11,7 +11,11 @@ public class CowshedTasks : Task
     public GameObject milkCostText;
     public GameObject feedCostText;
     public GameObject pastureCostText;
-    public GameObject healCostText; 
+    public GameObject healCostText;
+
+    public GameObject cow1;
+    public GameObject cow2;
+    public GameObject cow3;
 
     bool milked; // Si se ha ordeñado ya a las vacas en el turno actual
     int cowsNumber;
@@ -49,6 +53,7 @@ public class CowshedTasks : Task
         hungry = true;
         hungryStartTurn = GameManager.GetInstance().GetCurrentWeek();
         UpdateCostTexts();
+        UpdateAnim();
     }
    
     public override void OnNextTurn()
@@ -103,6 +108,7 @@ public class CowshedTasks : Task
             sickCows = 0;
             GameManager.GetInstance().SpendActions(healActCost);
             GameManager.GetInstance().UpdateMoney(-healMoneyCost);
+            UpdateAnim();
         }
     }
     void UpdateSickCows()
@@ -117,6 +123,7 @@ public class CowshedTasks : Task
             if (sickCows == 0) sickStartTurn = GameManager.GetInstance().GetCurrentWeek();
             sickCows++;
             if (sickCows > cowsNumber) sickCows = cowsNumber;
+            UpdateAnim();
         }
     }
     void UpdateCowsNumber()
@@ -128,6 +135,7 @@ public class CowshedTasks : Task
             sickCows -= rand;
             if (cowsNumber < 0) cowsNumber = 0;
             if (sickCows < 0) sickCows = 0;
+            UpdateAnim();
         }
     }
     void UpdateCostTexts()
@@ -136,5 +144,54 @@ public class CowshedTasks : Task
         feedCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + feedActCost + "\nNecesita: "+ cowsNumber * dailyMeal+" de heno";
         pastureCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + pastureActCost + "\nNecesita: tener un terreno de pasto" ;
         healCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + healActCost + "\nCoste de dinero: " + healMoneyCost;
+    }
+    void UpdateAnim()
+    {
+        if (cowsNumber == 0)
+        {
+            cow1.SetActive(false);
+            cow2.SetActive(false);
+            cow3.SetActive(false);
+        }
+        else if (cowsNumber == 1)
+        {
+            cow1.SetActive(true);
+            cow2.SetActive(false);
+            cow3.SetActive(false);
+
+            cow1.GetComponent<Animator>().Play("VacaNormal");
+        }
+        else if (cowsNumber == 2)
+        {
+            cow1.SetActive(true);
+            cow2.SetActive(true);
+            cow3.SetActive(false);
+
+            cow1.GetComponent<Animator>().Play("VacaNormal");
+            cow1.GetComponent<Animator>().Play("VacaNormal");
+        }
+        else if (cowsNumber == 3) 
+        {
+            cow1.SetActive(true);
+            cow2.SetActive(true);
+            cow3.SetActive(true);
+
+            cow1.GetComponent<Animator>().Play("VacaNormal");
+            cow1.GetComponent<Animator>().Play("VacaNormal");
+            cow1.GetComponent<Animator>().Play("VacaNormal");
+        }
+
+        if (sickCows == 1) cow1.GetComponent<Animator>().Play("VacaEnferma");
+        else if (sickCows == 2)
+        {
+            cow1.GetComponent<Animator>().Play("VacaEnferma");
+            cow2.GetComponent<Animator>().Play("VacaEnferma");
+        }
+        else if (sickCows == 3)
+        {
+            cow1.GetComponent<Animator>().Play("VacaEnferma");
+            cow2.GetComponent<Animator>().Play("VacaEnferma");
+            cow3.GetComponent<Animator>().Play("VacaEnferma");
+        }
     }
 }

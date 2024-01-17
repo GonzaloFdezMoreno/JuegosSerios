@@ -288,6 +288,16 @@ public class OrchardTask : Task
         if (GameManager.GetInstance().IsTractorPurchased()) tractorDivFactor = 2;
         GameManager.GetInstance().SpendActions(actCost / tractorDivFactor);
     }
+    public void KillPlants()
+    {
+        for (int i = 0; i < orchardSpots; i++)
+        {
+            if (spots[i].vegType != Vegetable.NONE)
+            {
+                spots[i].age = spots[i].timeToDie;
+            }
+        }
+    }
     void UpdateCostTexts()
     {
         int tractorDivFactor = 1;
