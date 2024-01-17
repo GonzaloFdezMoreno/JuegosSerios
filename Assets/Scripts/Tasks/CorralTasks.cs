@@ -141,7 +141,7 @@ public class CorralTasks : Task
     void UpdateCostTexts()
     {
         collectEggsCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + collectEggsActCost;
-        feedCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + feedActCost;
+        feedCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + feedActCost+ "\nNecesita: " + hensNumber + " de pienso";
         healCostText.GetComponent<TextMeshProUGUI>().text = "Coste en acciones: " + healActCost + "\nCoste de dinero: " + healMoneyCost;
     }
     void UpdateAnim()

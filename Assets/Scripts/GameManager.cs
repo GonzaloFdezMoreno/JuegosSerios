@@ -275,6 +275,15 @@ public class GameManager : MonoBehaviour
     public void OnTractorPurchased()
     {
         tractorPurchased = true;
+        foreach (GameObject obj in structures)
+        {
+            if (obj.GetComponent<OrchardTask>() != null)
+            {
+                obj.GetComponent<OrchardTask>().OnTractorPurchased();
+                break;
+            }
+
+        }
         if (tutorial)
         {
             nextTutorial(9);

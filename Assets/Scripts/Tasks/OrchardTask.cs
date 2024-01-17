@@ -295,8 +295,13 @@ public class OrchardTask : Task
             if (spots[i].vegType != Vegetable.NONE)
             {
                 spots[i].age = spots[i].timeToDie;
+                UpdatePlantSprite(i, plantGrowth0);
             }
         }
+    }
+    public void OnTractorPurchased()
+    {
+        UpdateCostTexts();
     }
     void UpdateCostTexts()
     {

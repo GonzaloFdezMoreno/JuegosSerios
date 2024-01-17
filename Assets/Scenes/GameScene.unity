@@ -14157,7 +14157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160.19684, y: -218.64563}
+  m_AnchoredPosition: {x: 163.49, y: -179.6}
   m_SizeDelta: {x: 164.3937, y: 59.2913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235444987
@@ -17990,7 +17990,7 @@ MonoBehaviour:
   startingItems:
   - {fileID: 11400000, guid: 525332a06d0cef24987190a1b8734bef, type: 2}
   - {fileID: 11400000, guid: 7ae918b3c3882ad47aa2932f080116ff, type: 2}
-  - {fileID: 11400000, guid: 0ecfa5832fc399d4a85ea280615d193d, type: 2}
+  - {fileID: 11400000, guid: 407b8cd9f9dcc1e46a6360c044b9ee80, type: 2}
   startingItemsAmount: 140000002a00000001000000
   inventoryItem: {fileID: 7033742589142811319, guid: 53f8ffb9ca75fb349909791380ac77cd,
     type: 3}
