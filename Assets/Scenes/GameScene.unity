@@ -6020,7 +6020,7 @@ PrefabInstance:
     - target: {fileID: 676524138783720674, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1153665552707050665, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
@@ -7145,8 +7145,8 @@ MonoBehaviour:
   healCostText: {fileID: 1670902241}
   cannotShearText: {fileID: 1475387919}
   sheep1: {fileID: 1688149945}
-  sheep2: {fileID: 0}
-  sheep3: {fileID: 0}
+  sheep2: {fileID: 2093374026}
+  sheep3: {fileID: 1905792961}
   sheepSprite1: {fileID: -813921196, guid: 9ee46a4f7a1f0ff46a690897d0a7ec42, type: 3}
   sheepSprite2: {fileID: 445652397, guid: 9ee46a4f7a1f0ff46a690897d0a7ec42, type: 3}
 --- !u!1 &707784333
@@ -21000,6 +21000,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f8ffb9ca75fb349909791380ac77cd, type: 3}
+--- !u!1 &1905792961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3309018543918619050, guid: 14d24a05fdd3d614f91d0f40b718eb94,
+    type: 3}
+  m_PrefabInstance: {fileID: 760512056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1905792962 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 750364667558592054, guid: 14d24a05fdd3d614f91d0f40b718eb94,
@@ -21633,7 +21639,7 @@ PrefabInstance:
     - target: {fileID: 676524138783720674, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1153665552707050665, guid: 3f9f9f47b79432644b508a8e4cda70b2,
         type: 3}
@@ -23106,6 +23112,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1626513470}
   m_SourcePrefab: {fileID: 100100000, guid: 079b4b99ab9f23745967875ac0db969d, type: 3}
+--- !u!1 &2093374026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3309018543918619050, guid: 14d24a05fdd3d614f91d0f40b718eb94,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368717855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2093374027 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 750364667558592054, guid: 14d24a05fdd3d614f91d0f40b718eb94,

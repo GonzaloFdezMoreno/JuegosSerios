@@ -66,6 +66,10 @@ public class SheepTasks : Task
         hungry = true;
         hungryStartTurn = GameManager.GetInstance().GetCurrentWeek();
         UpdateCostTexts();
+
+        sheep1.GetComponent<Animator>().Play("OvejaNormal");
+        sheep2.GetComponent<Animator>().Play("OvejaNormal");
+        sheep3.GetComponent<Animator>().Play("OvejaNormal");
     }
 
     public override void OnNextTurn()
