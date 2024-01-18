@@ -6966,7 +6966,7 @@ PrefabInstance:
         type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: e4f6f26be7d763e48bfb7a076a34e73d,
+      objectReference: {fileID: 21300000, guid: 4423b50eb4aad88498707d28e58cac54,
         type: 3}
     - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
@@ -7072,7 +7072,7 @@ PrefabInstance:
     - target: {fileID: 1643814220495036091, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6894534606244553706, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
@@ -7231,6 +7231,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: ae201b28a9d94a64abbd200f05941934,
         type: 3}
+    - target: {fileID: 8718629387740789982, guid: a8968accd79f8784d8b6d58a58f1935e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8902167182529833742, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
       propertyPath: m_SizeDelta.x
