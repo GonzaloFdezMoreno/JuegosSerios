@@ -4,7 +4,7 @@ Este juego es un proyecto académico de la Asignatura Juegos Serios de la FDI (U
 
 Tiene licencia abierta.
 
-Gameplay: https://www.youtube.com/watch?v=gLOrmUa5QJY&ab_channel=DAVIDCASIANOFLORES
+Gameplay: [https://www.youtube.com/watch?v=gLOrmUa5QJY&ab_channel=DAVIDCASIANOFLORES](https://www.youtube.com/watch?v=RFHXaaFpHJQ&ab_channel=DAVIDCASIANOFLORES)
 
 ## Índice
 
