@@ -30,7 +30,7 @@ Gameplay: https://www.youtube.com/watch?v=gLOrmUa5QJY&ab_channel=DAVIDCASIANOFLO
 # Aspectos generales <a name="aspG"></a>
 
 Queremos ofrecer una experiencia reflexiva donde el jugador aprenderá acerca de una forma de vida que normalmente pasa desapercibida por la mayor parte de la población, sobre todo por la gente que vive en grandes ciudades como Madrid. La vista del videojuego será cenital o aérea mostrando así la granja de nuestro jugador desde el cielo. 
-Los controles no irán más allá del uso del ratón. El jugador clickará en las diferentes zonas del mapa, desplegando así menús donde se ofrecerán diferentes opciones que el jugador podrá realizar. Estas opciones en su mayoría serán tareas que gastarán puntos de acción. Estos puntos de acción representan el tiempo que tiene un granjero a lo largo de la semana. Cuando estos se gasten, terminará la semana y mostraremos un pequeño resumen de las ganancias y gastos que ha sufrido el granjero. La partida finaliza cuando el jugador se queda o bien sin recursos o hayan pasado una serie de semanas sobreviviendo.
+Los controles no irán más allá del uso del ratón. El jugador clickará en las diferentes zonas del mapa, desplegando así menús donde se ofrecerán diferentes opciones que el jugador podrá realizar. Estas opciones en su mayoría serán tareas que gastarán puntos de acción. Estos puntos de acción representan el tiempo que tiene un granjero a lo largo de la semana. La partida finaliza cuando el jugador se queda sin dinero.
 Este juego quiere enseñar al jugador lo duro que es vivir el día a día en una granja particular y criticar duramente las formas en las que ciertas instituciones y empresas parecen dispuestas a terminar con esta forma de vida. No intenta dar la solución al problema solo visualizarlo. 
 
 ## i. Contexto de uso <a name="contUso"></a>
@@ -45,29 +45,25 @@ Los menús de nuestro juego son:
 
     * Jugar: comenzará el juego. 
 
-    * Modular el sonido: deslizador con el que subirás y bajarás el volumen del juego. 
-
     * Salir: terminas el programa y sales del juego.
 
-2. Menú de pausa: en el juego podrás pulsar ESC y el juego se pausa ofreciendo las siguientes opciones. 
+2. Menú de pausa: en el juego podrás pulsar ESC o clickar sobre la tuerca de ajustes de la esquina superior derecha y el juego se pausa ofreciendo las siguientes opciones. 
 
     * Continuar: quitar la pausa y continuar con el juego.
 
-    * Modular el sonido: deslizador con el que subirás y bajarás el volumen del juego.
-
     * Salir: terminas el programa y sales del juego.
 
-Estética de los menús: botones con detalles rústicos y materiales de tablones. La música tendrá un tono calmado y country. Los fondos verdes y azules mezclando el cielo con el campo.
+Estética de los menús: botones con detalles rústicos y materiales de tablones. Los fondos verdes y azules mezclando el cielo con el campo.
 
 ## i. Configuración <a name="config"></a>
 
-Lo único configurable del juego será el volumen de la música y los sonidos del juego. Esto se modulara con un deslizador de volumen en los dos menús anteriormente mencionados.
+En el juego no hay ninguna opción configurable.
 
 ## ii. Interfaz y control <a name="interCont"></a>
 
-* __Controles__: todo el Input va a ser a través del ratón clicando en diferentes partes del mapa de la granja y en las diferentes opciones que despliegue cada zona u objeto con la que interactúas. Al clickar sobre cada parcela de la granja, aparecerá una ventana emergente con una imagen que represente su estado actual (y que le dará al jugador la información necesaria para saber qué necesita en ese momento) y la lista de tareas que se puede realizar allí. Si clickamos sobre las tareas, veremos una descripción más detallada de la misma que especifica qué produce, qué necesita para ser realizada y el tiempo que consume, además de un botón para iniciarla.
+* __Controles__: todo el Input va a ser a través del ratón clicando en diferentes partes del mapa de la granja y en las diferentes opciones que despliegue cada zona u objeto con la que interactúas. Al clickar sobre cada parcela de la granja, aparecerá una ventana emergente con una imagen que represente su estado actual (y que le dará al jugador la información necesaria para saber qué necesita en ese momento) y la lista de tareas que se puede realizar allí. Si situamos el ratón sobre las tareas, veremos una descripción más detallada de la misma que especifica qué produce, qué necesita para ser realizada y el tiempo que consume. Si clickamos sobre el botón realizaremos la tarea.
 
-* __Interfaz__: en la parte superior de la pantalla encontraremos los contadores de dinero, número de horas restantes de trabajo de la semana y el número de semanas actual en el que nos encontramos. En la esquina inferior derecha tenemos el botón de irse a dormir (equivalente a pasar de turno en los juegos de estrategia) y en la esquina inferior izquierda encontraremos el botón que abre el inventario. Al clickar este último, se abrirá una ventana emergente con todos los objetos que tenemos actualmente, los cuales pueden ser vendidos o empleados en la realización de alguna otra tarea. Por último, en la esquina superior derecha tendremos el botón de ajustes, el cual abrirá una ventana con las opciones de configuración del juego, así como botones para salir al menú principal, cerrar el juego y reanudar la partida.
+* __Interfaz__: en la parte superior de la pantalla encontraremos los contadores de dinero, número de horas restantes de trabajo de la semana y el número de semanas actual en el que nos encontramos. En la parte central derecha tenemos el botón de "siguiente semana" (equivalente a pasar de turno en los juegos de estrategia) y en la esquina superior izquierda encontraremos el botón que abre el inventario. Al clickar este último, se abrirá una ventana emergente con todos los objetos que tenemos actualmente, los cuales pueden ser vendidos o empleados en la realización de alguna otra tarea. Por último, en la esquina superior derecha tendremos el botón de ajustes, el cual abrirá una ventana con los botones para salir al menú principal y reanudar la partida.
 
 ![Captura de pantalla 2023-11-23 114656](https://github.com/GonzaloFdezMoreno/JuegosSerios/assets/82372508/a667dcb1-3a8c-46cc-9353-bd98653b9171)
 
@@ -75,18 +71,18 @@ Lo único configurable del juego será el volumen de la música y los sonidos de
 
 ## i. Mecánica <a name="mec"></a>
 
-El jugador tendrá una vista aérea de su granja, similar a la de Stardew Valley. Al tratarse de un juego de gestión de recursos y estrategia, el jugador no controlará a ningún personaje, sino que interactuará con el entorno mediante clicks de ratón. El jugador podrá:
+El jugador tendrá una vista aérea de su granja. Al tratarse de un juego de gestión de recursos y estrategia, el jugador no controlará a ningún personaje, sino que interactuará con el entorno mediante clicks de ratón. El jugador podrá:
 
-* __Realizar tareas__: cuando el jugador haga click sobre cada estructura o parcela de su granja podrá ver las tareas que se permiten realizar en ella, además de una imagen que represente el estado actual de la misma. Se mostrarán tanto las tareas que necesitan realizarse actualmente como las que no, por lo que el jugador deberá decidir cuáles son las más prioritarias. La tarea se realizará haciendo click en su botón correspondiente. Algunas tareas consumirán recursos mientras que otras los producirán. Cada semana aparecerán nuevas tareas que necesitan ser realizadas. Las que no se realicen en esa semana aparecerán también a la semana siguiente.
+* __Realizar tareas__: cuando el jugador haga click sobre cada estructura o parcela de su granja podrá ver las tareas que se permiten realizar en ella, además de una imagen que represente el estado actual de la misma. Se mostrarán tanto las tareas que necesitan realizarse actualmente como las que no, por lo que el jugador deberá decidir cuáles son las más prioritarias. La tarea se realizará haciendo click en su botón correspondiente. Algunas tareas consumirán recursos mientras que otras los producirán. Todas consumen acciones. Cada semana habrá nuevas tareas que necesitan ser realizadas. Las que no se realicen en esa semana aparecerán también a la semana siguiente. Aparecen tanto las tareas que necesitan ser realizadas como las que no, por lo que el jugador deberá analizar a partir de la imagen informativa de la parcela qué tarea necesita ser realizada.
 
-* __Vender objetos__: el jugador podrá vender por dinero los productos que obtenga de las tareas. También podrá vender las diferentes estructuras que tiene en su granja, de manera que ya no le supondrá un gasto su mantenimiento pero no le generará más recursos. Con el paso de las semanas se verá forzado a tomar este tipo de decisiones.
+* __Vender objetos__: el jugador podrá vender por dinero los productos que obtenga de las tareas.
 
 * __Reaccionar a eventos__: los eventos son sucesos que cambian el estado actual de la partida y obliga al jugador a tomar una decisión. Algunos tendrán lugar en una semana concreta ya que son importantes para el desarrollo de la partida, mientras que otros surgirán de manera aleatoria para introducir variedad al juego. Los eventos fijos tendrán lugar al comienzo de la semana, momento en el que se le informará al jugador en qué consiste exactamente. Por ejemplo, al comienzo de la semana 5 se
 le informa al jugador de que un nuevo impuesto ha entrado en vigor, de manera que, en adelante, se le cobrará la cantidad correspondiente con una determinada frecuencia. Por el contrario, los eventos aleatorios pueden tener lugar al comienzo o durante la semana. Por ejemplo, un desastre natural tendrá lugar al inicio de una semana aleatoria, informando al jugador de una manera similar a los eventos fijos, mientras que, transcurridas 6 horas de trabajo de una semana aleatoria, puede aparecer un vecino que quiera comprar algún producto a un buen precio.
 
-* __Siguiente semana__: equivalente al botón de pasar de turno en los juegos de estrategia. Terminará la semana y se mostrará un resumen de los ingresos y gastos de la misma. Esta información se añadirá a la última página del libro de cuentas, el cual el jugador podrá consultar para saber los gastos e ingresos de toda la partida. No será necesario que el jugador haya gastado todas las horas de esa semana para pasar a la siguiente, pero es recomendable que maximice las tareas que haga cada una de ellas.
+* __Siguiente semana__: equivalente al botón de pasar de turno en los juegos de estrategia. Terminará la semana y se pasará a la siguiente. No será necesario que el jugador haya gastado todas las horas de esa semana para pasar a la siguiente, pero es recomendable que maximice las tareas que haga cada una de ellas.
 
-* __Paso de estaciones__: cada 12 semanas tendrá lugar el ciclo de estaciones entre primavera, verano, otoño e invierno. La estación actual tiene implicaciones en la recogida de la cosecha (habrá verduras exclusivas de cada estación) y en la probabilidad de que sucedan ciertos eventos (como las lluvias o los incendios).
+* __Paso de estaciones__: cada 8 semanas tendrá lugar el ciclo de estaciones entre primavera, verano, otoño e invierno. La estación actual tiene implicaciones en la recogida de la cosecha (habrá verduras exclusivas de cada estación) y en algunos eventos que tienen lugar en una estación específica (como las lluvias o los incendios).
 
 ### Recursos: 
 Los recursos que deberá gestionar el jugador son:
@@ -100,22 +96,17 @@ Los recursos que deberá gestionar el jugador son:
 ### Parcelas: 
 La granja constará de las siguientes __parcelas__, las cuales tendrán cada una de ellas unas tareas específicas:
 
-* __Corral__: contendrá a las gallinas. Las tareas serán: recoger huevos (produce huevos), alimentarlas (necesita pienso), atención médica, comprar el pienso.
+* __Corral__: contendrá a las gallinas. Las tareas serán: recoger huevos (produce huevos), alimentarlas (necesita pienso), atención médica.
 
-* __Establo de vacas__: contendrá vacas. Tareas: ordeñar (produce leche), alimentarlas (necesita heno, produce abono), llevarlas a pastar (necesita tener un perro y un terreno de pasto), atención médica, comprar heno.
+* __Establo de vacas__: contendrá vacas. Tareas: ordeñar (produce leche), alimentarlas (necesita heno, produce abono), llevarlas a pastar (necesita tener un terreno de pasto), atención médica.
 
-* __Establo de ovejas__: contendrá a las ovejas. Tareas: llevarlas a pastar (necesita tener un perro y un terreno de pasto), obtener queso, esquilar (produce lana), atención médica.
+* __Establo de ovejas__: contendrá a las ovejas. Tareas: llevarlas a pastar (necesita tener un terreno de pasto), obtener queso, esquilar (produce lana), atención médica.
 
-* __Huerto, cerezos y viñedo__: Plantar (necesita esquejes o semillas), cosechar (produce verduras, cerezas y uvas), regar, arar (si dispones de tractor se reduce el coste de horas), limpiar con insecticida (necesitas insecticida), comprar insecticida.
+* __Huerto__: Plantar (necesita semillas), cosechar (produce verduras, si dispones de tractor se reduce el coste de horas), limpiar verduras pochas (si dispones de tractor se reduce el coste de horas).
 
 * __Terreno de pasto__: esta parcela sirve exclusivamente para llevar a pastar a los animales de pastoreo.
-Perro: dar de comer, veterinario.
 
-* __Tractor__: arreglar y vender. Se desbloquea tras el tutorial.
-
-* __Casa granjero__: atender invitados, comprar artículos para la granja (en un catálogo) y consultar el libro de cuentas.
-  
-Todas las parcelas pueden ser vendidas, de manera que las tareas correspondientes dejarán de estar disponibles.
+* __Casa granjero__: comprar artículos para la granja (en una tienda) y vender el tractor.
 
 ### Eventos:
 * Fijos: estos eventos aparecerán en momentos espefificos durante el oroceso de la partida:
@@ -127,11 +118,11 @@ Todas las parcelas pueden ser vendidas, de manera que las tareas correspondiente
   
     * __Animales enfermos/Plaga en los cultivos__: durante el transcurso de las semanas es posible que alguna emergencia ocurra dentro de la granja y en estos eventos el jugador deberá responder a estos llevando a los animales al veterinario o acabando con la plaga (con cierto coste); si el jugador decide ignorarlos o no es capaz de solucionar estos problemas la adquisición del recurso afectado se verá reducida.
 
-    * __Visitas y compra de otros ciudadanos__: durante el juego algunos ciudadanos se pasarán por la granja ya sea para contarte algun consejo, aviso o chisme, este último será la forma en la que el jugador será informado de los cambios y otros sucesos que ocurrirán alrededor de la granja, también para comprarte algún producto por un precio mayor al normal o pedirte que le guardes cierta cantidad para una futura compra; sin embargo, según pasan las semanas, estas personas irán apareciendo con menos frecuencia.
+    * __Visitas y compra de otros ciudadanos__: durante el juego algunos ciudadanos se pasarán por la granja ya sea para contarte algun consejo, aviso o chisme, este último será la forma en la que el jugador será informado de los cambios y otros sucesos que ocurrirán alrededor de la granja, también para comprarte algún producto por un precio mayor al normal; sin embargo, según pasan las semanas, estas personas irán apareciendo con menos frecuencia.
 
     * __Lluvia o incendios__: al ocurrir alguno de estos eventos, al jugador solo se le informará de modo que en caso de que llueva pueda ahorrarse regar los cultivos, pero que si ocurre algún incendio se le muestre algún impedimento (no poder llevar a las vacas a pastar) o tenga alguna pérdida (alguna de las instalaciones se quema)
       
-    * __Compañía que te compra parte de tus terrenos__: dentro de estos eventos, el jugador deberá decidir si acepta el contrato de la compañía, en el cual le ofrecerán cierta cantidad de dinero pero que a cambio perderá una de las parcelas/fuentes de recursos de las que dispone permanentemente; por lo que tendrá que ver si le conviene aceptarlo. Si no lo acepta, al cabo de unas semanas se quemará misteriosamente el terreno y se le ofrecerá de nuevo la opción de compra. Si no acepta, en función del terreno afectado tendremos dos opciones: si el terreno era una zona de pasto, no se podrá utilizar durante 6 semanas, mientras que si había una estructura el jugador deberá pagar su reparación para volver a usarla.
+    * __Compañía que te compra parte de tus terrenos__: dentro de estos eventos, el jugador deberá decidir si acepta el contrato de la compañía, en el cual le ofrecerán cierta cantidad de dinero pero que a cambio perderá una de las parcelas/fuentes de recursos de las que dispone permanentemente; por lo que tendrá que ver si le conviene aceptarlo.
 
 ## i. Dinámica <a name="din"></a>
 
@@ -141,7 +132,7 @@ En este juego no existe una victoria como tal, el jugador está obligado a perde
 
 Sin embargo, esto no quiere decir que la forma en la que se juegue sea irrelevante. Si el jugador consigue desarrollar una estrategia que le permita maximizar sus ganancias, conseguirá sobrevivir más semanas, por lo que podrá experimentar situaciones que se den exclusivamente en momentos avanzados de la partida, como eventos o diálogos que no aparecen en las primeras semanas del juego.
 
-Nosotros esperamos que el jugador siga una estrategia en la que intente realizar el mayor número de tareas posibles cada semana, intentando gastar siempre las 84 horas/acciones semanales. En caso de que una semana no pueda realizar todas las tareas pendientes, deberá priorizar aquellas que, si son ignoradas, penalizan en mayor medida, como proveer de atención médica a un animal enfermo, pues si no es tratado dejará de producir recursos. Respecto a los productos de las tareas, deberá decidir si venderlos o guardarlos para utilizarlos como ingrediente para realizar otra tarea. Si se decanta por venderlo, obtendrá un beneficio instantáneo, mientras que si lo utiliza para otra tarea podrá obtener un beneficio incluso mayor en un futuro (dependiendo del objeto). También deberá decidir si cada parcela es rentable, pues si los gastos que supone su mantenimiento es mayor a su producción quizás sea buena idea venderla. Con estas estrategias se espera que el jugador consiga sobrevivir más semanas y así tener una partida más larga y con contenido exclusivo.
+Nosotros esperamos que el jugador siga una estrategia en la que intente realizar el mayor número de tareas posibles cada semana, intentando gastar siempre las 84 horas/acciones semanales. En caso de que una semana no pueda realizar todas las tareas pendientes, deberá priorizar aquellas que, si son ignoradas, penalizan en mayor medida, como proveer de atención médica a un animal enfermo, pues si no es tratado dejará de producir recursos. Respecto a los productos de las tareas, deberá decidir si venderlos o guardarlos para utilizarlos como ingrediente para realizar otra tarea. Si se decanta por venderlo, obtendrá un beneficio instantáneo, mientras que si lo utiliza para otra tarea podrá obtener un beneficio incluso mayor en un futuro (dependiendo del objeto). Con estas estrategias se espera que el jugador consiga sobrevivir más semanas y así tener una partida más larga y con contenido exclusivo.
 
 ## ii.  Estética <a name="est"></a>
 
@@ -158,10 +149,9 @@ El abuelo del protagonista, que se está jubilando, le pedirá que se haga cargo
 
 ## ii. Personajes <a name="pers"></a>
 
-* __Protagonista__: José Luis/Mari Carmen (unos 30 años), dependiendo de si el jugador elige ser chico o chica. En ciertas situaciones aparecerá una imagen de este personaje, como en la interfaz o en algún cuadro de diálogo.
 *  __Abuelo Saturnino__: el abuelo del protagonista. Le explicará al principio lo que debe hacer.
-*  __Alcalde__: Don Timoteo (50 años), es un alcalde que busca su propio beneficio e ignora el bienestar de su pueblo.
-* __Vecinos__: Doña Paqui, Don Faustino, Don Carmelo (65 años). Aparecerán esporádicamente en forma de eventos aleatorios.
+* __Vecinos__: Doña Paqui y Don Faustino (unos 65 años). Aparecerán esporádicamente en forma de eventos aleatorios.
+* __Timoteo__: Un hombre de negocios que querrá comprarle terrenos al jugador. Aparecerán esporádicamente en forma de eventos aleatorios.
 
 ## iii. Objetos <a name="obj"></a>
 
@@ -173,7 +163,6 @@ A continuación se detallan los objetos que pueden ser almacenados en el inventa
 | Leche       | Vacas (establo)             | Venta                               |
 | Queso       | Ovejas (establo)            | Venta                               |
 | Lana        | Ovejas (establo)            | Venta                               |
-| Carne       | Vacas, ovejas y gallinas    | Venta                               |
 | Pienso      | Compra                      | Alimentar animales (gallinas)       |
 | Heno        | Compra                      | Alimentar animales (ovejas y vacas) |
 | Abono       | Compra y al alimentar vacas | Fertilizar huerto                   |
@@ -181,10 +170,7 @@ A continuación se detallan los objetos que pueden ser almacenados en el inventa
 | Guisantes   | Huerto (solo primavera)     | Venta                               |
 | Tomates     | Huerto (solo verano)        | Venta                               |
 | Lechuga     | Huerto (solo otoño)         | Venta                               |
-| Uvas        | Viñedo (solo otoño)         | Venta                               |
-| Cerezas     | Cerezo (solo primavera)     | Venta                               |
 | Semillas    | Compra                      | Plantar en el huerto                |
-| Insecticida | Compra                      | Desinfectar huerto                  |  
 
 # Referencias <a name="ref"></a>
 
