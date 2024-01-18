@@ -20,7 +20,6 @@ public class HouseStructure : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log(onTutorial);
         if (!onTutorial && taskCanvas != null && !UIManager.GetInstance().GetUICanvasIsOpen() && !GameManager.GetInstance().IsPaused()) 
         {
             taskCanvas.SetActive(true);
