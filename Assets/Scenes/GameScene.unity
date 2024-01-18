@@ -6966,13 +6966,13 @@ PrefabInstance:
         type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 4423b50eb4aad88498707d28e58cac54,
+      objectReference: {fileID: 21300000, guid: 5434787887d9fb348840c1d1e7c196db,
         type: 3}
     - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
       propertyPath: images.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: e4f6f26be7d763e48bfb7a076a34e73d,
+      objectReference: {fileID: 21300000, guid: 5434787887d9fb348840c1d1e7c196db,
         type: 3}
     - target: {fileID: 851987873346715905, guid: a8968accd79f8784d8b6d58a58f1935e,
         type: 3}
